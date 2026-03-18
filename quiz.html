@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz de Nivelamento | PRISMA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:"Inter", Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#dfe8ef;
+      color:#111111;
+      min-height:100vh;
+    }
+
+    button,
+    input{
+      font-family:inherit;
+    }
+
+    .quiz-page{
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:48px 16px;
+    }
+
+    .quiz-shell{
+      width:100%;
+      max-width:560px;
+    }
+
+    .quiz-box,
+    .resultado{
+      width:100%;
+      background:linear-gradient(180deg,#f8f6f4 0%, #f4f1ee 100%);
+      border:1px solid #dbe3eb;
+      border-radius:14px;
+      padding:18px 18px 20px;
+      position:relative;
+      box-shadow:0 16px 40px rgba(10, 27, 52, 0.08);
+    }
+
+    .quiz-close{
+      position:absolute;
+      top:10px;
+      right:12px;
+      border:none;
+      background:transparent;
+      color:#b3b7bd;
+      font-size:16px;
+      cursor:pointer;
+      line-height:1;
+    }
+
+    .quiz-mini-kicker{
+      font-size:8px;
+      font-weight:600;
+      letter-spacing:0.6px;
+      text-transform:uppercase;
+      color:#8a919b;
+      margin-bottom:6px;
+    }
+
+    .quiz-title{
+      font-size:16px;
+      font-weight:800;
+      color:#111111;
+      margin-bottom:4px;
+    }
+
+    .quiz-subtitle{
+      font-size:8px;
+      color:#9aa1aa;
+      margin-bottom:12px;
+    }
+
+    .quiz-line{
+      width:100%;
+      height:1px;
+      background:#bfd5f2;
+      margin-bottom:16px;
+    }
+
+    .quiz-question{
+      font-size:14px;
+      font-weight:700;
+      color:#1c2430;
+      margin-bottom:14px;
+    }
+
+    .opcoes{
+      display:grid;
+      gap:7px;
+      margin-bottom:14px;
+    }
+
+    .opcao{
+      width:100%;
+      min-height:34px;
+      border:1px solid #c9d9ea;
+      background:#f8fbff;
+      border-radius:8px;
+      padding:0 12px;
+      text-align:left;
+      font-size:10px;
+      color:#5f6874;
+      cursor:pointer;
+      transition:0.22s ease;
+    }
+
+    .opcao:hover{
+      border-color:#9fc2e8;
+      background:#ffffff;
+      transform:translateY(-1px);
+    }
+
+    .opcao.selecionada{
+      background:linear-gradient(90deg,#f3e7f7 0%, #f3eefb 100%);
+      border-color:#d8b8e6;
+      color:#4f5966;
+      box-shadow:0 6px 14px rgba(192, 153, 225, 0.12);
+    }
+
+    .quiz-footer{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-top:6px;
+    }
+
+    .quiz-step{
+      font-size:8px;
+      color:#9aa1aa;
+    }
+
+    .quiz-actions{
+      display:flex;
+      justify-content:flex-end;
+      gap:8px;
+      margin-left:auto;
+    }
+
+    .quiz-btn-link{
+      border:none;
+      background:transparent;
+      color:#7a88a0;
+      font-size:8px;
+      font-weight:600;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      padding:0;
+    }
+
+    .quiz-btn-link::before{
+      content:"←";
+      font-size:9px;
+    }
+
+    .resultado{
+      text-align:center;
+      padding-top:22px;
+      padding-bottom:22px;
+    }
+
+    .resultado-icon-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+      margin-bottom:10px;
+    }
+
+    .resultado-sparkles{
+      color:#9b59ff;
+      font-size:14px;
+      line-height:1;
+    }
+
+    .resultado-icon{
+      width:54px;
+      height:40px;
+      border-radius:6px;
+      background:#081327;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#ffffff;
+      font-size:22px;
+    }
+
+    .resultado h2{
+      font-size:16px;
+      font-weight:700;
+      color:#111111;
+      margin-bottom:8px;
+    }
+
+    .resultado-texto{
+      font-size:8px;
+      line-height:1.5;
+      color:#9aa1aa;
+      max-width:260px;
+      margin:0 auto 14px;
+    }
+
+    .resultado-curso-box{
+      width:100%;
+      max-width:270px;
+      margin:0 auto 14px;
+      background:#e8f2ff;
+      border:1px solid #c8dbf5;
+      border-radius:6px;
+      padding:10px 12px;
+      text-align:left;
+    }
+
+    .resultado-curso-box strong{
+      display:block;
+      font-size:9px;
+      color:#111111;
+      margin-bottom:4px;
+    }
+
+    .resultado-curso-box span{
+      display:block;
+      font-size:8px;
+      color:#6d7682;
+      line-height:1.45;
+    }
+
+    .resultado-acoes{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .resultado-btn{
+      min-height:22px;
+      padding:0 12px;
+      border-radius:999px;
+      font-size:8px;
+      font-weight:700;
+      cursor:pointer;
+      border:none;
+    }
+
+    .resultado-btn-primario{
+      background:#081327;
+      color:#ffffff;
+    }
+
+    .resultado-btn-secundario{
+      background:#ffffff;
+      color:#7c8796;
+      border:1px solid #d5dce4;
+    }
+
+    .escondido{
+      display:none !important;
+    }
+
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.25);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:16px;
+      z-index:1000;
+    }
+
+    .modal-conteudo{
+      position:relative;
+      width:100%;
+      max-width:360px;
+      background:#f7f9fc;
+      border:1px solid #e4ebf3;
+      border-radius:12px;
+      padding:22px 18px 24px;
+      box-shadow:0 20px 45px rgba(4, 30, 66, 0.22);
+    }
+
+    .fechar{
+      position:absolute;
+      top:10px;
+      right:12px;
+      border:none;
+      background:transparent;
+      color:#9aa4b2;
+      font-size:26px;
+      cursor:pointer;
+    }
+
+    .modal-conteudo h3{
+      font-size:20px;
+      color:#111111;
+      margin-bottom:14px;
+    }
+
+    .formulario{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .formulario input{
+      height:42px;
+      padding:0 12px;
+      border:1px solid #d4e0ec;
+      border-radius:8px;
+      outline:none;
+      background:#ffffff;
+    }
+
+    .formulario input:focus{
+      border-color:#1473e6;
+    }
+
+    .btn-cadastro{
+      height:42px;
+      border:none;
+      border-radius:999px;
+      background:#081327;
+      color:#ffffff;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    #mensagemCadastro{
+      margin-top:12px;
+      font-size:13px;
+      font-weight:700;
+      min-height:18px;
+    }
+
+    @media (max-width:640px){
+      .quiz-page{
+        padding:22px 10px;
+      }
+
+      .quiz-box,
+      .resultado{
+        padding:14px 14px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="quiz-page">
+    <div class="quiz-shell">
+
+      <section class="quiz-box" id="quizBox">
+        <button class="quiz-close" type="button" onclick="window.location.href='index.html'">×</button>
+
+        <p class="quiz-mini-kicker">— QUIZ DE NIVELAMENTO</p>
+        <h1 class="quiz-title">Descubra seu curso ideal</h1>
+        <p class="quiz-subtitle" id="quizSubtitulo">7 perguntas • menos de 2 minutos</p>
+
+        <div class="quiz-line"></div>
+
+        <p class="quiz-question" id="pergunta">Carregando...</p>
+
+        <div id="opcoes" class="opcoes"></div>
+
+        <div class="quiz-footer">
+          <span class="quiz-step" id="passo">Pergunta 1 de 7</span>
+
+          <div class="quiz-actions">
+            <button id="btnVoltar" class="quiz-btn-link" type="button">VOLTAR</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="resultado escondido" id="resultadoBox">
+        <button class="quiz-close" type="button" onclick="window.location.href='index.html'">×</button>
+
+        <div class="resultado-icon-wrap">
+          <div class="resultado-sparkles">✦ ✦</div>
+          <div class="resultado-icon">
+            <i class="fa-solid fa-laptop"></i>
+          </div>
+        </div>
+
+        <h2>Perfil Identificado!</h2>
+
+        <p class="resultado-texto">
+          Com base nas suas respostas, identificamos uma trilha mais adequada ao seu perfil.
+        </p>
+
+        <div class="resultado-curso-box">
+          <strong id="cursoResultado">English for Software Development</strong>
+          <span id="textoResultado">
+            Ideal para quem quer desenvolver vocabulário técnico, fluidez e segurança em contextos profissionais de tecnologia.
+          </span>
+        </div>
+
+        <div class="resultado-acoes">
+          <button id="btnVerCursos" class="resultado-btn resultado-btn-primario" type="button">VER CURSOS</button>
+          <button id="btnCadastro" class="resultado-btn resultado-btn-secundario" type="button">REGISTRAR-SE</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="modal escondido" id="modalCadastro">
+    <div class="modal-conteudo">
+      <button id="fecharModal" class="fechar" type="button">×</button>
+      <h3>Criar conta</h3>
+
+      <form id="formCadastro" class="formulario" novalidate>
+        <input id="nome" type="text" placeholder="Seu nome">
+        <input id="email" type="email" placeholder="Seu e-mail">
+        <input id="senha" type="password" placeholder="Sua senha">
+        <input id="confirmarSenha" type="password" placeholder="Confirmar senha">
+        <button class="btn-cadastro" type="submit">Criar conta</button>
+      </form>
+
+      <p id="mensagemCadastro"></p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+  <script>
+    const perguntas = [
+      {
+        pergunta: "Qual é a sua área de atuação profissional?",
+        opcoes: [
+          "Tecnologia e TI / Dados",
+          "Saúde / Medicina / Farmácia",
+          "Jurídico / Negócios",
+          "Financeiro / Bancos",
+          "Hotelaria / Turismo",
+          "Marketing / Vendas",
+          "Administração / Operações",
+          "Outro / Estudante"
+        ]
+      },
+      {
+        pergunta: "Com que frequência você usa inglês no trabalho hoje?",
+        opcoes: [
+          "Nunca ou quase nunca",
+          "Leio e-mails ocasionalmente",
+          "Participo de reuniões simples",
+          "Interajo de forma recorrente",
+          "Uso inglês diariamente"
+        ]
+      },
+      {
+        pergunta: "Qual é o seu principal objetivo com o inglês?",
+        opcoes: [
+          "Conseguir emprego ou crescer na área",
+          "Trabalhar em empresa internacional",
+          "Trabalhar em carreira para o exterior",
+          "Crescer em cargos atuais",
+          "Me aprofundar no meu trabalho"
+        ]
+      },
+      {
+        pergunta: "Qual habilidade você mais precisa desenvolver?",
+        opcoes: [
+          "Leitura de documentos técnicos",
+          "Escrita de e-mails e relatórios",
+          "Conversação em reuniões",
+          "Vocabulário técnico da minha área",
+          "Entrevistas em inglês"
+        ]
+      },
+      {
+        pergunta: "Como você descreveria seu nível de inglês atual?",
+        opcoes: [
+          "Básico: sei poucas palavras",
+          "Pré-intermediário: leitura muito facilitada",
+          "Intermediário: consigo me comunicar com esforço",
+          "Intermediário avançado: me viro em temas da minha área",
+          "Avançado: já pretendo me especializar no idioma"
+        ]
+      },
+      {
+        pergunta: "Em qual situação você se sentiria menos confortável hoje?",
+        opcoes: [
+          "Apresentar projeto para equipe internacional",
+          "Negociar com cliente ou parceiro estrangeiro",
+          "Entrevistar para vaga global",
+          "Redigir relatório técnico longo",
+          "Participar de conferência internacional"
+        ]
+      },
+      {
+        pergunta: "Quantas horas por semana você consegue estudar?",
+        opcoes: [
+          "Menos de 1 hora",
+          "1 a 2 horas",
+          "3 a 5 horas",
+          "6 a 10 horas",
+          "Mais de 10 horas"
+        ]
+      }
+    ];
+
+    let atual = 0;
+    let respostas = new Array(perguntas.length).fill(null);
+
+    const passo = document.getElementById("passo");
+    const pergunta = document.getElementById("pergunta");
+    const opcoes = document.getElementById("opcoes");
+    const btnVoltar = document.getElementById("btnVoltar");
+    const quizSubtitulo = document.getElementById("quizSubtitulo");
+
+    const quizBox = document.getElementById("quizBox");
+    const resultadoBox = document.getElementById("resultadoBox");
+    const cursoResultado = document.getElementById("cursoResultado");
+    const textoResultado = document.getElementById("textoResultado");
+
+    const btnCadastro = document.getElementById("btnCadastro");
+    const btnVerCursos = document.getElementById("btnVerCursos");
+    const modalCadastro = document.getElementById("modalCadastro");
+    const fecharModal = document.getElementById("fecharModal");
+    const formCadastro = document.getElementById("formCadastro");
+    const mensagemCadastro = document.getElementById("mensagemCadastro");
+
+    function renderizarPergunta() {
+      const item = perguntas[atual];
+
+      passo.textContent = `Pergunta ${atual + 1} de ${perguntas.length}`;
+      pergunta.textContent = item.pergunta;
+      quizSubtitulo.textContent = `${perguntas.length} perguntas • menos de 2 minutos`;
+
+      opcoes.innerHTML = "";
+
+      item.opcoes.forEach((texto, index) => {
+        const botao = document.createElement("button");
+        botao.type = "button";
+        botao.className = "opcao";
+        botao.textContent = texto;
+
+        if (respostas[atual] === index) {
+          botao.classList.add("selecionada");
+        }
+
+        botao.addEventListener("click", () => {
+          respostas[atual] = index;
+          renderizarPergunta();
+
+          setTimeout(() => {
+            if (atual < perguntas.length - 1) {
+              atual++;
+              renderizarPergunta();
+            } else {
+              mostrarResultado();
+            }
+          }, 180);
+        });
+
+        opcoes.appendChild(botao);
+      });
+
+      btnVoltar.style.visibility = atual === 0 ? "hidden" : "visible";
+    }
+
+    function calcularCursoIdeal() {
+      const area = respostas[0];
+
+      if (area === 0) {
+        return {
+          curso: "English for Software Development",
+          descricao: "Ideal para quem quer desenvolver vocabulário técnico, fluidez e segurança em contextos profissionais de tecnologia.",
+          cursoInterno: "English for Software Development"
+        };
+      }
+
+      if (area === 1) {
+        return {
+          curso: "English for Healthcare Professionals",
+          descricao: "Indicado para profissionais da saúde que precisam de comunicação clínica, técnica e internacional.",
+          cursoInterno: "English for Healthcare Professionals"
+        };
+      }
+
+      if (area === 2) {
+        return {
+          curso: "English for Law & Legal",
+          descricao: "Uma trilha focada em linguagem jurídica, contratos, compliance e comunicação formal.",
+          cursoInterno: "English for Law & Legal"
+        };
+      }
+
+      if (area === 3) {
+        return {
+          curso: "English for Finance & Banking",
+          descricao: "Indicada para quem atua com bancos, relatórios executivos e comunicação internacional no mercado financeiro.",
+          cursoInterno: "English for Finance & Banking"
+        };
+      }
+
+      if (area === 4) {
+        return {
+          curso: "English for Tourism & Hospitality",
+          descricao: "Ideal para hotelaria, turismo, atendimento, reservas e experiência do cliente em contexto internacional.",
+          cursoInterno: "English for Tourism & Hospitality"
+        };
+      }
+
+      if (area === 5) {
+        return {
+          curso: "English for Marketing & Sales",
+          descricao: "Trilha recomendada para marketing, vendas, publicidade e relacionamento com clientes e parceiros globais.",
+          cursoInterno: "English for Marketing & Sales"
+        };
+      }
+
+      if (area === 6) {
+        return {
+          curso: "English for Manufacturing & Engineering",
+          descricao: "Indicado para operações, engenharia, processos produtivos e comunicação técnica no ambiente industrial.",
+          cursoInterno: "English for Manufacturing & Engineering"
+        };
+      }
+
+      return {
+        curso: "English for Software Development",
+        descricao: "Ideal para quem quer desenvolver vocabulário técnico, fluidez e segurança em contextos profissionais.",
+        cursoInterno: "English for Software Development"
+      };
+    }
+
+    function mostrarResultado() {
+      const resultado = calcularCursoIdeal();
+
+      quizBox.classList.add("escondido");
+      resultadoBox.classList.remove("escondido");
+
+      cursoResultado.textContent = resultado.curso;
+      textoResultado.textContent = resultado.descricao;
+
+      localStorage.setItem("cursoIdeal", resultado.cursoInterno);
+      localStorage.setItem("descricaoCursoIdeal", resultado.descricao);
+    }
+
+    btnVoltar.addEventListener("click", () => {
+      if (atual > 0) {
+        atual--;
+        renderizarPergunta();
+      }
+    });
+
+    btnVerCursos.addEventListener("click", () => {
+      window.location.href = "cursos.html";
+    });
+
+    btnCadastro.addEventListener("click", () => {
+      modalCadastro.classList.remove("escondido");
+      mensagemCadastro.textContent = "";
+    });
+
+    fecharModal.addEventListener("click", () => {
+      modalCadastro.classList.add("escondido");
+    });
+
+    modalCadastro.addEventListener("click", (e) => {
+      if (e.target === modalCadastro) {
+        modalCadastro.classList.add("escondido");
+      }
+    });
+
+    formCadastro.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById("nome").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const senha = document.getElementById("senha").value.trim();
+      const confirmarSenha = document.getElementById("confirmarSenha").value.trim();
+
+      if (!nome || !email || !senha || !confirmarSenha) {
+        mensagemCadastro.textContent = "Preencha todos os campos.";
+        mensagemCadastro.style.color = "#dc2626";
+        return;
+      }
+
+      if (senha.length < 6) {
+        mensagemCadastro.textContent = "A senha precisa ter pelo menos 6 caracteres.";
+        mensagemCadastro.style.color = "#dc2626";
+        return;
+      }
+
+      if (senha !== confirmarSenha) {
+        mensagemCadastro.textContent = "As senhas não coincidem.";
+        mensagemCadastro.style.color = "#dc2626";
+        return;
+      }
+
+      localStorage.setItem(
+        "usuarioCadastrado",
+        JSON.stringify({
+          nome,
+          email,
+          senha
+        })
+      );
+
+      mensagemCadastro.textContent = "Conta criada com sucesso!";
+      mensagemCadastro.style.color = "#16a34a";
+
+      setTimeout(() => {
+        window.location.href = "cursos.html";
+      }, 1200);
+    });
+
+    renderizarPergunta();
+  </script>
+</body>
+</html>

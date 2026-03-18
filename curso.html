@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso | PRISMA</title>
+  <link rel="icon" type="image/png" href="img/logo-prisma-3.png">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="header-logo" aria-label="PRISMA">
+        <img src="img/logo-prisma-3.png" alt="Logo Prisma" class="header-logo-img">
+      </a>
+
+      <nav class="header-menu">
+        <a href="index.html">Início</a>
+        <a href="cursos.html" class="active">Cursos</a>
+        <a href="certificados.html">Certificados</a>
+        <a href="index.html#recursos">Recursos</a>
+        <a href="perfil.html">Perfil</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <span id="userWelcome" class="user-welcome"></span>
+        <button class="header-login-btn" id="authButton" type="button">Entrar</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="curso-page curso-page-figma">
+    <!-- TOPO DO CURSO -->
+    <section class="curso-topo-figma">
+      <div class="curso-topo-container">
+        <p class="curso-label-figma">— MEUS CURSOS</p>
+
+        <h1 id="cursoTitulo" class="curso-titulo-figma">English for Software Development</h1>
+
+        <p class="curso-texto-figma" id="cursoDescricao1"></p>
+        <p class="curso-texto-figma" id="cursoDescricao2"></p>
+
+        <div class="curso-benefits-box figma-benefits-box">
+          <h3>Neste curso você irá:</h3>
+          <div class="curso-benefits-grid figma-benefits-grid" id="cursoBeneficios"></div>
+        </div>
+
+        <p class="curso-start-figma">
+          Inicie agora e dê um <span>START</span> em sua carreira profissional!
+        </p>
+
+        <div class="curso-seta-figma">⌄</div>
+      </div>
+    </section>
+
+    <!-- MÓDULOS -->
+    <section class="curso-modulos-section figma-modulos-section">
+      <div class="courses-container">
+        <div class="curso-modulos-grid figma-modulos-grid" id="cursoModulos"></div>
+      </div>
+    </section>
+
+    <!-- NOVA ÁREA DA AULA / QUIZ -->
+    <section class="curso-aula-section">
+      <div class="curso-aula-container">
+
+        <!-- ESQUERDA -->
+        <div class="curso-aula-main">
+          <h2 class="curso-aula-titulo">
+            Fundamentos do inglês para Programação
+          </h2>
+
+          <div class="curso-video-box">
+            <button class="curso-video-play" type="button" aria-label="Assistir aula">
+              <i class="fa-solid fa-play"></i>
+            </button>
+          </div>
+
+          <div class="curso-aula-texto">
+            <h3>Entendendo Comentários no Código</h3>
+            <p>
+              Nesta aula, você aprenderá o uso básico de comentários em linguagens
+              de programação. Comentários servem para explicar o código, organizar
+              trechos importantes e melhorar a leitura para quem desenvolve.
+            </p>
+            <p>
+              Eles não são executados pelo programa e ajudam bastante no estudo e
+              na manutenção do projeto, principalmente quando trabalhamos em equipe.
+            </p>
+          </div>
+
+          <section class="curso-quiz-card">
+            <div class="curso-quiz-header">
+              <h3>Pratique o que você aprendeu</h3>
+              <div class="curso-quiz-icon">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+            </div>
+
+            <div class="curso-quiz-body">
+              <div class="curso-quiz-top">
+                <span class="curso-quiz-badge">QUIZ 01</span>
+                <span class="curso-quiz-progress">01/03 PERGUNTAS</span>
+              </div>
+
+              <div class="curso-quiz-question">
+                <h4>What is the purpose of the comment in the code below?</h4>
+
+                <div class="curso-code-box">
+<pre><code>// This function adds two numbers
+function add(a, b) {
+  return a + b;
+}</code></pre>
+                </div>
+
+                <p>
+                  Escolha a opção que melhor define o papel que esse comentário
+                  desempenha no trecho acima.
+                </p>
+              </div>
+
+              <div class="curso-quiz-options" id="quizOptions">
+                <button class="curso-quiz-option" type="button">
+                  <span class="curso-quiz-number">1</span>
+                  <span class="curso-quiz-text">Executar uma função de divisão</span>
+                </button>
+
+                <button class="curso-quiz-option selected" type="button">
+                  <span class="curso-quiz-number">2</span>
+                  <span class="curso-quiz-text">Explicar a função e deixar o código mais claro</span>
+                </button>
+
+                <button class="curso-quiz-option" type="button">
+                  <span class="curso-quiz-number">3</span>
+                  <span class="curso-quiz-text">Fazer o programa rodar mais rápido</span>
+                </button>
+
+                <button class="curso-quiz-option" type="button">
+                  <span class="curso-quiz-number">4</span>
+                  <span class="curso-quiz-text">Substituir uma variável no sistema</span>
+                </button>
+              </div>
+
+              <div class="curso-quiz-feedback" id="quizFeedback">
+                <span class="feedback-chip feedback-neutral">The comment explains the function</span>
+                <span class="feedback-chip feedback-correct">Correto</span>
+                <span class="feedback-chip feedback-good">Boa!</span>
+              </div>
+
+              <div class="curso-quiz-footer">
+                <button class="curso-quiz-next" type="button">Próxima</button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- DIREITA -->
+        <aside class="curso-aula-sidebar">
+          <div class="curso-sidebar-card">
+            <h3>English for Software Devs</h3>
+
+            <div class="curso-sidebar-progress">
+              <span class="progress-line active"></span>
+              <span class="progress-line active"></span>
+              <span class="progress-line active"></span>
+              <span class="progress-line"></span>
+            </div>
+
+            <div class="curso-sidebar-list">
+              <div class="curso-sidebar-item done">
+                <span class="curso-sidebar-icon"><i class="fa-solid fa-check"></i></span>
+                <div>
+                  <strong>Mód. 1</strong>
+                  <p>Introdução ao Inglês Técnico</p>
+                </div>
+              </div>
+
+              <div class="curso-sidebar-item done">
+                <span class="curso-sidebar-icon"><i class="fa-solid fa-check"></i></span>
+                <div>
+                  <strong>Aula 1</strong>
+                  <p>Vocabulário básico</p>
+                </div>
+              </div>
+
+              <div class="curso-sidebar-item done">
+                <span class="curso-sidebar-icon"><i class="fa-solid fa-check"></i></span>
+                <div>
+                  <strong>Aula 2</strong>
+                  <p>Termos comuns em código</p>
+                </div>
+              </div>
+
+              <div class="curso-sidebar-item current">
+                <span class="curso-sidebar-icon"><i class="fa-solid fa-play"></i></span>
+                <div>
+                  <strong>Aula 3</strong>
+                  <p>Comentários no código</p>
+                </div>
+              </div>
+
+              <div class="curso-sidebar-item">
+                <span class="curso-sidebar-icon"><i class="fa-regular fa-circle"></i></span>
+                <div>
+                  <strong>Quiz 1</strong>
+                  <p>Fixação da aula</p>
+                </div>
+              </div>
+
+              <div class="curso-sidebar-item">
+                <span class="curso-sidebar-icon"><i class="fa-regular fa-circle"></i></span>
+                <div>
+                  <strong>Aula 4</strong>
+                  <p>Comandos básicos</p>
+                </div>
+              </div>
+
+              <div class="curso-sidebar-item">
+                <span class="curso-sidebar-icon"><i class="fa-regular fa-circle"></i></span>
+                <div>
+                  <strong>Mód. 2</strong>
+                  <p>Leitura de documentação</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="prisma-final-footer">
+    <div class="footer-shell">
+      <div class="footer-left">
+        <div class="footer-column">
+          <h4>PRECISA DE AJUDA?</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Plano de aula</a>
+          <a href="#">Conheça-nos</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>AVISOS LEGAIS</h4>
+          <a href="#">Política de privacidade</a>
+          <a href="#">Cookies</a>
+          <a href="#">Definições de cookies</a>
+        </div>
+      </div>
+
+      <div class="footer-center">
+        <img src="img/logo-prisma-3.png" alt="Logo Prisma" class="footer-prisma-img">
+        <p>© 2026 COPYRIGHT - PRISMA</p>
+      </div>
+
+      <div class="footer-right footer-contact">
+        <h4>CENTRAL DE ATENDIMENTO</h4>
+        <a href="#"><i class="fa-solid fa-phone"></i> 0800 000 00 00</a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i> 55 (11) 99999-0000</a>
+        <a href="#"><i class="fa-regular fa-envelope"></i> atendimento@prisma.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="curso.js"></script>
+</body>
+</html>
