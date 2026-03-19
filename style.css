@@ -136,16 +136,16 @@ input{
 /* HERO */
 .hero-prisma{
   background:var(--bg-page);
-  padding:28px 18px 12px;
+  padding:20px 18px 10px;
 }
 
 .hero-container{
   display:grid;
-  grid-template-columns:1.1fr 0.9fr;
-  gap:10px;
+  grid-template-columns:1.05fr 0.95fr;
+  gap:18px;
   align-items:center;
   background:var(--hero-bg);
-  padding:38px 38px 34px;
+  padding:46px 48px 40px;
   min-height:340px;
   transition:transform 0.25s ease;
 }
@@ -162,31 +162,32 @@ input{
   border-radius:999px;
   font-size:10px;
   padding:0 10px;
-  min-height:22px;
-  margin-bottom:14px;
+  min-height:24px;
+  margin-bottom:16px;
   color:#4a4a4a;
   font-weight:600;
 }
 
 .hero-left h1{
-  font-size:32px;
-  line-height:1.2;
-  font-weight:700;
-  margin-bottom:14px;
-  letter-spacing:-0.7px;
+  font-size:48px;
+  line-height:1.08;
+  font-weight:800;
+  margin-bottom:18px;
+  letter-spacing:-1px;
+  max-width:520px;
 }
 
 .hero-description{
-  font-size:11px;
-  line-height:1.5;
+  font-size:15px;
+  line-height:1.65;
   color:var(--text-soft);
-  max-width:410px;
-  margin-bottom:16px;
+  max-width:500px;
+  margin-bottom:22px;
 }
 
 .hero-buttons{
   display:flex;
-  gap:8px;
+  gap:10px;
   flex-wrap:wrap;
 }
 
@@ -196,11 +197,11 @@ input{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:30px;
-  padding:0 14px;
+  min-height:40px;
+  padding:0 20px;
   border-radius:999px;
-  font-size:9px;
-  font-weight:700;
+  font-size:11px;
+  font-weight:800;
   cursor:pointer;
   transition:transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
@@ -209,25 +210,25 @@ input{
   background:var(--btn-dark);
   color:#ffffff;
   border:1px solid var(--btn-dark);
-  gap:6px;
+  gap:8px;
+  box-shadow:0 6px 14px rgba(31,40,76,0.14);
 }
 
 .btn-primary i{
-  font-size:8px;
+  font-size:10px;
 }
 
 .btn-secondary{
-  background:#f7f8fa;
-  border:1px solid #7e8a99;
-  color:transparent;
-  background-image:linear-gradient(90deg,#d8a9ff,#8ab6ff);
-  -webkit-background-clip:text;
-  background-clip:text;
-  font-weight:700;
+  background:linear-gradient(90deg,#d8a9ff 0%, #8ab6ff 100%);
+  border:1px solid #2f3550;
+  color:#1f284c;
+  font-weight:800;
+  box-shadow:0 6px 14px rgba(31,40,76,0.08);
 }
 
 .btn-secondary:hover{
-  background:#ffffff;
+  background:linear-gradient(90deg,#d2a0ff 0%, #80afff 100%);
+  color:#1f284c;
 }
 
 .hero-right{
@@ -241,12 +242,12 @@ input{
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:12px;
+  gap:10px;
   width:100%;
 }
 
 .hero-prisma-img{
-  width:240px;
+  width:250px;
   max-width:100%;
   object-fit:contain;
   transition:transform 0.25s ease;
@@ -256,7 +257,7 @@ input{
   font-size:26px;
   letter-spacing:8px;
   color:#4a1e58;
-  font-weight:600;
+  font-weight:700;
 }
 
 /* STATS */
@@ -268,36 +269,43 @@ input{
 
 .hero-stats-container{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(3,1fr);
   text-align:center;
-  padding:14px 18px;
+  padding:16px 18px;
 }
 
 .hero-stat{
   position:relative;
 }
 
-.hero-stat:not(:last-child)::after{
+.hero-stat:last-child{
+  display:none;
+}
+
+.hero-stat:not(:nth-child(3))::after{
   content:"";
   position:absolute;
   right:0;
-  top:4px;
+  top:8px;
   width:1px;
-  height:24px;
+  height:32px;
   background:#dde2e8;
 }
 
 .hero-stat strong{
   display:block;
   color:#1f71ef;
-  font-size:21px;
+  font-size:28px;
+  font-weight:800;
   margin-bottom:4px;
 }
 
 .hero-stat span{
-  font-size:9px;
-  letter-spacing:0.8px;
+  font-size:10px;
+  letter-spacing:0.6px;
   color:#8c97a3;
+  text-transform:uppercase;
+  line-height:1.3;
 }
 
 /* SEÇÕES */
@@ -725,7 +733,7 @@ input{
 }
 
 .footer-prisma-img{
-  width:44px;
+  width: 80px;
   height:auto;
   display:block;
   object-fit:contain;
@@ -1045,63 +1053,62 @@ input{
 
 .curso-topo-figma{
   background:#e8e9f2;
-  padding:28px 18px 10px;
+  padding:54px 18px 26px;
 }
 
 .curso-topo-container{
   width:100%;
-  max-width:760px;
+  max-width:860px;
   margin:0 auto;
 }
 
 .curso-label-figma{
-  font-size:10px;
+  font-size:12px;
   color:#4b5563;
   text-transform:uppercase;
-  margin-bottom:14px;
-  letter-spacing:0.2px;
+  margin-bottom:16px;
+  letter-spacing:0.4px;
 }
 
 .curso-titulo-figma{
-  font-size:26px;
+  font-size:44px;
   line-height:1.08;
   font-weight:800;
   color:#111111;
-  margin-bottom:12px;
-  max-width:520px;
+  margin-bottom:16px;
+  max-width:760px;
 }
 
 .curso-texto-figma{
-  font-size:11px;
-  line-height:1.55;
+  font-size:15px;
+  line-height:1.75;
   color:#2a2f3a;
-  margin-bottom:8px;
-  max-width:640px;
+  margin-bottom:12px;
+  max-width:820px;
 }
 
 .figma-benefits-box{
   background:#03123a;
   border:none;
-  border-radius:18px;
-  padding:22px 20px 18px;
-  margin-top:22px;
-  max-width:700px;
-  box-shadow:none;
-  backdrop-filter:none;
+  border-radius:22px;
+  padding:28px 26px 24px;
+  margin-top:30px;
+  max-width:820px;
+  box-shadow:0 12px 28px rgba(3,18,58,0.12);
 }
 
 .figma-benefits-box h3{
   color:#ffffff;
   text-align:center;
-  font-size:16px;
-  font-weight:700;
-  margin-bottom:20px;
+  font-size:20px;
+  font-weight:800;
+  margin-bottom:24px;
 }
 
 .figma-benefits-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:12px;
+  gap:18px;
 }
 
 .figma-benefit-item{
@@ -1109,28 +1116,28 @@ input{
 }
 
 .figma-benefit-item i{
-  font-size:22px;
+  font-size:28px;
   color:#ffffff;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 
 .figma-benefit-item p{
   color:#ffffff;
-  font-size:10px;
-  line-height:1.45;
+  font-size:13px;
+  line-height:1.5;
   font-weight:500;
 }
 
 .curso-start-figma{
-  margin-top:22px;
-  font-size:12px;
-  color:#f3efe8;
-  font-weight:600;
+  margin-top:24px;
+  font-size:18px;
+  color:var(--blue);
+  font-weight:700;
 }
 
 .curso-start-figma span{
-  color:#d990ff;
-  font-weight:800;
+  color:var(--blue);
+  font-weight:900;
 }
 
 .curso-seta-figma{
@@ -1142,24 +1149,26 @@ input{
   line-height:1;
 }
 
-/* MÓDULOS: usando a imagem inteira do figma */
+/* MÓDULOS */
 .figma-modulos-section{
-  padding:18px 18px 38px;
+  padding:28px 18px 48px;
 }
 
 .figma-modulos-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  align-items:start;
 }
 
 .figma-modulo-card{
   background:transparent;
   border:none;
-  border-radius:6px;
+  border-radius:10px;
   overflow:hidden;
   box-shadow:none;
   transition:transform 0.2s ease;
+  width:100%;
 }
 
 .figma-modulo-card:hover{
@@ -1178,7 +1187,7 @@ input{
   height:auto;
   display:block;
   object-fit:contain;
-  transform:none;
+  border-radius:10px;
 }
 
 /* esconde o conteúdo HTML duplicado porque a imagem já tem tudo */
@@ -1192,141 +1201,6 @@ input{
 
 .hidden-progress{
   display:none;
-}
-
-/* RESPONSIVO */
-@media (max-width:900px){
-  .hero-container{
-    grid-template-columns:1fr;
-  }
-
-  .plans-grid,
-  .four-cols,
-  .resources-grid{
-    grid-template-columns:1fr;
-  }
-
-  .header-container{
-    grid-template-columns:1fr;
-    gap:10px;
-    padding:10px 14px;
-  }
-
-  .header-menu{
-    flex-wrap:wrap;
-  }
-
-  .header-actions{
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-
-  .hero-stats-container{
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-  }
-
-  .hero-stat:not(:last-child)::after{
-    display:none;
-  }
-
-  .plan-card{
-    min-height:auto;
-  }
-
-  .footer-shell{
-    grid-template-columns:1fr;
-    justify-items:center;
-    gap:20px;
-  }
-
-  .footer-left{
-    flex-direction:column;
-    gap:18px;
-    justify-self:center;
-  }
-
-  .footer-right{
-    justify-self:center;
-  }
-
-  .footer-column,
-  .footer-contact{
-    align-items:center;
-  }
-
-  .footer-column h4,
-  .footer-column a,
-  .footer-contact h4,
-  .footer-contact a{
-    text-align:center;
-  }
-
-  .prisma-courses-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .figma-benefits-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .figma-modulos-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media (max-width:640px){
-  .hero-left h1,
-  .section-title,
-  .final-cta h2{
-    font-size:28px;
-  }
-
-  .hero-container{
-    padding:24px 20px;
-  }
-
-  .hero-prisma-img{
-    width:180px;
-  }
-
-  .hero-prisma-text{
-    font-size:20px;
-    letter-spacing:6px;
-  }
-
-  .hero-stats-container{
-    grid-template-columns:1fr;
-  }
-
-  .prisma-courses-grid{
-    grid-template-columns:1fr;
-  }
-
-  .courses-page{
-    padding:12px 10px 30px;
-  }
-
-  .courses-hero-box{
-    padding:16px 14px 18px;
-  }
-
-  .courses-main-title{
-    font-size:24px;
-  }
-
-  .curso-topo-container{
-    max-width:100%;
-  }
-
-  .curso-titulo-figma{
-    font-size:22px;
-  }
-
-  .figma-benefits-grid,
-  .figma-modulos-grid{
-    grid-template-columns:1fr;
-  }
 }
 
 /* ===== AULA / QUIZ / SIDEBAR DO CURSO ===== */
@@ -1713,7 +1587,34 @@ input{
   color:#48556b;
 }
 
-/* RESPONSIVO DA ÁREA NOVA */
+/* AJUSTES EXTRAS */
+.modulo-clicavel{
+  cursor:pointer;
+}
+
+.modulo-clicavel:hover{
+  transform:translateY(-4px);
+}
+
+.curso-lesson-meta{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:2px 0 10px;
+  font-size:9px;
+  font-weight:700;
+  color:#5c6777;
+  text-transform:uppercase;
+  letter-spacing:0.4px;
+}
+
+.curso-sidebar-subtitle{
+  font-size:10px;
+  color:#6c7789;
+  margin-bottom:10px;
+}
+
+/* RESPONSIVO */
 @media (max-width:980px){
   .curso-aula-container{
     grid-template-columns:1fr;
@@ -1730,7 +1631,224 @@ input{
   }
 }
 
+@media (max-width:900px){
+  .hero-container{
+    grid-template-columns:1fr;
+    padding:34px 28px;
+    text-align:center;
+  }
+
+  .hero-left{
+    max-width:100%;
+  }
+
+  .hero-left h1{
+    max-width:100%;
+    font-size:40px;
+  }
+
+  .hero-description{
+    max-width:100%;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .plans-grid,
+  .four-cols,
+  .resources-grid{
+    grid-template-columns:1fr;
+  }
+
+  .header-container{
+    grid-template-columns:1fr;
+    gap:10px;
+    padding:10px 14px;
+  }
+
+  .header-menu{
+    flex-wrap:wrap;
+  }
+
+  .header-actions{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .hero-stats-container{
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+  }
+
+  .hero-stat::after{
+    display:none !important;
+  }
+
+  .plan-card{
+    min-height:auto;
+  }
+
+  .footer-shell{
+    grid-template-columns:1fr;
+    justify-items:center;
+    gap:20px;
+  }
+
+  .footer-left{
+    flex-direction:column;
+    gap:18px;
+    justify-self:center;
+  }
+
+  .footer-right{
+    justify-self:center;
+  }
+
+  .footer-column,
+  .footer-contact{
+    align-items:center;
+  }
+
+  .footer-column h4,
+  .footer-column a,
+  .footer-contact h4,
+  .footer-contact a{
+    text-align:center;
+  }
+
+  .prisma-courses-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .figma-benefits-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .figma-modulos-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .curso-titulo-figma{
+    font-size:36px;
+  }
+
+  .curso-texto-figma{
+    font-size:14px;
+  }
+}
+
 @media (max-width:640px){
+  .hero-prisma{
+    padding:14px 10px 0;
+  }
+
+  .hero-left h1,
+  .section-title,
+  .final-cta h2{
+    font-size:32px;
+  }
+
+  .hero-container{
+    padding:26px 18px;
+  }
+
+  .hero-pill{
+    font-size:9px;
+  }
+
+  .hero-description{
+    font-size:13px;
+  }
+
+  .hero-prisma-img{
+    width:180px;
+  }
+
+  .hero-prisma-text{
+    font-size:18px;
+    letter-spacing:5px;
+  }
+
+  .hero-stats-container{
+    grid-template-columns:repeat(3,1fr);
+    padding:14px 8px;
+    gap:8px;
+  }
+
+  .hero-stat strong{
+    font-size:20px;
+  }
+
+  .hero-stat span{
+    font-size:8px;
+    line-height:1.2;
+    letter-spacing:0.2px;
+  }
+
+  .prisma-courses-grid{
+    grid-template-columns:1fr;
+  }
+
+  .courses-page{
+    padding:12px 10px 30px;
+  }
+
+  .courses-hero-box{
+    padding:16px 14px 18px;
+  }
+
+  .courses-main-title{
+    font-size:24px;
+  }
+
+  .curso-topo-figma{
+    padding:34px 14px 20px;
+  }
+
+  .curso-topo-container{
+    max-width:100%;
+  }
+
+  .curso-label-figma{
+    font-size:11px;
+  }
+
+  .curso-titulo-figma{
+    font-size:30px;
+  }
+
+  .curso-texto-figma{
+    font-size:14px;
+    line-height:1.65;
+  }
+
+  .figma-benefits-box{
+    padding:22px 18px;
+  }
+
+  .figma-benefits-box h3{
+    font-size:18px;
+  }
+
+  .figma-benefits-grid,
+  .figma-modulos-grid{
+    grid-template-columns:1fr;
+  }
+
+  .curso-start-figma{
+    font-size:16px;
+  }
+
+  .figma-modulo-card{
+    max-width:100%;
+  }
+
+  .figma-modulo-thumb img{
+    height:auto;
+    object-fit:contain;
+  }
+
   .curso-aula-section{
     padding:16px 10px 30px;
   }

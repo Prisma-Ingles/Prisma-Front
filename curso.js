@@ -131,7 +131,11 @@ function renderCurso() {
 
   if (cursoModulos) {
     cursoModulos.innerHTML = dados.modulos.map((modulo, index) => `
-      <article class="curso-modulo-card figma-modulo-card">
+      <article 
+        class="figma-modulo-card ${index === 0 ? "modulo-clicavel" : ""}" 
+        data-modulo-index="${index}"
+        data-modulo-titulo="${modulo.title}"
+      >
         <div class="figma-modulo-thumb">
           <img src="img/modulo${index + 1}.png" alt="${modulo.title}">
         </div>
@@ -157,7 +161,26 @@ function renderCurso() {
         </div>
       </article>
     `).join("");
+
+    ativarCliqueModulos();
   }
+}
+
+function ativarCliqueModulos() {
+  const modulos = document.querySelectorAll(".figma-modulo-card");
+
+  modulos.forEach((modulo) => {
+    modulo.addEventListener("click", () => {
+      const index = Number(modulo.dataset.moduloIndex);
+      const titulo = modulo.dataset.moduloTitulo;
+      const cursoSelecionado = localStorage.getItem("cursoSelecionado") || "English for Software Development";
+
+      if (cursoSelecionado === "English for Software Development" && index === 0) {
+        localStorage.setItem("moduloSelecionado", titulo);
+        window.location.href = "aula.html";
+      }
+    });
+  });
 }
 
 if (authButton) {
