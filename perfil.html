@@ -1,36 +1,110 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Perfil</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil | PRISMA</title>
+
+  <link rel="icon" href="img/logo-prisma-3.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="perfil.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-<header>
+  <nav class="header">
+    <div class="container header-content">
+      <a href="index.html">
+        <img src="img/logo-prisma-3.png" class="logo-img" alt="Logo PRISMA">
+      </a>
 
-<h2>Logo</h2>
+      <ul class="header-links">
+        <li><a href="index.html">INÍCIO</a></li>
+        <li><a href="cursos.html">CURSOS</a></li>
+        <li><a href="certificados.html">CERTIFICADOS</a></li>
+        <li><a href="recursos.html">RECURSOS</a></li>
+        <li><a href="perfil.html" class="active">PERFIL</a></li>
+        <li><a href="contato.html">CONTATO</a></li>
+      </ul>
 
-<nav>
+      <div class="header-auth">
+        <span id="userWelcome" class="user-welcome"></span>
+        <button id="authButton" class="btn-entrar" type="button">ENTRAR</button>
+      </div>
+    </div>
+  </nav>
 
-<a href="index.html">Início</a>
-<a href="cursos.html">Cursos</a>
-<a href="certificados.html">Certificados</a>
-<a href="recursos.html">Recursos</a>
-<a href="perfil.html">Perfil</a>
-<a href="contato.html">Contato</a>
+  <section class="hero">
+    <div class="container">
+      <p>— MINHA JORNADA</p>
+      <h1>Meu Perfil</h1>
+    </div>
+  </section>
 
-</nav>
+  <section class="profile-section">
+    <div class="profile-card">
+      <div class="user-info">
+        <div class="avatar" id="avatar">A</div>
 
-</header>
+        <div class="details">
+          <h2 id="nomeUsuario">Aluno Prisma</h2>
+          <p id="emailUsuario">aluno@prisma.com.br</p>
+          <span class="level">Nível 4 - Intermediário</span>
 
-<h1 style="text-align:center;margin-top:100px;">
-Perfil do Usuário
-</h1>
+          <div class="progress-bar-main">
+            <div style="width:60%"></div>
+          </div>
+        </div>
+      </div>
 
-<script src="script.js"></script>
+      <h2 class="titulo-progresso">— PROGRESSO NOS CURSOS</h2>
+
+      <div class="course-grid" id="courseGrid"></div>
+    </div>
+  </section>
+
+  <section class="final-cta reveal" id="contato">
+    <div class="container final-cta-content">
+      <p class="section-kicker white-kicker">— DESCUBRA SEU CAMINHO</p>
+      <h2>Seu próximo passo<br>começa<br><span>em inglês</span></h2>
+      <button id="ctaCadastrar" class="btn-white" type="button">CRIAR CONTA GRATUITA</button>
+    </div>
+  </section>
+
+  <footer class="prisma-final-footer">
+    <div class="footer-shell">
+      <div class="footer-left">
+        <div class="footer-column">
+          <h4>PRECISA DE AJUDA?</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Plano de aula</a>
+          <a href="#">Conheça-nos</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>AVISOS LEGAIS</h4>
+          <a href="#">Política de privacidade</a>
+          <a href="#">Cookies</a>
+          <a href="#">Definições de cookies</a>
+        </div>
+      </div>
+
+      <div class="footer-center">
+        <img src="img/logo-prisma-3.png" alt="Logo Prisma" class="footer-prisma-img">
+        <p>© 2026 COPYRIGHT - PRISMA</p>
+      </div>
+
+      <div class="footer-right footer-contact">
+        <h4>CENTRAL DE ATENDIMENTO</h4>
+        <a href="#"><i class="fa-solid fa-phone"></i> 0800 000 00 00</a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i> 55 (11) 99999-0000</a>
+        <a href="#"><i class="fa-regular fa-envelope"></i> atendimento@prisma.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="perfil.js"></script>
 
 </body>
 </html>

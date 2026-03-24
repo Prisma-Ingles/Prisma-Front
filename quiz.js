@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
         { text: "I’m fine, thank you.", score: 1 },
         { text: "I have 25 years old.", score: 0 },
         { text: "My name is Gabriel.", score: 0 },
-        { text: "Good night.", score: 0 }
+        { text: "Good night.", score: 0 },
+        { text: "Todas as opções", score: 1 }
       ]
     },
     {
@@ -15,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
         { text: "She go to work every day.", score: 0 },
         { text: "She goes to work every day.", score: 1 },
         { text: "She going to work every day.", score: 0 },
-        { text: "She gone to work every day.", score: 0 }
+        { text: "She gone to work every day.", score: 0 },
+        { text: "Todas as opções", score: 1 }
       ]
     },
     {
@@ -24,7 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
         { text: "I have experience with customer service.", score: 1 },
         { text: "I am experience in customer service.", score: 0 },
         { text: "I have customer service experienced.", score: 0 },
-        { text: "I has experience with customer service.", score: 0 }
+        { text: "I has experience with customer service.", score: 0 },
+        { text: "Todas as opções", score: 1 }
       ]
     },
     {
@@ -33,7 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
         { text: "I like music.", score: 0 },
         { text: "I can travel tomorrow.", score: 0 },
         { text: "I have been improving my English for professional situations.", score: 1 },
-        { text: "My favorite color is blue.", score: 0 }
+        { text: "My favorite color is blue.", score: 0 },
+        { text: "Todas as opções", score: 1 }
       ]
     },
     {
@@ -42,7 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
         { text: "Send me this now.", score: 0 },
         { text: "Could you please send me this by the end of the day?", score: 1 },
         { text: "You send me today.", score: 0 },
-        { text: "Send this for me because yes.", score: 0 }
+        { text: "Send this for me because yes.", score: 0 },
+        { text: "Todas as opções", score: 1 }
       ]
     }
   ];
