@@ -1,0 +1,126 @@
+
+
+body{
+
+    background-color: #ddfcf9;
+}
+
+
+.logo img{
+
+    width: 70px;
+    height: 60px;
+}
+
+
+#cabecalho-certificados{
+
+/* margin-top: 85px; */
+margin-top: 120px;
+padding: 30px;
+background: linear-gradient(90deg,rgba(10, 54, 126, 1) 0%, rgba(52, 158, 213, 1) 50%, rgba(52, 158, 213, 1) 80%, rgba(234, 203, 253, 1) 100%);
+color: white;
+
+}
+
+#cabecalho-certificados h1{
+
+    font-weight: 600;
+    padding: 20px 0px;
+    font-size: 55px;
+}
+
+
+.comofunciona{
+
+    margin: 50px 80px;
+    background-color: rgb(219, 236, 255);
+    border: 1px solid #0138C3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.comofunciona .icone-texto{
+
+    display: flex;
+    gap: 20px;
+
+}
+
+.certificados{
+
+    margin-bottom: 200px;
+}
+
+.icone-texto img{
+
+    width: 40px;
+    height: 40px;
+}
+
+.fileira-certificados{
+
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 50px;
+}
+
+.seucertificado{
+
+    width: 32%;
+    background-color: white;
+    padding:50px 20px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #373838;
+
+}
+
+.seucertificado .conteudo{
+
+    display: flex;
+    flex-direction: column; 
+     gap: 12px;
+    
+}
+
+.seucertificado img{
+
+    width:40px;
+    height: 40px;
+    margin: auto;
+}
+
+
+.seucertificado h3{
+
+    font-size: 16px;
+    padding: 8px;
+    background-color: rgb(244, 244, 244);
+    margin: auto;
+    border-radius: 50px;
+    box-shadow: 1px 7px 15px -2px #828282;
+}
+
+.seucertificado h4{
+
+    padding-top: 10px;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.seucertificadobloqueado .conteudo{
+
+    background-color: #95b9da;
+    color: black;
+    border-radius: 20px;
+    gap: 20px;
+    padding: 20px 0px;
+}
+
+.seucertificadobloqueado h3{
+
+    display: none;
+}
+
+
