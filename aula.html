@@ -89,59 +89,35 @@
 
             <div class="prisma-question-card">
               <div class="question-top">
-                <span class="question-label">QUESTÃO 1</span>
-                <span class="question-type">MÚLTIPLA ESCOLHA</span>
+                <span class="question-label" id="questionLabel">QUESTÃO 1</span>
+                <span class="question-type" id="questionType">MÚLTIPLA ESCOLHA</span>
               </div>
 
-              <h3 class="question-title">
+              <h3 class="question-title" id="questionTitle">
                 What is the purpose of the comment in the code below?
               </h3>
 
               <div class="code-box">
-<pre><code>// TODO: add input validation before sending to the API
-
-function submitForm(data) {
-  sendToAPI(data);
-}</code></pre>
+                <pre><code id="questionCode"></code></pre>
               </div>
 
-              <p class="question-desc">
+              <p class="question-desc" id="questionDesc">
                 Escolha a opção que melhor descreve o papel desse comentário dentro do código.
               </p>
 
-              <div class="answers">
-                <button class="answer" type="button">
-                  <span class="letter">A</span>
-                  <span class="answer-copy">Descreve o que a função já faz atualmente.</span>
-                </button>
-
-                <button class="answer selected" type="button">
-                  <span class="letter">B</span>
-                  <span class="answer-copy">Indica uma tarefa pendente que o desenvolvedor ainda precisa implementar.</span>
-                </button>
-
-                <button class="answer" type="button">
-                  <span class="letter">C</span>
-                  <span class="answer-copy">Marca o código como desativado temporariamente.</span>
-                </button>
-
-                <button class="answer" type="button">
-                  <span class="letter">D</span>
-                  <span class="answer-copy">Explica um erro que ocorreu na execução anterior.</span>
-                </button>
-              </div>
+              <div class="answers" id="answersContainer"></div>
 
               <div class="quiz-footer">
-                <div class="quiz-dots" aria-hidden="true">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
+                <div class="quiz-dots" id="quizDots" aria-hidden="true"></div>
 
-                <button class="next-btn" type="button">
-                  <span>Próxima</span>
-                  <span class="next-arrow">→</span>
-                </button>
+                <div class="quiz-actions">
+                  <button class="back-btn" id="backBtn" type="button">← Voltar</button>
+
+                  <button class="next-btn" id="nextBtn" type="button">
+                    <span id="nextBtnText">Próxima</span>
+                    <span class="next-arrow">→</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

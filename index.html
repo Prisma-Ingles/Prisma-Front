@@ -15,7 +15,7 @@
 </head>
 <body>
 
-  <nav class="header">
+  <nav class="header" id="header">
     <div class="container header-content">
       <a href="index.html" aria-label="PRISMA">
         <img src="img/logo-prisma-3.png" alt="Logo Prisma" class="logo-img">
@@ -66,7 +66,8 @@
       <div class="hero-right">
         <div class="hero-prisma-box">
           <img src="img/logo-prisma-3.png" alt="Logo Prisma" class="hero-prisma-img">
-          <p class="hero-prisma-text">PRISMA</p>
+          <img src="img/Prisma-logo.png" class="hero-prisma-text">
+          <img src="" alt=""></img>
         </div>
       </div>
     </div>
@@ -197,6 +198,7 @@
           <div class="plan-progress">
             <div class="plan-progress-bar progress-free"></div>
           </div>
+
           <div class="plan-progress-label">
             <span>Acesso ao conteúdo</span>
             <strong>15%</strong>
@@ -208,7 +210,9 @@
             <li>Emissão de certificado com custo adicional</li>
           </ul>
 
-          <button class="plan-btn light-btn">COMEÇAR GRÁTIS</button>
+          <button class="plan-btn light-btn" type="button" onclick="openPayment('free')">
+            COMEÇAR GRÁTIS
+          </button>
         </article>
 
         <article class="plan-card plus-card reveal">
@@ -233,6 +237,7 @@
           <div class="plan-progress">
             <div class="plan-progress-bar progress-plus"></div>
           </div>
+
           <div class="plan-progress-label">
             <span>Acesso ao conteúdo</span>
             <strong>55%</strong>
@@ -245,7 +250,9 @@
             <li>1 chamada em grupo com professor especializado por mês</li>
           </ul>
 
-          <button class="plan-btn light-btn">ASSINAR PLANO</button>
+          <button class="plan-btn light-btn" type="button" onclick="openPayment('plus')">
+            ASSINAR PLANO
+          </button>
         </article>
 
         <article class="plan-card pro-card reveal">
@@ -264,6 +271,7 @@
           <div class="plan-progress">
             <div class="plan-progress-bar progress-pro"></div>
           </div>
+
           <div class="plan-progress-label">
             <span>Acesso ao conteúdo</span>
             <strong>100%</strong>
@@ -277,7 +285,9 @@
             <li>Recursos extras exclusivos</li>
           </ul>
 
-          <button class="plan-btn light-btn">LIBERAR TUDO</button>
+          <button class="plan-btn light-btn" type="button" onclick="openPayment('pro')">
+            LIBERAR TUDO
+          </button>
         </article>
       </div>
     </div>
@@ -370,176 +380,52 @@
     </div>
   </div>
 
-  <script>
-    const revealElements = document.querySelectorAll(".reveal");
+  <div class="payment-modal" id="paymentModal">
+    <div class="payment-box" id="paymentBox">
+      <button class="payment-close" id="paymentClose" type="button">×</button>
 
-    function revealOnScroll() {
-      const triggerBottom = window.innerHeight * 0.88;
-      revealElements.forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top;
-        if (elementTop < triggerBottom) {
-          element.classList.add("show");
-        }
-      });
-    }
+      <span class="payment-plan-tag" id="paymentPlanTag">PLANO</span>
+      <h2 id="paymentTitle">Finalizar assinatura</h2>
+      <p class="payment-subtitle" id="paymentSubtitle">
+        Escolha a forma de pagamento para continuar.
+      </p>
 
-    function getUsuario() {
-      const usuarioSalvo = localStorage.getItem("usuarioCadastrado");
-      return usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
-    }
+      <div class="payment-methods">
+        <button class="method-btn active" type="button" data-method="card">Cartão</button>
+        <button class="method-btn" type="button" data-method="pix">Pix</button>
+      </div>
 
-    function atualizarHeaderUsuario() {
-      const userWelcome = document.getElementById("userWelcome");
-      const authButton = document.getElementById("authButton");
-      const usuario = getUsuario();
+      <div class="payment-content active" id="cardPayment">
+        <div class="payment-form">
+          <input type="text" placeholder="Nome no cartão">
+          <input type="text" placeholder="Número do cartão">
+          <div class="payment-row">
+            <input type="text" placeholder="MM/AA">
+            <input type="text" placeholder="CVV">
+          </div>
+          <input type="text" placeholder="CPF do titular">
+        </div>
 
-      if (usuario) {
-        userWelcome.textContent = `Bem-vindo, ${usuario.nome} 👋`;
-        authButton.textContent = "SAIR";
-      } else {
-        userWelcome.textContent = "";
-        authButton.textContent = "ENTRAR";
-      }
-    }
+        <button class="payment-confirm-btn" id="cardConfirmBtn" type="button">
+          Confirmar pagamento
+        </button>
+      </div>
 
-    function abrirModalCadastro() {
-      const loginModal = document.getElementById("loginModal");
-      const tabEntrar = document.getElementById("tabEntrar");
-      const tabCadastrar = document.getElementById("tabCadastrar");
-      const formEntrar = document.getElementById("formEntrar");
-      const formCadastrar = document.getElementById("formCadastrar");
+      <div class="payment-content" id="pixPayment">
+        <div class="pix-card">
+          <p class="pix-title">Pagamento via Pix</p>
+          <div class="pix-qr-box">QR CODE</div>
+          <p class="pix-copy">ou copie a chave Pix abaixo</p>
+          <div class="pix-code-box">00020126580014BR.GOV.BCB.PIX0114prisma@pix.com</div>
+        </div>
 
-      loginModal.classList.add("active");
-      tabCadastrar.classList.add("active");
-      tabEntrar.classList.remove("active");
-      formCadastrar.classList.remove("hidden-form");
-      formEntrar.classList.add("hidden-form");
-    }
+        <button class="payment-confirm-btn" id="pixConfirmBtn" type="button">
+          Já paguei
+        </button>
+      </div>
+    </div>
+  </div>
 
-    window.addEventListener("scroll", revealOnScroll);
-    window.addEventListener("load", revealOnScroll);
-
-    const loginModal = document.getElementById("loginModal");
-    const authButton = document.getElementById("authButton");
-    const closeModal = document.getElementById("closeModal");
-    const tabEntrar = document.getElementById("tabEntrar");
-    const tabCadastrar = document.getElementById("tabCadastrar");
-    const formEntrar = document.getElementById("formEntrar");
-    const formCadastrar = document.getElementById("formCadastrar");
-    const formMessage = document.getElementById("formMessage");
-    const ctaCadastrar = document.getElementById("ctaCadastrar");
-
-    authButton?.addEventListener("click", () => {
-      const usuario = getUsuario();
-
-      if (usuario) {
-        localStorage.removeItem("usuarioCadastrado");
-        atualizarHeaderUsuario();
-        window.location.href = "index.html";
-        return;
-      }
-
-      loginModal.classList.add("active");
-    });
-
-    closeModal?.addEventListener("click", () => {
-      loginModal.classList.remove("active");
-      formMessage.textContent = "";
-      formMessage.className = "form-message";
-    });
-
-    loginModal?.addEventListener("click", (e) => {
-      if (e.target === loginModal) {
-        loginModal.classList.remove("active");
-        formMessage.textContent = "";
-        formMessage.className = "form-message";
-      }
-    });
-
-    tabEntrar?.addEventListener("click", () => {
-      tabEntrar.classList.add("active");
-      tabCadastrar.classList.remove("active");
-      formEntrar.classList.remove("hidden-form");
-      formCadastrar.classList.add("hidden-form");
-      formMessage.textContent = "";
-      formMessage.className = "form-message";
-    });
-
-    tabCadastrar?.addEventListener("click", () => {
-      tabCadastrar.classList.add("active");
-      tabEntrar.classList.remove("active");
-      formCadastrar.classList.remove("hidden-form");
-      formEntrar.classList.add("hidden-form");
-      formMessage.textContent = "";
-      formMessage.className = "form-message";
-    });
-
-    ctaCadastrar?.addEventListener("click", abrirModalCadastro);
-
-    formCadastrar?.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const nome = document.getElementById("nomeCadastrar").value.trim();
-      const email = document.getElementById("emailCadastrar").value.trim();
-      const senha = document.getElementById("senhaCadastrar").value;
-      const confirmarSenha = document.getElementById("confirmarSenha").value;
-
-      if (!nome || !email || !senha || !confirmarSenha) {
-        formMessage.textContent = "Preencha todos os campos.";
-        formMessage.className = "form-message error";
-        return;
-      }
-
-      if (senha !== confirmarSenha) {
-        formMessage.textContent = "As senhas não coincidem.";
-        formMessage.className = "form-message error";
-        return;
-      }
-
-      const usuario = { nome, email, senha };
-      localStorage.setItem("usuarioCadastrado", JSON.stringify(usuario));
-
-      formMessage.textContent = "Conta criada com sucesso!";
-      formMessage.className = "form-message success";
-
-      atualizarHeaderUsuario();
-
-      setTimeout(() => {
-        window.location.href = "cursos.html";
-      }, 700);
-    });
-
-    formEntrar?.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const email = document.getElementById("emailEntrar").value.trim();
-      const senha = document.getElementById("senhaEntrar").value;
-
-      const usuario = getUsuario();
-
-      if (!usuario) {
-        formMessage.textContent = "Nenhuma conta cadastrada ainda.";
-        formMessage.className = "form-message error";
-        return;
-      }
-
-      if (usuario.email !== email || usuario.senha !== senha) {
-        formMessage.textContent = "E-mail ou senha incorretos.";
-        formMessage.className = "form-message error";
-        return;
-      }
-
-      formMessage.textContent = "Login realizado com sucesso!";
-      formMessage.className = "form-message success";
-
-      atualizarHeaderUsuario();
-
-      setTimeout(() => {
-        window.location.href = "cursos.html";
-      }, 700);
-    });
-
-    atualizarHeaderUsuario();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

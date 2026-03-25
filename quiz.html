@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
     *{
@@ -97,6 +98,12 @@
       font-size:14px;
       font-weight:700;
       color:#1c2430;
+      margin-bottom:8px;
+    }
+
+    .quiz-helper{
+      font-size:9px;
+      color:#7e8794;
       margin-bottom:14px;
     }
 
@@ -108,16 +115,20 @@
 
     .opcao{
       width:100%;
-      min-height:34px;
+      min-height:40px;
       border:1px solid #c9d9ea;
       background:#f8fbff;
       border-radius:8px;
-      padding:0 12px;
+      padding:10px 12px;
       text-align:left;
       font-size:10px;
       color:#5f6874;
       cursor:pointer;
       transition:0.22s ease;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
     }
 
     .opcao:hover{
@@ -131,6 +142,27 @@
       border-color:#d8b8e6;
       color:#4f5966;
       box-shadow:0 6px 14px rgba(192, 153, 225, 0.12);
+    }
+
+    .opcao-check{
+      width:16px;
+      height:16px;
+      min-width:16px;
+      border-radius:4px;
+      border:1px solid #c7d4e3;
+      background:#ffffff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:10px;
+      color:transparent;
+      transition:0.2s ease;
+    }
+
+    .opcao.selecionada .opcao-check{
+      background:#081327;
+      border-color:#081327;
+      color:#ffffff;
     }
 
     .quiz-footer{
@@ -151,6 +183,7 @@
       justify-content:flex-end;
       gap:8px;
       margin-left:auto;
+      align-items:center;
     }
 
     .quiz-btn-link{
@@ -169,6 +202,24 @@
     .quiz-btn-link::before{
       content:"←";
       font-size:9px;
+    }
+
+    .quiz-btn-next{
+      min-height:26px;
+      padding:0 14px;
+      border:none;
+      border-radius:999px;
+      background:#081327;
+      color:#ffffff;
+      font-size:8px;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.2s ease;
+    }
+
+    .quiz-btn-next:disabled{
+      opacity:0.45;
+      cursor:not-allowed;
     }
 
     .resultado{
@@ -377,6 +428,7 @@
         <div class="quiz-line"></div>
 
         <p class="quiz-question" id="pergunta">Carregando...</p>
+        <p class="quiz-helper" id="quizHelper">Selecione uma ou mais opções</p>
 
         <div id="opcoes" class="opcoes"></div>
 
@@ -385,6 +437,7 @@
 
           <div class="quiz-actions">
             <button id="btnVoltar" class="quiz-btn-link" type="button">VOLTAR</button>
+            <button id="btnProximo" class="quiz-btn-next" type="button" disabled>PRÓXIMO</button>
           </div>
         </div>
       </section>
@@ -438,300 +491,6 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
-  <script>
-    const perguntas = [
-      {
-        pergunta: "Qual é a sua área de atuação profissional?",
-        opcoes: [
-          "Tecnologia e TI / Dados",
-          "Saúde / Medicina / Farmácia",
-          "Jurídico / Negócios",
-          "Financeiro / Bancos",
-          "Hotelaria / Turismo",
-          "Marketing / Vendas",
-          "Administração / Operações",
-          "Outro / Estudante",
-          "Todas as opções"
-        ]
-      },
-      {
-        pergunta: "Com que frequência você usa inglês no trabalho hoje?",
-        opcoes: [
-          "Nunca ou quase nunca",
-          "Leio e-mails ocasionalmente",
-          "Participo de reuniões simples",
-          "Interajo de forma recorrente",
-          "Uso inglês diariamente",
-          "Todas as opções"
-        ]
-      },
-      {
-        pergunta: "Qual é o seu principal objetivo com o inglês?",
-        opcoes: [
-          "Conseguir emprego ou crescer na área",
-          "Trabalhar em empresa internacional",
-          "Trabalhar em carreira para o exterior",
-          "Crescer em cargos atuais",
-          "Me aprofundar no meu trabalho",
-          "Todas as opções"
-        ]
-      },
-      {
-        pergunta: "Qual habilidade você mais precisa desenvolver?",
-        opcoes: [
-          "Leitura de documentos técnicos",
-          "Escrita de e-mails e relatórios",
-          "Conversação em reuniões",
-          "Vocabulário técnico da minha área",
-          "Entrevistas em inglês",
-          "Todas as opções"
-        ]
-      },
-      {
-        pergunta: "Como você descreveria seu nível de inglês atual?",
-        opcoes: [
-          "Básico: sei poucas palavras",
-          "Pré-intermediário: leitura muito facilitada",
-          "Intermediário: consigo me comunicar com esforço",
-          "Intermediário avançado: me viro em temas da minha área",
-          "Avançado: já pretendo me especializar no idioma",
-          "Todas as opções"
-        ]
-      },
-      {
-        pergunta: "Em qual situação você se sentiria menos confortável hoje?",
-        opcoes: [
-          "Apresentar projeto para equipe internacional",
-          "Negociar com cliente ou parceiro estrangeiro",
-          "Entrevistar para vaga global",
-          "Redigir relatório técnico longo",
-          "Participar de conferência internacional",
-          "Todas as opções"
-        ]
-      },
-      {
-        pergunta: "Quantas horas por semana você consegue estudar?",
-        opcoes: [
-          "Menos de 1 hora",
-          "1 a 2 horas",
-          "3 a 5 horas",
-          "6 a 10 horas",
-          "Mais de 10 horas",
-          "Todas as opções"
-        ]
-      }
-    ];
-
-    let atual = 0;
-    let respostas = new Array(perguntas.length).fill(null);
-
-    const passo = document.getElementById("passo");
-    const pergunta = document.getElementById("pergunta");
-    const opcoes = document.getElementById("opcoes");
-    const btnVoltar = document.getElementById("btnVoltar");
-    const quizSubtitulo = document.getElementById("quizSubtitulo");
-
-    const quizBox = document.getElementById("quizBox");
-    const resultadoBox = document.getElementById("resultadoBox");
-    const cursoResultado = document.getElementById("cursoResultado");
-    const textoResultado = document.getElementById("textoResultado");
-
-    const btnCadastro = document.getElementById("btnCadastro");
-    const btnVerCursos = document.getElementById("btnVerCursos");
-    const modalCadastro = document.getElementById("modalCadastro");
-    const fecharModal = document.getElementById("fecharModal");
-    const formCadastro = document.getElementById("formCadastro");
-    const mensagemCadastro = document.getElementById("mensagemCadastro");
-
-    function renderizarPergunta() {
-      const item = perguntas[atual];
-
-      passo.textContent = `Pergunta ${atual + 1} de ${perguntas.length}`;
-      pergunta.textContent = item.pergunta;
-      quizSubtitulo.textContent = `${perguntas.length} perguntas • menos de 2 minutos`;
-
-      opcoes.innerHTML = "";
-
-      item.opcoes.forEach((texto, index) => {
-        const botao = document.createElement("button");
-        botao.type = "button";
-        botao.className = "opcao";
-        botao.textContent = texto;
-
-        if (respostas[atual] === index) {
-          botao.classList.add("selecionada");
-        }
-
-        botao.addEventListener("click", () => {
-          respostas[atual] = index;
-          renderizarPergunta();
-
-          setTimeout(() => {
-            if (atual < perguntas.length - 1) {
-              atual++;
-              renderizarPergunta();
-            } else {
-              mostrarResultado();
-            }
-          }, 180);
-        });
-
-        opcoes.appendChild(botao);
-      });
-
-      btnVoltar.style.visibility = atual === 0 ? "hidden" : "visible";
-    }
-
-    function calcularCursoIdeal() {
-      const area = respostas[0];
-
-      if (area === 0) {
-        return {
-          curso: "English for Software Development",
-          descricao: "Ideal para quem quer desenvolver vocabulário técnico, fluidez e segurança em contextos profissionais de tecnologia.",
-          cursoInterno: "English for Software Development"
-        };
-      }
-
-      if (area === 1) {
-        return {
-          curso: "English for Healthcare Professionals",
-          descricao: "Indicado para profissionais da saúde que precisam de comunicação clínica, técnica e internacional.",
-          cursoInterno: "English for Healthcare Professionals"
-        };
-      }
-
-      if (area === 2) {
-        return {
-          curso: "English for Law & Legal",
-          descricao: "Uma trilha focada em linguagem jurídica, contratos, compliance e comunicação formal.",
-          cursoInterno: "English for Law & Legal"
-        };
-      }
-
-      if (area === 3) {
-        return {
-          curso: "English for Finance & Banking",
-          descricao: "Indicada para quem atua com bancos, relatórios executivos e comunicação internacional no mercado financeiro.",
-          cursoInterno: "English for Finance & Banking"
-        };
-      }
-
-      if (area === 4) {
-        return {
-          curso: "English for Tourism & Hospitality",
-          descricao: "Ideal para hotelaria, turismo, atendimento, reservas e experiência do cliente em contexto internacional.",
-          cursoInterno: "English for Tourism & Hospitality"
-        };
-      }
-
-      if (area === 5) {
-        return {
-          curso: "English for Marketing & Sales",
-          descricao: "Trilha recomendada para marketing, vendas, publicidade e relacionamento com clientes e parceiros globais.",
-          cursoInterno: "English for Marketing & Sales"
-        };
-      }
-
-      if (area === 6) {
-        return {
-          curso: "English for Manufacturing & Engineering",
-          descricao: "Indicado para operações, engenharia, processos produtivos e comunicação técnica no ambiente industrial.",
-          cursoInterno: "English for Manufacturing & Engineering"
-        };
-      }
-
-      return {
-        curso: "English for Software Development",
-        descricao: "Ideal para quem quer desenvolver vocabulário técnico, fluidez e segurança em contextos profissionais.",
-        cursoInterno: "English for Software Development"
-      };
-    }
-
-    function mostrarResultado() {
-      const resultado = calcularCursoIdeal();
-
-      quizBox.classList.add("escondido");
-      resultadoBox.classList.remove("escondido");
-
-      cursoResultado.textContent = resultado.curso;
-      textoResultado.textContent = resultado.descricao;
-
-      localStorage.setItem("cursoIdeal", resultado.cursoInterno);
-      localStorage.setItem("descricaoCursoIdeal", resultado.descricao);
-    }
-
-    btnVoltar.addEventListener("click", () => {
-      if (atual > 0) {
-        atual--;
-        renderizarPergunta();
-      }
-    });
-
-    btnVerCursos.addEventListener("click", () => {
-      window.location.href = "cursos.html";
-    });
-
-    btnCadastro.addEventListener("click", () => {
-      modalCadastro.classList.remove("escondido");
-      mensagemCadastro.textContent = "";
-    });
-
-    fecharModal.addEventListener("click", () => {
-      modalCadastro.classList.add("escondido");
-    });
-
-    modalCadastro.addEventListener("click", (e) => {
-      if (e.target === modalCadastro) {
-        modalCadastro.classList.add("escondido");
-      }
-    });
-
-    formCadastro.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const nome = document.getElementById("nome").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const senha = document.getElementById("senha").value.trim();
-      const confirmarSenha = document.getElementById("confirmarSenha").value.trim();
-
-      if (!nome || !email || !senha || !confirmarSenha) {
-        mensagemCadastro.textContent = "Preencha todos os campos.";
-        mensagemCadastro.style.color = "#dc2626";
-        return;
-      }
-
-      if (senha.length < 6) {
-        mensagemCadastro.textContent = "A senha precisa ter pelo menos 6 caracteres.";
-        mensagemCadastro.style.color = "#dc2626";
-        return;
-      }
-
-      if (senha !== confirmarSenha) {
-        mensagemCadastro.textContent = "As senhas não coincidem.";
-        mensagemCadastro.style.color = "#dc2626";
-        return;
-      }
-
-      localStorage.setItem(
-        "usuarioCadastrado",
-        JSON.stringify({
-          nome,
-          email,
-          senha
-        })
-      );
-
-      mensagemCadastro.textContent = "Conta criada com sucesso!";
-      mensagemCadastro.style.color = "#16a34a";
-
-      setTimeout(() => {
-        window.location.href = "cursos.html";
-      }, 1200);
-    });
-
-    renderizarPergunta();
-  </script>
+  <script src="quiz.js"></script>
 </body>
 </html>
