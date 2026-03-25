@@ -32,7 +32,7 @@ body{
 #cabecalho-suporte{
 
 /* margin-top: 85px; */
-margin-top: 120px;
+margin-top: 50px;
 padding: 30px;
 background: linear-gradient(90deg,rgba(10, 54, 126, 1) 0%, rgba(52, 158, 213, 1) 50%, rgba(52, 158, 213, 1) 80%, rgba(234, 203, 253, 1) 100%);
 color: white;
