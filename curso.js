@@ -37,34 +37,46 @@ const cursosData = {
     ],
     modulos: [
       {
+        id: "software-modulo-1",
         title: "Fundamentos do Inglês para Programação",
         hours: "10h",
-        description: "Introdução ao vocabulário técnico e às estruturas mais usadas no universo da programação."
+        description: "Introdução ao vocabulário técnico e às estruturas mais usadas no universo da programação.",
+        image: "img/modulo1.png"
       },
       {
+        id: "software-modulo-2",
         title: "Escrita Técnica em Código",
         hours: "10h",
-        description: "Como produzir textos escritos com clareza em commits, issues e pull requests."
+        description: "Como produzir textos escritos com clareza em commits, issues e pull requests.",
+        image: "img/modulo2.png"
       },
       {
+        id: "software-modulo-3",
         title: "Leitura de Documentação Técnica",
         hours: "8h",
-        description: "Aprenda a navegar por documentações, guias e referências em inglês."
+        description: "Aprenda a navegar por documentações, guias e referências em inglês.",
+        image: "img/modulo3.png"
       },
       {
+        id: "software-modulo-4",
         title: "Inglês para Ferramentas de Desenvolvimento",
         hours: "12h",
-        description: "Vocabulário comum em ferramentas de versionamento, integração e produtividade."
+        description: "Vocabulário comum em ferramentas de versionamento, integração e produtividade.",
+        image: "img/modulo4.png"
       },
       {
+        id: "software-modulo-5",
         title: "Interpretação de Erros e Logs",
         hours: "10h",
-        description: "Compreenda mensagens de erro e registros de sistema no contexto do trabalho."
+        description: "Compreenda mensagens de erro e registros de sistema no contexto do trabalho.",
+        image: "img/modulo5.png"
       },
       {
+        id: "software-modulo-6",
         title: "Comunicação em Times de Desenvolvimento",
         hours: "5h",
-        description: "Expressões usadas em reuniões, code reviews e colaboração técnica."
+        description: "Expressões usadas em reuniões, code reviews e colaboração técnica.",
+        image: "img/modulo6.png"
       }
     ]
   },
@@ -80,12 +92,48 @@ const cursosData = {
       { icon: "fa-solid fa-comments", text: "Apresentar resultados em inglês" }
     ],
     modulos: [
-      { title: "Vocabulary for Data Science", hours: "8h", description: "Vocabulário essencial para atuar com dados em inglês." },
-      { title: "English for AI and Machine Learning", hours: "10h", description: "Termos e expressões usados em IA e ML." },
-      { title: "Presenting Data Insights", hours: "6h", description: "Como apresentar insights com clareza." },
-      { title: "Reading Technical Papers", hours: "7h", description: "Leitura de artigos e papers técnicos." },
-      { title: "Writing Reports and Dashboards", hours: "5h", description: "Relatórios e dashboards em inglês." },
-      { title: "Communication in Global Data Teams", hours: "6h", description: "Comunicação em times globais de dados." }
+      {
+        id: "data-modulo-1",
+        title: "Vocabulary for Data Science",
+        hours: "8h",
+        description: "Vocabulário essencial para atuar com dados em inglês.",
+        image: "img/modulo1.png"
+      },
+      {
+        id: "data-modulo-2",
+        title: "English for AI and Machine Learning",
+        hours: "10h",
+        description: "Termos e expressões usados em IA e ML.",
+        image: "img/modulo2.png"
+      },
+      {
+        id: "data-modulo-3",
+        title: "Presenting Data Insights",
+        hours: "6h",
+        description: "Como apresentar insights com clareza.",
+        image: "img/modulo3.png"
+      },
+      {
+        id: "data-modulo-4",
+        title: "Reading Technical Papers",
+        hours: "7h",
+        description: "Leitura de artigos e papers técnicos.",
+        image: "img/modulo4.png"
+      },
+      {
+        id: "data-modulo-5",
+        title: "Writing Reports and Dashboards",
+        hours: "5h",
+        description: "Relatórios e dashboards em inglês.",
+        image: "img/modulo5.png"
+      },
+      {
+        id: "data-modulo-6",
+        title: "Communication in Global Data Teams",
+        hours: "6h",
+        description: "Comunicação em times globais de dados.",
+        image: "img/modulo6.png"
+      }
     ]
   },
 
@@ -100,19 +148,145 @@ const cursosData = {
       { icon: "fa-solid fa-user-tie", text: "Comunicar riscos de forma profissional" }
     ],
     modulos: [
-      { title: "Cybersecurity Essentials in English", hours: "8h", description: "Base do inglês técnico em cibersegurança." },
-      { title: "Incident Reports and Communication", hours: "7h", description: "Relatórios e comunicação de incidentes." },
-      { title: "Risk, Threats and Vulnerabilities", hours: "8h", description: "Riscos, ameaças e vulnerabilidades." },
-      { title: "Compliance and Governance", hours: "6h", description: "Governança e compliance em inglês." },
-      { title: "Security Meetings and Presentations", hours: "5h", description: "Reuniões e apresentações da área." },
-      { title: "Professional Writing for Security Teams", hours: "6h", description: "Escrita profissional para times de segurança." }
+      {
+        id: "cyber-modulo-1",
+        title: "Cybersecurity Essentials in English",
+        hours: "8h",
+        description: "Base do inglês técnico em cibersegurança.",
+        image: "img/modulo1.png"
+      },
+      {
+        id: "cyber-modulo-2",
+        title: "Incident Reports and Communication",
+        hours: "7h",
+        description: "Relatórios e comunicação de incidentes.",
+        image: "img/modulo2.png"
+      },
+      {
+        id: "cyber-modulo-3",
+        title: "Risk, Threats and Vulnerabilities",
+        hours: "8h",
+        description: "Riscos, ameaças e vulnerabilidades.",
+        image: "img/modulo3.png"
+      },
+      {
+        id: "cyber-modulo-4",
+        title: "Compliance and Governance",
+        hours: "6h",
+        description: "Governança e compliance em inglês.",
+        image: "img/modulo4.png"
+      },
+      {
+        id: "cyber-modulo-5",
+        title: "Security Meetings and Presentations",
+        hours: "5h",
+        description: "Reuniões e apresentações da área.",
+        image: "img/modulo5.png"
+      },
+      {
+        id: "cyber-modulo-6",
+        title: "Professional Writing for Security Teams",
+        hours: "6h",
+        description: "Escrita profissional para times de segurança.",
+        image: "img/modulo6.png"
+      }
     ]
   }
 };
 
+function getCursoSelecionado() {
+  return localStorage.getItem("cursoSelecionado") || "English for Software Development";
+}
+
+function getDadosCurso() {
+  const cursoSelecionado = getCursoSelecionado();
+  return cursosData[cursoSelecionado] || cursosData["English for Software Development"];
+}
+
+function abrirAula(moduloId, moduloTitle) {
+  if (moduloId) {
+    localStorage.setItem("moduloSelecionado", moduloId);
+  }
+
+  if (moduloTitle) {
+    localStorage.setItem("moduloTitulo", moduloTitle);
+  }
+
+  window.location.href = "aula.html";
+}
+
+function renderBeneficios(beneficios) {
+  if (!cursoBeneficios) return;
+
+  cursoBeneficios.innerHTML = beneficios.map((item) => `
+    <div class="curso-benefit-item figma-benefit-item">
+      <i class="${item.icon}"></i>
+      <p>${item.text}</p>
+    </div>
+  `).join("");
+}
+
+function renderModulos(modulos) {
+  if (!cursoModulos) return;
+
+  cursoModulos.innerHTML = modulos.map((modulo, index) => {
+    const progresso = [63, 7, 0, 0, 0, 0][index] ?? 0;
+    const statusTexto = progresso > 0 ? `${progresso}%` : "Não iniciado";
+
+    return `
+      <article
+        class="curso-modulo-card figma-modulo-card modulo-clicavel"
+        data-modulo-id="${modulo.id}"
+        data-modulo-title="${modulo.title}"
+      >
+        <div class="figma-modulo-thumb">
+          <img src="${modulo.image}" alt="${modulo.title}">
+        </div>
+
+        <div class="figma-modulo-info">
+          <div class="figma-modulo-top">
+            <h3>${modulo.title}</h3>
+            <span class="figma-modulo-hours">${modulo.hours}</span>
+          </div>
+
+          <p class="figma-modulo-desc">${modulo.description}</p>
+
+          ${
+            progresso > 0
+              ? `
+                <div class="figma-progress">
+                  <div class="figma-progress-bar">
+                    <span style="width:${progresso}%"></span>
+                  </div>
+                  <small>${statusTexto}</small>
+                </div>
+              `
+              : `
+                <div class="figma-progress figma-progress-empty">
+                  <small>${statusTexto}</small>
+                </div>
+              `
+          }
+        </div>
+      </article>
+    `;
+  }).join("");
+
+  const cardsModulos = document.querySelectorAll(".modulo-clicavel");
+
+  cardsModulos.forEach((card) => {
+    card.style.cursor = "pointer";
+
+    card.addEventListener("click", () => {
+      const moduloId = card.dataset.moduloId;
+      const moduloTitle = card.dataset.moduloTitle;
+      abrirAula(moduloId, moduloTitle);
+    });
+  });
+}
+
 function renderCurso() {
-  const cursoSelecionado = localStorage.getItem("cursoSelecionado") || "English for Software Development";
-  const dados = cursosData[cursoSelecionado] || cursosData["English for Software Development"];
+  const dados = getDadosCurso();
 
   document.title = `${dados.titulo} | PRISMA`;
 
@@ -120,48 +294,12 @@ function renderCurso() {
   if (cursoDescricao1) cursoDescricao1.textContent = dados.descricao1;
   if (cursoDescricao2) cursoDescricao2.textContent = dados.descricao2;
 
-  if (cursoBeneficios) {
-    cursoBeneficios.innerHTML = dados.beneficios.map(item => `
-      <div class="curso-benefit-item figma-benefit-item">
-        <i class="${item.icon}"></i>
-        <p>${item.text}</p>
-      </div>
-    `).join("");
-  }
-
-  if (cursoModulos) {
-    cursoModulos.innerHTML = dados.modulos.map((modulo, index) => `
-      <article class="curso-modulo-card figma-modulo-card">
-        <div class="figma-modulo-thumb">
-          <img src="img/modulo${index + 1}.png" alt="${modulo.title}">
-        </div>
-
-        <div class="figma-modulo-info">
-          <h4>${modulo.title}</h4>
-
-          <p class="figma-modulo-desc">
-            ${modulo.description}
-          </p>
-
-          <div class="figma-modulo-footer">
-            <span class="figma-modulo-status ${index < 2 ? "concluido" : index === 5 ? "progresso" : "nao-iniciado"}">
-              ${index < 2 ? "Concluído" : index === 5 ? "Em andamento" : "Não iniciado"}
-            </span>
-
-            <strong>${modulo.hours}</strong>
-          </div>
-
-          <div class="figma-progress ${index === 2 || index === 3 || index === 4 ? "hidden-progress" : ""}">
-            <span style="width:${index === 0 ? "62%" : index === 1 ? "17%" : index === 5 ? "25%" : "0%"}"></span>
-          </div>
-        </div>
-      </article>
-    `).join("");
-  }
+  renderBeneficios(dados.beneficios);
+  renderModulos(dados.modulos);
 }
 
 if (authButton) {
-  authButton.addEventListener("click", function () {
+  authButton.addEventListener("click", () => {
     const usuarioAtual = getUsuario();
 
     if (usuarioAtual) {

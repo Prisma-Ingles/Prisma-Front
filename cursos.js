@@ -5,14 +5,26 @@ const cursoIdealTexto = document.getElementById("cursoIdealTexto");
 const descricaoCursoIdeal = document.getElementById("descricaoCursoIdeal");
 const courseCards = document.querySelectorAll(".prisma-course-card");
 
+/* =========================
+   USUÁRIO
+========================= */
+
 function getUsuario() {
   const usuarioSalvo = localStorage.getItem("usuarioCadastrado");
   return usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
 }
 
+/* =========================
+   CURSO IDEAL
+========================= */
+
 function getCursoIdeal() {
   return localStorage.getItem("cursoIdeal") || "English for Software Development";
 }
+
+/* =========================
+   HEADER / LOGIN
+========================= */
 
 function atualizarUsuarioCurso() {
   const usuarioAtual = getUsuario();
@@ -28,6 +40,10 @@ function atualizarUsuarioCurso() {
   }
 }
 
+/* =========================
+   TEXTO DO CURSO
+========================= */
+
 function atualizarCursoIdealTexto() {
   const cursoIdeal = getCursoIdeal();
   const descricaoSalva = localStorage.getItem("descricaoCursoIdeal");
@@ -41,6 +57,10 @@ function atualizarCursoIdealTexto() {
   }
 }
 
+/* =========================
+   DESTAQUE DO CURSO
+========================= */
+
 function destacarCursoIdeal() {
   const cursoIdeal = getCursoIdeal();
 
@@ -53,21 +73,44 @@ function destacarCursoIdeal() {
   });
 }
 
+/* =========================
+   ABRIR CURSO
+========================= */
+
 function abrirCurso(courseName) {
+  if (!courseName) return;
+
   localStorage.setItem("cursoSelecionado", courseName);
   window.location.href = "curso.html";
 }
+
+/* =========================
+   CLIQUE NOS CARDS
+========================= */
 
 function configurarCards() {
   courseCards.forEach((card) => {
     card.style.cursor = "pointer";
 
     card.addEventListener("click", () => {
-      const courseName = card.dataset.course;
+      let courseName = card.dataset.course;
+
+      // fallback caso esqueça data-course
+      if (!courseName) {
+        const titulo = card.querySelector("h3");
+        if (titulo) {
+          courseName = titulo.textContent.trim();
+        }
+      }
+
       abrirCurso(courseName);
     });
   });
 }
+
+/* =========================
+   BOTÃO LOGIN / SAIR
+========================= */
 
 if (authButton) {
   authButton.addEventListener("click", function () {
@@ -81,6 +124,10 @@ if (authButton) {
     }
   });
 }
+
+/* =========================
+   INIT
+========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
   atualizarUsuarioCurso();

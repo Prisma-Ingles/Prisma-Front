@@ -1,4 +1,3 @@
-
 const bloqueios = document.querySelectorAll('.seucertificado.seucertificadobloqueado');
 
 bloqueios.forEach(bloqueio => {

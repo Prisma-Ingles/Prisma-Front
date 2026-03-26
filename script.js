@@ -1,5 +1,5 @@
 const header = document.getElementById("header");
-const sections = document.querySelectorAll(".section");
+const revealElements = document.querySelectorAll(".reveal");
 
 const loginModal = document.getElementById("loginModal");
 const closeModal = document.getElementById("closeModal");
@@ -24,6 +24,31 @@ const confirmarSenha = document.getElementById("confirmarSenha");
 
 const authButton = document.getElementById("authButton");
 const userWelcome = document.getElementById("userWelcome");
+const ctaCadastrar = document.getElementById("ctaCadastrar");
+
+const paymentModal = document.getElementById("paymentModal");
+const paymentBox = document.getElementById("paymentBox");
+const paymentClose = document.getElementById("paymentClose");
+const paymentTitle = document.getElementById("paymentTitle");
+const paymentPlanTag = document.getElementById("paymentPlanTag");
+const paymentSubtitle = document.getElementById("paymentSubtitle");
+
+const methodBtns = document.querySelectorAll(".method-btn");
+const paymentContents = document.querySelectorAll(".payment-content");
+const cardConfirmBtn = document.getElementById("cardConfirmBtn");
+const pixConfirmBtn = document.getElementById("pixConfirmBtn");
+
+function revealOnScroll() {
+  const triggerBottom = window.innerHeight * 0.88;
+
+  revealElements.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+
+    if (elementTop < triggerBottom) {
+      element.classList.add("show");
+    }
+  });
+}
 
 function showMessage(text, type) {
   if (!formMessage) return;
@@ -38,6 +63,11 @@ function clearMessage() {
   formMessage.classList.remove("error", "success");
 }
 
+function getUsuario() {
+  const usuarioSalvo = localStorage.getItem("usuarioCadastrado");
+  return usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
+}
+
 function abrirModal() {
   if (!loginModal) return;
   loginModal.classList.add("active");
@@ -49,6 +79,13 @@ function fecharModal() {
   if (!loginModal) return;
   loginModal.classList.remove("active");
   clearMessage();
+}
+
+function abrirModalCadastro() {
+  if (!loginModal) return;
+  loginModal.classList.add("active");
+  clearMessage();
+  ativarCadastrar();
 }
 
 function ativarEntrar() {
@@ -91,32 +128,78 @@ function ativarCadastrar() {
   clearMessage();
 }
 
-function revelarSecoes() {
-  sections.forEach((section) => {
-    const sectionTop = section.getBoundingClientRect().top;
-    const trigger = window.innerHeight - 100;
-
-    if (sectionTop < trigger) {
-      section.classList.add("show");
-    }
-  });
-}
-
 function atualizarUsuario() {
-  const usuario = JSON.parse(localStorage.getItem("usuarioCadastrado"));
+  const usuario = getUsuario();
 
   if (usuario && userWelcome && authButton) {
     userWelcome.textContent = `Bem-vindo, ${usuario.nome} 👋`;
-    authButton.textContent = "Sair";
+    authButton.textContent = "SAIR";
   } else if (userWelcome && authButton) {
     userWelcome.textContent = "";
-    authButton.textContent = "Entrar";
+    authButton.textContent = "ENTRAR";
   }
+}
+
+function switchPaymentMethod(method) {
+  methodBtns.forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.method === method);
+  });
+
+  paymentContents.forEach((content) => {
+    content.classList.remove("active");
+  });
+
+  if (method === "card") {
+    document.getElementById("cardPayment")?.classList.add("active");
+  } else {
+    document.getElementById("pixPayment")?.classList.add("active");
+  }
+}
+
+function openPayment(planType) {
+  if (!paymentModal || !paymentBox) return;
+
+  paymentModal.classList.add("active");
+  paymentBox.classList.remove("payment-free", "payment-plus", "payment-pro");
+
+  if (planType === "free") {
+    paymentBox.classList.add("payment-free");
+    if (paymentPlanTag) paymentPlanTag.textContent = "PRISMA FREE";
+    if (paymentTitle) paymentTitle.textContent = "Começar com o Prisma Free";
+    if (paymentSubtitle) {
+      paymentSubtitle.textContent = "Escolha a forma de pagamento para ativar sua experiência inicial.";
+    }
+  }
+
+  if (planType === "plus") {
+    paymentBox.classList.add("payment-plus");
+    if (paymentPlanTag) paymentPlanTag.textContent = "PRISMA PLUS";
+    if (paymentTitle) paymentTitle.textContent = "Assinar o Prisma Plus";
+    if (paymentSubtitle) {
+      paymentSubtitle.textContent = "Escolha a forma de pagamento para desbloquear mais aulas e exercícios.";
+    }
+  }
+
+  if (planType === "pro") {
+    paymentBox.classList.add("payment-pro");
+    if (paymentPlanTag) paymentPlanTag.textContent = "PRISMA PRO";
+    if (paymentTitle) paymentTitle.textContent = "Liberar o Prisma Pro";
+    if (paymentSubtitle) {
+      paymentSubtitle.textContent = "Escolha a forma de pagamento para acessar todos os cursos e recursos exclusivos.";
+    }
+  }
+
+  switchPaymentMethod("card");
+}
+
+function fecharPagamento() {
+  if (!paymentModal) return;
+  paymentModal.classList.remove("active");
 }
 
 if (authButton) {
   authButton.addEventListener("click", function () {
-    const usuario = localStorage.getItem("usuarioCadastrado");
+    const usuario = getUsuario();
 
     if (usuario) {
       localStorage.removeItem("usuarioCadastrado");
@@ -125,6 +208,10 @@ if (authButton) {
       abrirModal();
     }
   });
+}
+
+if (ctaCadastrar) {
+  ctaCadastrar.addEventListener("click", abrirModalCadastro);
 }
 
 if (closeModal) {
@@ -147,21 +234,6 @@ if (tabCadastrar) {
   tabCadastrar.addEventListener("click", ativarCadastrar);
 }
 
-window.addEventListener("scroll", function () {
-  if (header) {
-    if (window.scrollY > 40) {
-      header.classList.add("header-scroll");
-    } else {
-      header.classList.remove("header-scroll");
-    }
-  }
-
-  revelarSecoes();
-});
-
-revelarSecoes();
-atualizarUsuario();
-
 if (formEntrar) {
   formEntrar.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -174,15 +246,15 @@ if (formEntrar) {
       return;
     }
 
-    const usuario = JSON.parse(localStorage.getItem("usuarioCadastrado"));
+    const usuario = getUsuario();
 
     if (!usuario) {
       showMessage("Nenhuma conta cadastrada ainda.", "error");
       return;
     }
 
-    if (usuario.email !== email) {
-      showMessage("E-mail não encontrado.", "error");
+    if (usuario.email !== email || usuario.senha !== senha) {
+      showMessage("E-mail ou senha incorretos.", "error");
       return;
     }
 
@@ -191,7 +263,8 @@ if (formEntrar) {
     setTimeout(() => {
       fecharModal();
       atualizarUsuario();
-    }, 1200);
+      window.location.href = "cursos.html";
+    }, 900);
   });
 }
 
@@ -233,8 +306,56 @@ if (formCadastrar) {
     setTimeout(() => {
       fecharModal();
       atualizarUsuario();
-      ativarEntrar();
-    }, 1200);
+      window.location.href = "cursos.html";
+    }, 900);
   });
 }
 
+if (paymentClose) {
+  paymentClose.addEventListener("click", fecharPagamento);
+}
+
+if (paymentModal) {
+  paymentModal.addEventListener("click", function (e) {
+    if (e.target === paymentModal) {
+      fecharPagamento();
+    }
+  });
+}
+
+methodBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    switchPaymentMethod(btn.dataset.method);
+  });
+});
+
+if (cardConfirmBtn) {
+  cardConfirmBtn.addEventListener("click", () => {
+    alert("Pagamento com cartão aprovado com sucesso!");
+    fecharPagamento();
+  });
+}
+
+if (pixConfirmBtn) {
+  pixConfirmBtn.addEventListener("click", () => {
+    alert("Pagamento via Pix confirmado com sucesso!");
+    fecharPagamento();
+  });
+}
+
+window.addEventListener("scroll", function () {
+  if (header) {
+    if (window.scrollY > 40) {
+      header.classList.add("header-scroll");
+    } else {
+      header.classList.remove("header-scroll");
+    }
+  }
+
+  revealOnScroll();
+});
+
+window.addEventListener("load", () => {
+  revealOnScroll();
+  atualizarUsuario();
+});

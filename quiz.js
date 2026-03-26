@@ -1,284 +1,324 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const questions = [
-    {
-      question: 'Como você responderia à pergunta: “How are you?”',
-      options: [
-        { text: "I’m fine, thank you.", score: 1 },
-        { text: "I have 25 years old.", score: 0 },
-        { text: "My name is Gabriel.", score: 0 },
-        { text: "Good night.", score: 0 }
-      ]
-    },
-    {
-      question: "Qual frase está correta em inglês?",
-      options: [
-        { text: "She go to work every day.", score: 0 },
-        { text: "She goes to work every day.", score: 1 },
-        { text: "She going to work every day.", score: 0 },
-        { text: "She gone to work every day.", score: 0 }
-      ]
-    },
-    {
-      question: "Como dizer corretamente: 'Tenho experiência com atendimento ao cliente'?",
-      options: [
-        { text: "I have experience with customer service.", score: 1 },
-        { text: "I am experience in customer service.", score: 0 },
-        { text: "I have customer service experienced.", score: 0 },
-        { text: "I has experience with customer service.", score: 0 }
-      ]
-    },
-    {
-      question: "Qual frase demonstra um nível mais avançado?",
-      options: [
-        { text: "I like music.", score: 0 },
-        { text: "I can travel tomorrow.", score: 0 },
-        { text: "I have been improving my English for professional situations.", score: 1 },
-        { text: "My favorite color is blue.", score: 0 }
-      ]
-    },
-    {
-      question: "Em um contexto profissional, qual frase está mais adequada?",
-      options: [
-        { text: "Send me this now.", score: 0 },
-        { text: "Could you please send me this by the end of the day?", score: 1 },
-        { text: "You send me today.", score: 0 },
-        { text: "Send this for me because yes.", score: 0 }
-      ]
-    }
-  ];
-
-  let currentQuestion = 0;
-  let answers = new Array(questions.length).fill(null);
-
-  const quizQuestion = document.getElementById("quizQuestion");
-  const quizOptions = document.getElementById("quizOptions");
-  const quizStep = document.getElementById("quizStep");
-  const quizProgressBar = document.getElementById("quizProgressBar");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-
-  const quizCard = document.getElementById("quizCard");
-  const quizResultCard = document.getElementById("quizResultCard");
-  const resultLevel = document.getElementById("resultLevel");
-  const resultText = document.getElementById("resultText");
-  const openRegisterFromResult = document.getElementById("openRegisterFromResult");
-
-  const loginModal = document.getElementById("loginModal");
-  const openModal = document.getElementById("openModal");
-  const closeModal = document.getElementById("closeModal");
-  const tabEntrar = document.getElementById("tabEntrar");
-  const tabCadastrar = document.getElementById("tabCadastrar");
-  const formEntrar = document.getElementById("formEntrar");
-  const formCadastrar = document.getElementById("formCadastrar");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalSubtitle = document.getElementById("modalSubtitle");
-  const formMessage = document.getElementById("formMessage");
-
-  function renderQuestion() {
-    const questionData = questions[currentQuestion];
-
-    quizStep.textContent = `Pergunta ${currentQuestion + 1} de ${questions.length}`;
-    quizQuestion.textContent = questionData.question;
-    quizProgressBar.style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
-
-    quizOptions.innerHTML = "";
-
-    questionData.options.forEach((option, index) => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "quiz-option";
-      button.textContent = option.text;
-
-      if (answers[currentQuestion] === index) {
-        button.classList.add("selected");
-      }
-
-      button.addEventListener("click", function () {
-        answers[currentQuestion] = index;
-        renderQuestion();
-      });
-
-      quizOptions.appendChild(button);
-    });
-
-    prevBtn.style.visibility = currentQuestion === 0 ? "hidden" : "visible";
-    nextBtn.textContent = currentQuestion === questions.length - 1 ? "Finalizar" : "Próxima";
+const perguntas = [
+  {
+    pergunta: "Qual é a sua área de atuação profissional?",
+    opcoes: [
+      "Tecnologia e TI / Dados",
+      "Saúde / Medicina / Farmácia",
+      "Jurídico / Negócios",
+      "Financeiro / Bancos",
+      "Hotelaria / Turismo",
+      "Marketing / Vendas",
+      "Administração / Operações",
+      "Outro / Estudante"
+    ]
+  },
+  {
+    pergunta: "Com que frequência você usa inglês no trabalho hoje?",
+    opcoes: [
+      "Nunca ou quase nunca",
+      "Leio e-mails ocasionalmente",
+      "Participo de reuniões simples",
+      "Interajo de forma recorrente",
+      "Uso inglês diariamente"
+    ]
+  },
+  {
+    pergunta: "Qual é o seu principal objetivo com o inglês?",
+    opcoes: [
+      "Conseguir emprego ou crescer na área",
+      "Trabalhar em empresa internacional",
+      "Trabalhar em carreira para o exterior",
+      "Crescer em cargos atuais",
+      "Me aprofundar no meu trabalho"
+    ]
+  },
+  {
+    pergunta: "Qual habilidade você mais precisa desenvolver?",
+    opcoes: [
+      "Leitura de documentos técnicos",
+      "Escrita de e-mails e relatórios",
+      "Conversação em reuniões",
+      "Vocabulário técnico da minha área",
+      "Entrevistas em inglês"
+    ]
+  },
+  {
+    pergunta: "Como você descreveria seu nível de inglês atual?",
+    opcoes: [
+      "Básico: sei poucas palavras",
+      "Pré-intermediário: leitura muito facilitada",
+      "Intermediário: consigo me comunicar com esforço",
+      "Intermediário avançado: me viro em temas da minha área",
+      "Avançado: já pretendo me especializar no idioma"
+    ]
+  },
+  {
+    pergunta: "Em qual situação você se sentiria menos confortável hoje?",
+    opcoes: [
+      "Apresentar projeto para equipe internacional",
+      "Negociar com cliente ou parceiro estrangeiro",
+      "Entrevistar para vaga global",
+      "Redigir relatório técnico longo",
+      "Participar de conferência internacional"
+    ]
+  },
+  {
+    pergunta: "Quantas horas por semana você consegue estudar?",
+    opcoes: [
+      "Menos de 1 hora",
+      "1 a 2 horas",
+      "3 a 5 horas",
+      "6 a 10 horas",
+      "Mais de 10 horas"
+    ]
   }
+];
 
-  function calculateResult() {
-    let totalScore = 0;
+let atual = 0;
+let respostas = perguntas.map(() => []);
 
-    answers.forEach((answerIndex, questionIndex) => {
-      if (answerIndex !== null) {
-        totalScore += questions[questionIndex].options[answerIndex].score;
-      }
+const passo = document.getElementById("passo");
+const pergunta = document.getElementById("pergunta");
+const opcoes = document.getElementById("opcoes");
+const btnVoltar = document.getElementById("btnVoltar");
+const btnProximo = document.getElementById("btnProximo");
+const quizSubtitulo = document.getElementById("quizSubtitulo");
+const quizHelper = document.getElementById("quizHelper");
+
+const quizBox = document.getElementById("quizBox");
+const resultadoBox = document.getElementById("resultadoBox");
+const cursoResultado = document.getElementById("cursoResultado");
+const textoResultado = document.getElementById("textoResultado");
+
+const btnCadastro = document.getElementById("btnCadastro");
+const btnVerCursos = document.getElementById("btnVerCursos");
+const modalCadastro = document.getElementById("modalCadastro");
+const fecharModal = document.getElementById("fecharModal");
+const formCadastro = document.getElementById("formCadastro");
+const mensagemCadastro = document.getElementById("mensagemCadastro");
+
+function opcaoEstaSelecionada(indiceOpcao) {
+  return respostas[atual].includes(indiceOpcao);
+}
+
+function atualizarBotaoProximo() {
+  btnProximo.disabled = respostas[atual].length === 0;
+  btnProximo.textContent = atual === perguntas.length - 1 ? "FINALIZAR" : "PRÓXIMO";
+}
+
+function renderizarPergunta() {
+  const item = perguntas[atual];
+
+  passo.textContent = `Pergunta ${atual + 1} de ${perguntas.length}`;
+  pergunta.textContent = item.pergunta;
+  quizSubtitulo.textContent = `${perguntas.length} perguntas • menos de 2 minutos`;
+  quizHelper.textContent = "Selecione uma ou mais opções";
+
+  opcoes.innerHTML = "";
+
+  item.opcoes.forEach((texto, index) => {
+    const botao = document.createElement("button");
+    botao.type = "button";
+    botao.className = "opcao";
+
+    if (opcaoEstaSelecionada(index)) {
+      botao.classList.add("selecionada");
+    }
+
+    botao.innerHTML = `
+      <span>${texto}</span>
+      <span class="opcao-check">✓</span>
+    `;
+
+    botao.addEventListener("click", () => {
+      alternarOpcao(index);
+      renderizarPergunta();
     });
 
-    if (totalScore <= 2) {
-      return {
-        level: "Básico",
-        text: "Você está começando sua jornada e já pode evoluir com uma trilha ideal."
-      };
-    }
+    opcoes.appendChild(botao);
+  });
 
-    if (totalScore <= 4) {
-      return {
-        level: "Intermediário",
-        text: "Você já possui uma boa base e pode desenvolver fluidez e confiança no inglês profissional."
-      };
-    }
+  btnVoltar.style.visibility = atual === 0 ? "hidden" : "visible";
+  atualizarBotaoProximo();
+}
 
+function alternarOpcao(index) {
+  if (respostas[atual].includes(index)) {
+    respostas[atual] = respostas[atual].filter((i) => i !== index);
+  } else {
+    respostas[atual].push(index);
+  }
+}
+
+function calcularCursoIdeal() {
+  const respostasArea = respostas[0];
+
+  if (respostasArea.includes(0)) {
     return {
-      level: "Avançado",
-      text: "Você já demonstra ótimo domínio do idioma e pode focar em comunicação profissional e networking internacional."
+      curso: "English for Software Development",
+      descricao:
+        "Ideal para quem quer desenvolver vocabulário técnico, fluidez e segurança em contextos profissionais de tecnologia.",
+      cursoInterno: "English for Software Development"
     };
   }
 
-  function showResult() {
-    const result = calculateResult();
-
-    quizCard.style.display = "none";
-    quizResultCard.classList.remove("hidden-result");
-
-    resultLevel.textContent = result.level;
-    resultText.textContent = result.text;
-
-    localStorage.setItem("quizNivel", result.level);
-    localStorage.setItem("quizResultadoTexto", result.text);
+  if (respostasArea.includes(1)) {
+    return {
+      curso: "English for Healthcare Professionals",
+      descricao:
+        "Indicado para profissionais da saúde que precisam de comunicação clínica, técnica e internacional.",
+      cursoInterno: "English for Healthcare Professionals"
+    };
   }
 
-  function openLoginModal() {
-    loginModal.classList.add("active");
+  if (respostasArea.includes(2)) {
+    return {
+      curso: "English for Law & Legal",
+      descricao:
+        "Uma trilha focada em linguagem jurídica, contratos, compliance e comunicação formal.",
+      cursoInterno: "English for Law & Legal"
+    };
   }
 
-  function closeLoginModal() {
-    loginModal.classList.remove("active");
+  if (respostasArea.includes(3)) {
+    return {
+      curso: "English for Finance & Banking",
+      descricao:
+        "Indicada para quem atua com bancos, relatórios executivos e comunicação internacional no mercado financeiro.",
+      cursoInterno: "English for Finance & Banking"
+    };
   }
 
-  function activateEntrarTab() {
-    tabEntrar.classList.add("active");
-    tabCadastrar.classList.remove("active");
-
-    formEntrar.classList.remove("hidden-form");
-    formCadastrar.classList.add("hidden-form");
-
-    modalTitle.textContent = "Bem-vindo";
-    modalSubtitle.textContent = "Acesse sua conta ou crie uma nova gratuitamente.";
-    formMessage.textContent = "";
-    formMessage.className = "form-message";
+  if (respostasArea.includes(4)) {
+    return {
+      curso: "English for Tourism & Hospitality",
+      descricao:
+        "Ideal para hotelaria, turismo, atendimento, reservas e experiência do cliente em contexto internacional.",
+      cursoInterno: "English for Tourism & Hospitality"
+    };
   }
 
-  function activateCadastrarTab() {
-    tabCadastrar.classList.add("active");
-    tabEntrar.classList.remove("active");
-
-    formCadastrar.classList.remove("hidden-form");
-    formEntrar.classList.add("hidden-form");
-
-    modalTitle.textContent = "Crie sua conta";
-    modalSubtitle.textContent = "Cadastre-se para salvar seu resultado e começar sua jornada.";
-    formMessage.textContent = "";
-    formMessage.className = "form-message";
+  if (respostasArea.includes(5)) {
+    return {
+      curso: "English for Marketing & Sales",
+      descricao:
+        "Trilha recomendada para marketing, vendas, publicidade e relacionamento com clientes e parceiros globais.",
+      cursoInterno: "English for Marketing & Sales"
+    };
   }
 
-  nextBtn.addEventListener("click", function () {
-    if (answers[currentQuestion] === null) {
-      alert("Selecione uma resposta antes de continuar.");
-      return;
-    }
+  if (respostasArea.includes(6)) {
+    return {
+      curso: "English for Manufacturing & Engineering",
+      descricao:
+        "Indicado para operações, engenharia, processos produtivos e comunicação técnica no ambiente industrial.",
+      cursoInterno: "English for Manufacturing & Engineering"
+    };
+  }
 
-    if (currentQuestion < questions.length - 1) {
-      currentQuestion++;
-      renderQuestion();
-    } else {
-      showResult();
-    }
-  });
+  return {
+    curso: "English for Software Development",
+    descricao:
+      "Ideal para quem quer desenvolver vocabulário técnico, fluidez e segurança em contextos profissionais.",
+    cursoInterno: "English for Software Development"
+  };
+}
 
-  prevBtn.addEventListener("click", function () {
-    if (currentQuestion > 0) {
-      currentQuestion--;
-      renderQuestion();
-    }
-  });
+function mostrarResultado() {
+  const resultado = calcularCursoIdeal();
 
-  openModal.addEventListener("click", function () {
-    openLoginModal();
-    activateEntrarTab();
-  });
+  quizBox.classList.add("escondido");
+  resultadoBox.classList.remove("escondido");
 
-  closeModal.addEventListener("click", closeLoginModal);
+  cursoResultado.textContent = resultado.curso;
+  textoResultado.textContent = resultado.descricao;
 
-  loginModal.addEventListener("click", function (event) {
-    if (event.target === loginModal) {
-      closeLoginModal();
-    }
-  });
+  localStorage.setItem("cursoIdeal", resultado.cursoInterno);
+  localStorage.setItem("descricaoCursoIdeal", resultado.descricao);
+  localStorage.setItem("respostasQuiz", JSON.stringify(respostas));
+}
 
-  tabEntrar.addEventListener("click", activateEntrarTab);
-  tabCadastrar.addEventListener("click", activateCadastrarTab);
-
-  openRegisterFromResult.addEventListener("click", function () {
-    openLoginModal();
-    activateCadastrarTab();
-  });
-
-  formEntrar.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    formMessage.textContent = "Login realizado com sucesso!";
-    formMessage.className = "form-message success";
-
-    setTimeout(function () {
-      closeLoginModal();
-    }, 1200);
-  });
-
-  formCadastrar.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const nome = document.getElementById("nomeCadastrar").value.trim();
-    const email = document.getElementById("emailCadastrar").value.trim();
-    const senha = document.getElementById("senhaCadastrar").value;
-    const confirmarSenha = document.getElementById("confirmarSenha").value;
-
-    if (!nome || !email || !senha || !confirmarSenha) {
-      formMessage.textContent = "Preencha todos os campos.";
-      formMessage.className = "form-message error";
-      return;
-    }
-
-    if (senha.length < 6) {
-      formMessage.textContent = "A senha precisa ter pelo menos 6 caracteres.";
-      formMessage.className = "form-message error";
-      return;
-    }
-
-    if (senha !== confirmarSenha) {
-      formMessage.textContent = "As senhas não coincidem.";
-      formMessage.className = "form-message error";
-      return;
-    }
-
-    const nivelSalvo = localStorage.getItem("quizNivel") || "Não identificado";
-
-    localStorage.setItem(
-      "usuarioCadastrado",
-      JSON.stringify({
-        nome: nome,
-        email: email,
-        nivel: nivelSalvo
-      })
-    );
-
-    formMessage.textContent = `Conta criada com sucesso! Nível salvo: ${nivelSalvo}.`;
-    formMessage.className = "form-message success";
-
-    setTimeout(function () {
-      closeLoginModal();
-      window.location.href = "index.html";
-    }, 1500);
-  });
-
-  renderQuestion();
+btnVoltar.addEventListener("click", () => {
+  if (atual > 0) {
+    atual--;
+    renderizarPergunta();
+  }
 });
+
+btnProximo.addEventListener("click", () => {
+  if (respostas[atual].length === 0) {
+    alert("Selecione pelo menos uma opção antes de continuar.");
+    return;
+  }
+
+  if (atual < perguntas.length - 1) {
+    atual++;
+    renderizarPergunta();
+  } else {
+    mostrarResultado();
+  }
+});
+
+btnVerCursos.addEventListener("click", () => {
+  window.location.href = "cursos.html";
+});
+
+btnCadastro.addEventListener("click", () => {
+  modalCadastro.classList.remove("escondido");
+  mensagemCadastro.textContent = "";
+});
+
+fecharModal.addEventListener("click", () => {
+  modalCadastro.classList.add("escondido");
+});
+
+modalCadastro.addEventListener("click", (e) => {
+  if (e.target === modalCadastro) {
+    modalCadastro.classList.add("escondido");
+  }
+});
+
+formCadastro.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const nome = document.getElementById("nome").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const senha = document.getElementById("senha").value.trim();
+  const confirmarSenha = document.getElementById("confirmarSenha").value.trim();
+
+  if (!nome || !email || !senha || !confirmarSenha) {
+    mensagemCadastro.textContent = "Preencha todos os campos.";
+    mensagemCadastro.style.color = "#dc2626";
+    return;
+  }
+
+  if (senha.length < 6) {
+    mensagemCadastro.textContent = "A senha precisa ter pelo menos 6 caracteres.";
+    mensagemCadastro.style.color = "#dc2626";
+    return;
+  }
+
+  if (senha !== confirmarSenha) {
+    mensagemCadastro.textContent = "As senhas não coincidem.";
+    mensagemCadastro.style.color = "#dc2626";
+    return;
+  }
+
+  localStorage.setItem(
+    "usuarioCadastrado",
+    JSON.stringify({
+      nome,
+      email,
+      senha
+    })
+  );
+
+  mensagemCadastro.textContent = "Conta criada com sucesso!";
+  mensagemCadastro.style.color = "#16a34a";
+
+  setTimeout(() => {
+    window.location.href = "cursos.html";
+  }, 1200);
+});
+
+renderizarPergunta();

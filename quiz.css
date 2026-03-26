@@ -108,7 +108,7 @@ a {
 
 .quiz-card,
 .quiz-result-card {
-  background: #f7fbff;
+   background: linear-gradient(135deg, #8FC4FF, #EFBEFF);
   border: 1px solid #d7e4ef;
   border-radius: 18px;
   padding: 34px 30px;
