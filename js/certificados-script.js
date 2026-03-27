@@ -4,7 +4,7 @@ bloqueios.forEach(bloqueio => {
   const imagem = bloqueio.querySelector('.conteudo img');
   
   if (imagem) {
-    imagem.src = './certificados-fotos/icone-cadeado.png';
+    imagem.src = '../img/certificados-fotos/icone-cadeado.png';
     imagem.style.width = '30px';
   }
 

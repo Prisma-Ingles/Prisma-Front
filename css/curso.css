@@ -1,0 +1,214 @@
+:root{
+  --bg-page:#eef9ff;
+  --hero-bg: linear-gradient(120deg, #F2F7FA, #C7EAFF);
+  --navy:#03123a;
+  --text:#000000;
+  --text-soft:#5d6876;
+  --white:#ffffff;
+  --btn-dark:#1f284c;
+  --btn-border:#7e8a99;
+  --card-bg:#ffffff;
+  --card-blue: linear-gradient(135deg, #E2F2FF, #D4ECFF);
+  --line:#d4d9df;
+  --purple:#4a1e58;
+  --blue:#1f71ef;
+  --shadow-card:0 14px 34px rgba(10,27,52,0.12);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Inter", Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:var(--bg-page);
+  color:var(--text);
+}
+
+.courses-container {
+    margin-bottom: 70px;
+}
+
+.curso-page-figma{
+  min-height:100vh;
+}
+
+.curso-topo-figma{
+  padding:28px 18px 10px;
+}
+
+.curso-topo-container{
+  width:100%;
+  max-width:1000px;
+  margin:0 auto;
+}
+
+.curso-label-figma{
+  font-size:15px;
+  color:#4b5563;
+  text-transform:uppercase;
+  margin-bottom:14px;
+  letter-spacing:0.2px;
+}
+
+.curso-titulo-figma{
+  font-size:40px;
+  line-height:1.08;
+  font-weight:800;
+  color:#111111;
+  margin-bottom:12px;
+  max-width:520px;
+  margin-left: 13px;
+ white-space:nowrap;
+}
+
+
+.curso-texto-figma{
+  font-size:18px;
+  line-height:1.60;
+  color:#2a2f3a;
+  margin-bottom:8px;
+  max-width:940px;
+  margin-left: 13px;
+}
+
+/* ===== BENEFÍCIOS ===== */
+
+.figma-benefits-box{
+  width:100%;
+  max-width:1247px;
+  min-height:310px;
+  background:#03123a;
+  border:none;
+  border-radius:28px;
+  padding:46px 40px 42px;
+  margin:34px auto 0;
+  box-shadow:0 12px 28px rgba(3,18,58,0.12);
+}
+
+.figma-benefits-box h3{
+  color:#ffffff;
+  text-align:center;
+  font-size:20px;
+  font-weight:800;
+  margin-bottom:34px;
+}
+
+.figma-benefits-grid{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  width:100%;
+  gap:20px;
+}
+
+.figma-benefit-item{
+  flex:1;
+  max-width:220px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.figma-benefit-item i{
+  width:86px;
+  height:86px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 16px;
+  font-size:32px;
+  color:#ffffff;
+  border-radius:20px;
+}
+
+.figma-benefit-item p{
+  color:#ffffff;
+  font-size:13px;
+  line-height:1.4;
+  font-weight:500;
+}
+
+.curso-start-figma{
+  margin-top:70px;
+  font-size:32px;
+  color:#1f1f1f;
+  font-weight:600;
+  text-align:center;
+}
+
+
+.curso-start-figma span{
+  color:#d990ff;
+  font-weight:800;
+}
+
+.curso-seta-figma{
+  text-align:center;
+  font-size:28px;
+  color:#ffffff;
+  opacity:0.8;
+  margin-top:8px;
+  line-height:1;
+}
+
+/* MÓDULOS */
+.figma-modulos-section{
+  padding:18px 18px 38px;
+}
+
+.figma-modulos-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  justify-content:center;
+}
+
+.figma-modulo-card{
+  width:320px;
+  height:345px;
+  background:transparent;
+  border:none;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:none;
+  transition:transform 0.2s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.figma-modulo-card:hover{
+  transform:translateY(-4px);
+}
+
+.figma-modulo-thumb{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.figma-modulo-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+
+.figma-modulo-info{
+  display:none;
+}
+
+.figma-progress{
+  display:none;
+}
+
+.hidden-progress{
+  display:none;
+}

@@ -71,6 +71,7 @@ function getUsuario() {
 function abrirModal() {
   if (!loginModal) return;
   loginModal.classList.add("active");
+  document.body.classList.add("blur-bg");  
   clearMessage();
   ativarEntrar();
 }
@@ -78,12 +79,14 @@ function abrirModal() {
 function fecharModal() {
   if (!loginModal) return;
   loginModal.classList.remove("active");
+  document.body.classList.remove("blur-bg");
   clearMessage();
 }
 
 function abrirModalCadastro() {
   if (!loginModal) return;
   loginModal.classList.add("active");
+  document.body.classList.add("blur-bg"); 
   clearMessage();
   ativarCadastrar();
 }
@@ -160,6 +163,7 @@ function openPayment(planType) {
   if (!paymentModal || !paymentBox) return;
 
   paymentModal.classList.add("active");
+  document.body.classList.add("blur-bg");
   paymentBox.classList.remove("payment-free", "payment-plus", "payment-pro");
 
   if (planType === "free") {
@@ -195,6 +199,7 @@ function openPayment(planType) {
 function fecharPagamento() {
   if (!paymentModal) return;
   paymentModal.classList.remove("active");
+  document.body.classList.remove("blur-bg");
 }
 
 if (authButton) {

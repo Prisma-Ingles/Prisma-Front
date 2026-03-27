@@ -43,7 +43,7 @@ function atualizarUsuarioAula() {
     }
 
     if (authButton) {
-      authButton.textContent = "Entrar";
+      authButton.textContent = "ENTRAR";
     }
   }
 }

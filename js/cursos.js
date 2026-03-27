@@ -36,7 +36,7 @@ function atualizarUsuarioCurso() {
   } else {
     if (userWelcome) userWelcome.textContent = "";
     if (nomeUsuario) nomeUsuario.textContent = "Aluno";
-    if (authButton) authButton.textContent = "Entrar";
+    if (authButton) authButton.textContent = "ENTRAR";
   }
 }
 

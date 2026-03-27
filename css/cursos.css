@@ -1,0 +1,170 @@
+:root{
+  --bg-page:#eef9ff;
+  --hero-bg: linear-gradient(120deg, #F2F7FA, #C7EAFF);
+  --navy:#03123a;
+  --text:#000000;
+  --text-soft:#5d6876;
+  --white:#ffffff;
+  --btn-dark:#1f284c;
+  --btn-border:#7e8a99;
+  --card-bg:#ffffff;
+  --card-blue: linear-gradient(135deg, #E2F2FF, #D4ECFF);
+  --line:#d4d9df;
+  --purple:#4a1e58;
+  --blue:#1f71ef;
+  --shadow-card:0 14px 34px rgba(10,27,52,0.12);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Inter", Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:var(--bg-page);
+  color:var(--text);
+}
+
+.courses-page{
+  min-height:100vh;
+}
+
+.courses-hero-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  height: 180px;
+  width:100%;
+  max-width:none;
+  background:linear-gradient(90deg,rgba(10, 54, 126, 1) 0%, rgba(52, 158, 213, 1) 50%, rgba(52, 158, 213, 1) 80%, rgba(234, 203, 253, 1) 100%);
+  padding:18px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  color:#fff;
+}
+
+.courses-top-label{
+  font-size:15px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.courses-main-title{
+  font-size:42px;
+  font-weight:800;
+  margin-bottom:8px;
+  line-height:1.05;
+}
+
+.courses-main-description{
+  font-size:15px;
+  max-width:700px;
+  line-height:1.5;
+}
+
+.prisma-courses-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:16px;
+  width:100%;
+  max-width:1180px;
+  margin:0 auto;
+  margin-bottom: 80px;
+}
+
+.prisma-course-card{
+  width: 350px;
+  background:#ffffff;
+  border:1px solid #ced6dc;
+  border-radius:6px;
+  overflow:hidden;
+  transition:0.25s ease;
+  box-shadow:0 6px 16px rgba(6,20,42,0.08);
+  cursor:pointer;
+}
+
+.prisma-course-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 30px rgba(0,0,0,0.10);
+}
+
+.prisma-course-top{
+  height: 120px;
+  background:#03123a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.prisma-course-top i{
+  color:#fff;
+  font-size:22px;
+}
+
+.prisma-course-bottom{
+  padding:12px;
+}
+
+.prisma-course-tag{
+  width: max-content;
+  background: #F1F2FE;
+  font-size:9px;
+  color:#8a96a5;
+  margin-bottom:6px;
+  display:block;
+  text-transform:uppercase;
+  font-weight:700;
+  letter-spacing:0.4px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.prisma-course-card h3{
+  font-size:17px;
+  margin-bottom:8px;
+  line-height:1.25;
+}
+
+.prisma-course-card p{
+  font-size:15px;
+  color:#4f5c69;
+  margin-bottom:10px;
+  line-height:1.45;
+}
+
+.prisma-course-card ul{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.prisma-course-card ul li{
+  font-size:9px;
+  color:#7a8795;
+  position:relative;
+  padding-left:10px;
+}
+
+.prisma-course-card ul li::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  top:0;
+  color:#97a3b1;
+}
+
+.prisma-course-card-active,
+.curso-destaque{
+  box-shadow:0 14px 30px rgba(31,113,239,0.18);
+}
+
+.prisma-course-card-active .prisma-course-top,
+.curso-destaque .prisma-course-top{
+  background: #309ED6;
+}
+

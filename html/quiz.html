@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz de Nivelamento | PRISMA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="../css/quiz.css">
+</head>
+<body>
+
+  <main class="quiz-page">
+    <div class="quiz-shell">
+
+      <section class="quiz-box" id="quizBox">
+        <button class="quiz-close" type="button" onclick="window.location.href='index.html'">×</button>
+
+        <p class="quiz-mini-kicker">— QUIZ DE NIVELAMENTO</p>
+        <h1 class="quiz-title">Descubra seu curso ideal</h1>
+        <p class="quiz-subtitle" id="quizSubtitulo">7 perguntas • menos de 2 minutos</p>
+
+        <div class="quiz-line"></div>
+
+        <p class="quiz-question" id="pergunta">Carregando...</p>
+        <p class="quiz-helper" id="quizHelper">Selecione uma ou mais opções</p>
+
+        <div id="opcoes" class="opcoes"></div>
+
+        <div class="quiz-footer">
+          <span class="quiz-step" id="passo">Pergunta 1 de 7</span>
+
+          <div class="quiz-actions">
+            <button id="btnVoltar" class="quiz-btn-link" type="button">VOLTAR</button>
+            <button id="btnProximo" class="quiz-btn-next" type="button" disabled>PRÓXIMO</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="resultado escondido" id="resultadoBox">
+        <button class="quiz-close" type="button" onclick="window.location.href='index.html'">×</button>
+
+        <div class="resultado-icon-wrap">
+          <div class="resultado-sparkles">✦ ✦</div>
+          <div class="resultado-icon">
+            <i class="fa-solid fa-laptop"></i>
+          </div>
+        </div>
+
+        <h2>Perfil Identificado!</h2>
+
+        <p class="resultado-texto">
+          Com base nas suas respostas, identificamos uma trilha mais adequada ao seu perfil.
+        </p>
+
+        <div class="resultado-curso-box">
+          <strong id="cursoResultado">English for Software Development</strong>
+          <span id="textoResultado">
+            Ideal para quem quer desenvolver vocabulário técnico, fluidez e segurança em contextos profissionais de tecnologia.
+          </span>
+        </div>
+
+        <div class="resultado-acoes">
+          <button id="btnVerCursos" class="resultado-btn resultado-btn-primario" type="button">VER CURSOS</button>
+          <button id="btnCadastro" class="resultado-btn resultado-btn-secundario" type="button">REGISTRAR-SE</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="modal escondido" id="modalCadastro">
+    <div class="modal-conteudo">
+      <button id="fecharModal" class="fechar" type="button">×</button>
+      <h3>Criar conta</h3>
+
+      <form id="formCadastro" class="formulario" novalidate>
+        <input id="nome" type="text" placeholder="Seu nome">
+        <input id="email" type="email" placeholder="Seu e-mail">
+        <input id="senha" type="password" placeholder="Sua senha">
+        <input id="confirmarSenha" type="password" placeholder="Confirmar senha">
+        <button class="btn-cadastro" type="submit">Criar conta</button>
+      </form>
+
+      <p id="mensagemCadastro"></p>
+    </div>
+  </div>
+
+  <script src="../js/quiz.js"></script>
+  <script src="../js/vlibras.js"></script>
+</body>
+</html>

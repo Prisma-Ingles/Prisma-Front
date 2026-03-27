@@ -20,7 +20,7 @@ function atualizarUsuarioCurso() {
     if (authButton) authButton.textContent = "Sair";
   } else {
     if (userWelcome) userWelcome.textContent = "";
-    if (authButton) authButton.textContent = "Entrar";
+    if (authButton) authButton.textContent = "ENTRAR";
   }
 }
 
@@ -41,42 +41,42 @@ const cursosData = {
         title: "Fundamentos do Inglês para Programação",
         hours: "10h",
         description: "Introdução ao vocabulário técnico e às estruturas mais usadas no universo da programação.",
-        image: "img/modulo1.png"
+        image: "../img/tl-cursos/modulo1.png"
       },
       {
         id: "software-modulo-2",
         title: "Escrita Técnica em Código",
         hours: "10h",
         description: "Como produzir textos escritos com clareza em commits, issues e pull requests.",
-        image: "img/modulo2.png"
+        image: "../img/tl-cursos/modulo2.png"
       },
       {
         id: "software-modulo-3",
         title: "Leitura de Documentação Técnica",
         hours: "8h",
         description: "Aprenda a navegar por documentações, guias e referências em inglês.",
-        image: "img/modulo3.png"
+        image: "../img/tl-cursos/modulo3.png"
       },
       {
         id: "software-modulo-4",
         title: "Inglês para Ferramentas de Desenvolvimento",
         hours: "12h",
         description: "Vocabulário comum em ferramentas de versionamento, integração e produtividade.",
-        image: "img/modulo4.png"
+        image: "../img/tl-cursos/modulo4.png"
       },
       {
         id: "software-modulo-5",
         title: "Interpretação de Erros e Logs",
         hours: "10h",
         description: "Compreenda mensagens de erro e registros de sistema no contexto do trabalho.",
-        image: "img/modulo5.png"
+        image: "../img/tl-cursos/modulo5.png"
       },
       {
         id: "software-modulo-6",
         title: "Comunicação em Times de Desenvolvimento",
         hours: "5h",
         description: "Expressões usadas em reuniões, code reviews e colaboração técnica.",
-        image: "img/modulo6.png"
+        image: "../img/tl-cursos/modulo6.png"
       }
     ]
   },
@@ -97,42 +97,42 @@ const cursosData = {
         title: "Vocabulary for Data Science",
         hours: "8h",
         description: "Vocabulário essencial para atuar com dados em inglês.",
-        image: "img/modulo1.png"
+        image: "../img/tl-cursos/modulo1.png"
       },
       {
         id: "data-modulo-2",
         title: "English for AI and Machine Learning",
         hours: "10h",
         description: "Termos e expressões usados em IA e ML.",
-        image: "img/modulo2.png"
+        image: "../img/tl-cursos/modulo2.png"
       },
       {
         id: "data-modulo-3",
         title: "Presenting Data Insights",
         hours: "6h",
         description: "Como apresentar insights com clareza.",
-        image: "img/modulo3.png"
+        image: "../img/tl-cursos/modulo3.png"
       },
       {
         id: "data-modulo-4",
         title: "Reading Technical Papers",
         hours: "7h",
         description: "Leitura de artigos e papers técnicos.",
-        image: "img/modulo4.png"
+        image: "../img/tl-cursos/modulo4.png"
       },
       {
         id: "data-modulo-5",
         title: "Writing Reports and Dashboards",
         hours: "5h",
         description: "Relatórios e dashboards em inglês.",
-        image: "img/modulo5.png"
+        image: "../img/tl-cursos/modulo5.png"
       },
       {
         id: "data-modulo-6",
         title: "Communication in Global Data Teams",
         hours: "6h",
         description: "Comunicação em times globais de dados.",
-        image: "img/modulo6.png"
+        image: "../img/tl-cursos/modulo6.png"
       }
     ]
   },
@@ -153,42 +153,42 @@ const cursosData = {
         title: "Cybersecurity Essentials in English",
         hours: "8h",
         description: "Base do inglês técnico em cibersegurança.",
-        image: "img/modulo1.png"
+        image: "../img/tl-cursos/modulo1.png"
       },
       {
         id: "cyber-modulo-2",
         title: "Incident Reports and Communication",
         hours: "7h",
         description: "Relatórios e comunicação de incidentes.",
-        image: "img/modulo2.png"
+        image: "../img/tl-cursos/modulo2.png"
       },
       {
         id: "cyber-modulo-3",
         title: "Risk, Threats and Vulnerabilities",
         hours: "8h",
         description: "Riscos, ameaças e vulnerabilidades.",
-        image: "img/modulo3.png"
+        image: "../img/tl-cursos/modulo3.png"
       },
       {
         id: "cyber-modulo-4",
         title: "Compliance and Governance",
         hours: "6h",
         description: "Governança e compliance em inglês.",
-        image: "img/modulo4.png"
+        image: "../img/tl-cursos/modulo4.png"
       },
       {
         id: "cyber-modulo-5",
         title: "Security Meetings and Presentations",
         hours: "5h",
         description: "Reuniões e apresentações da área.",
-        image: "img/modulo5.png"
+        image: "../img/tl-cursos/modulo5.png"
       },
       {
         id: "cyber-modulo-6",
         title: "Professional Writing for Security Teams",
         hours: "6h",
         description: "Escrita profissional para times de segurança.",
-        image: "img/modulo6.png"
+        image: "../img/tl-cursos/modulo6.png"
       }
     ]
   }
