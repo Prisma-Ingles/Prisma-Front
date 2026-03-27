@@ -157,6 +157,7 @@ margin-bottom: 10px;
     background-color: rgb(235, 245, 250);
     border: 1px solid rgb(191, 219, 250);
     border-radius: 6px;
+    cursor:pointer;
 }
 
 #Assunto_tecnico:focus{
@@ -195,6 +196,14 @@ margin-bottom: 10px;
      border:none;
 
 }
+
+.btn_btn-enviar:hover{
+
+    cursor: pointer;
+    background-color: #011970;
+    transition: 0.5s;
+}
+
 
 .caixacontato label{
 

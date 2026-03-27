@@ -74,6 +74,12 @@ color: white;
 
 }
 
+.seucertificado:hover {
+    transition: 0.3s;
+    transform: translateY(-15px);
+    cursor: pointer;
+}
+
 .seucertificado .conteudo{
 
     display: flex;
@@ -119,4 +125,17 @@ color: white;
 .seucertificadobloqueado h3{
 
     display: none;
+}
+
+.seucertificadobloqueado:hover{
+
+    transform: none;
+    cursor:auto;
+}
+
+.seucertificadobloqueado p:hover{
+
+    cursor: pointer;
+    transform: translateY(-5px);
+    transition: 0.3s;
 }
