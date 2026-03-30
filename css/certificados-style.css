@@ -236,3 +236,16 @@ body{
 .btn-certificado:hover {
     background-color: #003cff;
 }
+
+@media(max-width: 1100px){
+
+    .fileira-certificados{
+
+    flex-direction: column;
+}
+
+  .seucertificado{
+
+    width: 98%;
+  }
+}

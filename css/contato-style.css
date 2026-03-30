@@ -9,27 +9,13 @@ body {
     height: 60px;
 }
 
-.Icone-h3 {
-    display: flex;
-
-}
-
-.Icone-h3 img {
-    width: 25px;
-    margin-right: 10px;
-}
-
-.botoes p {
-    margin-left: 35px;
-}
-
 
 #cabecalho-suporte {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
-    height: 180px;
+    gap: 20px;
+    height: 100%;
     width: 100%;
     max-width: none;
     background: linear-gradient(90deg, rgba(10, 54, 126, 1) 0%, rgba(52, 158, 213, 1) 50%, rgba(52, 158, 213, 1) 80%, rgba(234, 203, 253, 1) 100%);
@@ -40,20 +26,20 @@ body {
 }
 
 .contato-top-label {
-    font-size: 15px;
+    font-size: 25px;
     text-transform: uppercase;
     margin-bottom: 8px;
 }
 
 .contato-title {
-    font-size: 42px;
+    font-size: 40px;
     font-weight: 800;
     margin-bottom: 8px;
     line-height: 1.05;
 }
 
 .contato-description {
-    font-size: 15px;
+    font-size: 20px;
     max-width: 700px;
     line-height: 1.5;
 }
@@ -69,16 +55,27 @@ body {
     margin: 80px 0px;
 }
 
-.botoesSuporte {
-
-    width: 500px;
+.Icone-h3 {
+    display: flex;
 
 }
 
+.Icone-h3 img {
+    width: 25px;
+    margin-right: 10px;
+}
 
-.botoesSuporte p {
-
+.botoes p {
+    margin-left: 35px;
     color: rgb(105, 103, 103);
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.botoes h3{
+
+    font-weight: 800;
+    font-size: 17px;
 
 }
 
@@ -90,28 +87,9 @@ body {
     margin-bottom: 20px;
     border-radius: 20px;
     border: 2px solid rgb(191, 219, 250);
+    width: 500px;
 }
 
-.botoesSuporte div i {
-
-    font-size: 30px;
-    padding-bottom: 10px;
-
-}
-
-
-.botoesSuporte div h3 {
-
-    font-weight: 800;
-    font-size: 17px;
-
-}
-
-.botoesSuporte div p {
-
-    font-weight: 700;
-    font-size: 17px;
-}
 
 
 .caixaMensagem {
@@ -228,5 +206,78 @@ body {
     font-size: 17px;
     font-weight: bold;
     color: rgb(148, 148, 148);
+
+}
+
+@media(max-width: 1000px){
+
+
+.botoesSuporte .botoes {
+
+    width: 98%;
+    margin-right: 250px;
+
+}
+
+
+.botoes h3 {
+    font-size: 45px;
+
+}
+
+.botoes p {
+
+    font-size: 45px;
+    margin-left: 10%;
+}
+
+.Icone-h3 img{
+
+    width: 60px;
+}
+
+
+.caixaMensagem h3 {
+    font-size: 50px;
+}
+
+.formulariocontato {
+    width: 96%;
+
+}
+
+.nome_email {
+
+    flex-direction: column;
+}
+
+.inputs {
+
+    font-size: 50px;
+    width: 100%;
+}
+
+.formulariocontato label{
+
+    font-size: 40px;
+    padding: 25px 0px;
+}
+
+#Assunto_tecnico {
+
+    font-size: 50px;
+}
+
+#mensagemcaixa {
+
+    font-size: 50px;
+    height: 400px;
+}
+
+.btn_btn-enviar {
+
+
+font-size: 50px;
+}
 
 }
