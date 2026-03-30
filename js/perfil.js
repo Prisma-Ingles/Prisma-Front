@@ -1,4 +1,4 @@
-// ================= USUÁRIO =================
+
 const user = JSON.parse(localStorage.getItem("usuarioCadastrado"));
 
 const nomeEl = document.getElementById("nomeUsuario");
@@ -29,7 +29,7 @@ if(user){
     };
 }
 
-// ================= CURSOS =================
+
 const courses = [
     { title: "English for Software Development", progress: 72, modules: "7 de 10" },
     { title: "English for Data Science & AI", progress: 45, modules: "4 de 10" },

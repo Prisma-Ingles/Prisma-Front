@@ -61,7 +61,6 @@ input{
   margin:0 auto;
 }
 
-/* ANIMAÇÕES */
 .reveal{
   opacity:0;
   transform:translateY(28px);
@@ -74,9 +73,6 @@ input{
   transform:translateY(0);
 }
 
-
-
-/* HERO */
 .hero-prisma{
   background:var(--bg-page);
   padding:0px;
@@ -209,8 +205,6 @@ input{
   font-weight:700;
 }
 
-
-/* STATS */
 .hero-stats-bar{
   background:#ffffff;
   border-top:1px solid #d8dee5;
@@ -253,7 +247,6 @@ input{
   color:#8c97a3;
 }
 
-/* SEÇÕES */
 .section-light{
   background:var(--bg-page);
   padding:44px 18px 54px;
@@ -304,7 +297,6 @@ input{
   margin-bottom:18px;
 }
 
-/* CARDS */
 .cards-grid{
   display:grid;
   gap:10px;
@@ -361,7 +353,6 @@ input{
   background:var(--card-blue);
 }
 
-/* PLANOS */
 .plans-section{
   background:var(--bg-page);
   padding:42px 0px 54px;
@@ -406,8 +397,6 @@ input{
   flex-direction:column;
   justify-content:flex-start;
 }
-
-/* ===== PLANOS ===== */
 
 .plan-card{
   width:340px;
@@ -622,7 +611,7 @@ input{
   margin-top:auto;
 }
 
-/* CTA FINAL */
+
 .final-cta{
   background:linear-gradient(180deg,#83b3eb,#709fd8);
   padding:90px 18px 90px;
@@ -651,7 +640,6 @@ input{
   border-radius: 20px;
 }
 
-/* MODAL */
 .modal-overlay{
   position:fixed;
   inset:0;
@@ -820,7 +808,7 @@ input{
   color:#16a34a;
 }
 
-/* HOVERS */
+
 .btn-primary:hover,
 .btn-secondary:hover,
 .btn-white:hover,
@@ -833,7 +821,7 @@ input{
   transform:translateY(-4px) scale(1.01);
 }
 
-/* RESPONSIVO */
+
 @media (max-width:900px){
   .hero-container{
     grid-template-columns:1fr;
@@ -921,7 +909,6 @@ input{
   }
 }
 
-/* ===== AULA / QUIZ / SIDEBAR DO CURSO ===== */
 
 .curso-aula-section{
   padding:24px 18px 42px;
@@ -1151,7 +1138,7 @@ input{
   gap:10px;
 }
 
-/* ===== QUIZ ===== */
+/* QUIZ */
 
 .quiz-actions{
   display:flex;
@@ -1230,7 +1217,6 @@ input{
   transform:translateY(-1px);
 }
 
-/* QUANDO SELECIONADO */
 .answer-chip.selected{
   background:#000824;
   box-shadow:0 0 0 2px rgba(255,255,255,0.4) inset;
@@ -1241,7 +1227,6 @@ input{
   border:2px solid #202020;
 }
 
-/* DOTS */
 .quiz-dots span{
   opacity:0.4;
   transition:0.2s ease;
@@ -1477,46 +1462,6 @@ input{
   color:#6b7687;
 }
 
-/* QUIZ */
-.curso-quiz-card,
-.curso-quiz-header,
-.curso-quiz-body,
-.curso-quiz-top,
-.curso-quiz-badge,
-.curso-quiz-progress,
-.curso-quiz-question,
-.curso-code-box,
-.curso-quiz-options,
-.curso-quiz-option,
-.curso-quiz-number,
-.curso-quiz-text,
-.curso-quiz-feedback,
-.feedback-chip,
-.feedback-neutral,
-.feedback-correct,
-.feedback-good,
-.curso-quiz-footer,
-.curso-quiz-next,
-.figma-style,
-.figma-header,
-.figma-quiz-top,
-.figma-code-box,
-.figma-instruction,
-.figma-options-wrapper,
-.figma-option-row,
-.figma-option-left,
-.figma-letter,
-.figma-text,
-.figma-answer-buttons,
-.figma-btn,
-.figma-footer,
-.figma-next{
-  
-}
-
-
-
-/* AJUSTES EXTRAS */
 .modulo-clicavel{
   cursor:pointer;
 }
@@ -1525,7 +1470,6 @@ input{
   transform:translateY(-4px);
 }
 
-/* AJUSTES EXTRAS */
 .modulo-clicavel{
   cursor:pointer;
 }
@@ -1534,7 +1478,6 @@ input{
   transform:translateY(-4px);
 }
 
-/* RESPONSIVO */
 @media (max-width:1000px){
 
   .curso-aula-container{
@@ -1560,7 +1503,6 @@ input{
 
 }
 
-/* RESPONSIVO */
 @media (max-width:900px){
 
  .hero-container{
@@ -1656,7 +1598,7 @@ input{
 
 }
 
-/* MOBILE */
+
 @media (max-width:640px){
 
   .hero-prisma{
@@ -1887,10 +1829,6 @@ input{
   white-space:nowrap !important;
 }
 
-
-/* =========================
-   MODAL DE PAGAMENTO 
-========================= */
 
 .payment-modal{
   position:fixed;

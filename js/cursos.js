@@ -68,7 +68,6 @@ function destacarCursoIdeal() {
 function abrirCurso(courseName) {
   if (!courseName) return;
 
-  // Apenas "English for Software Development" redireciona
   if (courseName !== "English for Software Development") {
     return;
   }

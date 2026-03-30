@@ -1,70 +1,65 @@
-/* contato-style.css */
 
-body{
-
+body {
     background-color: #eef9ff;
 }
 
-.logo img{
+.logo img {
 
     width: 70px;
     height: 60px;
 }
 
-.Icone-h3{
+.Icone-h3 {
     display: flex;
 
 }
 
-.Icone-h3 img{
+.Icone-h3 img {
     width: 25px;
     margin-right: 10px;
 }
 
-.botoes p{
-
+.botoes p {
     margin-left: 35px;
-    /* border: 1px solid rgb(238, 255, 0); */
-
 }
 
 
-#cabecalho-suporte{
+#cabecalho-suporte {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
-  height: 180px;
-  width:100%;
-  max-width:none;
-  background:linear-gradient(90deg,rgba(10, 54, 126, 1) 0%, rgba(52, 158, 213, 1) 50%, rgba(52, 158, 213, 1) 80%, rgba(234, 203, 253, 1) 100%);
-  padding:18px;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  color:#fff;
+    height: 180px;
+    width: 100%;
+    max-width: none;
+    background: linear-gradient(90deg, rgba(10, 54, 126, 1) 0%, rgba(52, 158, 213, 1) 50%, rgba(52, 158, 213, 1) 80%, rgba(234, 203, 253, 1) 100%);
+    padding: 18px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    color: #fff;
 }
 
-.contato-top-label{
-  font-size:15px;
-  text-transform:uppercase;
-  margin-bottom:8px;
+.contato-top-label {
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
 }
 
-.contato-title{
-  font-size:42px;
-  font-weight:800;
-  margin-bottom:8px;
-  line-height:1.05;
+.contato-title {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    line-height: 1.05;
 }
 
-.contato-description{
-  font-size:15px;
-  max-width:700px;
-  line-height:1.5;
+.contato-description {
+    font-size: 15px;
+    max-width: 700px;
+    line-height: 1.5;
 }
 
 
-.nossoscontatos{
+.nossoscontatos {
 
     display: flex;
     justify-content: space-around;
@@ -74,21 +69,21 @@ body{
     margin: 80px 0px;
 }
 
-.botoesSuporte{
+.botoesSuporte {
 
     width: 500px;
 
 }
 
 
-.botoesSuporte p{
+.botoesSuporte p {
 
     color: rgb(105, 103, 103);
 
 }
 
 
-.botoesSuporte .botoes{
+.botoesSuporte .botoes {
 
     background-color: rgb(255, 255, 255);
     padding: 25px;
@@ -97,7 +92,7 @@ body{
     border: 2px solid rgb(191, 219, 250);
 }
 
-.botoesSuporte div i{
+.botoesSuporte div i {
 
     font-size: 30px;
     padding-bottom: 10px;
@@ -105,21 +100,21 @@ body{
 }
 
 
-.botoesSuporte div h3{
+.botoesSuporte div h3 {
 
     font-weight: 800;
     font-size: 17px;
 
 }
 
-.botoesSuporte div p{
+.botoesSuporte div p {
 
     font-weight: 700;
     font-size: 17px;
 }
 
 
-.caixaMensagem{
+.caixaMensagem {
 
     background-color: rgb(255, 255, 255);
     height: 100%;
@@ -128,23 +123,23 @@ body{
     border: 2px solid rgb(191, 219, 250);
 }
 
-.caixaMensagem h3{
+.caixaMensagem h3 {
 
     padding: 20px 0px;
     font-weight: 800;
-    color:rgb(0, 102, 255);
+    color: rgb(0, 102, 255);
 }
 
 .formulariocontato {
-    width:500px;
-    padding:10px;
-    
+    width: 500px;
+    padding: 10px;
+
 
 }
 
-.inputs{
+.inputs {
 
-    padding:10px;
+    padding: 10px;
     border-radius: 6px;
     border: 1px solid rgb(191, 219, 250);
     outline: none;
@@ -157,14 +152,14 @@ body{
 
 }
 
-.nome_email{
+.nome_email {
 
-display: flex; 
-gap:20px;
-margin-bottom: 10px;
-} 
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
 
-#Assunto_tecnico{
+#Assunto_tecnico {
 
     width: 100%;
     padding: 10px;
@@ -176,13 +171,13 @@ margin-bottom: 10px;
     border-radius: 6px;
 }
 
-#Assunto_tecnico:focus{
+#Assunto_tecnico:focus {
 
-    outline:none;
+    outline: none;
 }
 
 
-#mensagemcaixa{
+#mensagemcaixa {
 
     width: 100%;
     height: 200px;
@@ -195,25 +190,25 @@ margin-bottom: 10px;
     border-radius: 6px;
 }
 
-#mensagemcaixa:focus{
+#mensagemcaixa:focus {
 
-    outline:none;
+    outline: none;
 }
 
 
 
-.btn_btn-enviar{
+.btn_btn-enviar {
 
-     width: 100%;
-     padding: 10px;
-     border-radius: 6px;
-     color: white;
-     background-color: #000824;
-     border:none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+    background-color: #000824;
+    border: none;
 
 }
 
-.caixacontato label{
+.caixacontato label {
 
     display: block;
     padding: 10px 0px;

@@ -1,52 +1,50 @@
-body{
-
+body {
     background-color: #ddfcf9;
 }
 
 
-.logo img{
-
+.logo img {
     width: 70px;
     height: 60px;
 }
 
 
-#cabecalho-certificados{
+#cabecalho-certificados {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
-  height: 180px;
-  width:100%;
-  max-width:none;
-  background:linear-gradient(90deg,rgba(10, 54, 126, 1) 0%, rgba(52, 158, 213, 1) 50%, rgba(52, 158, 213, 1) 80%, rgba(234, 203, 253, 1) 100%);
-  padding:18px;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  color:#fff;
+    height: 180px;
+    width: 100%;
+    max-width: none;
+    background: linear-gradient(90deg, rgba(10, 54, 126, 1) 0%, rgba(52, 158, 213, 1) 50%, rgba(52, 158, 213, 1) 80%, rgba(234, 203, 253, 1) 100%);
+    padding: 18px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    color: #fff;
 }
 
-.certificados-top-label{
-  font-size:15px;
-  text-transform:uppercase;
-  margin-bottom:8px;
+.certificados-top-label {
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
 }
 
-.certificados-title{
-  font-size:42px;
-  font-weight:800;
-  margin-bottom:8px;
-  line-height:1.05;
+.certificados-title {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    line-height: 1.05;
 }
 
-.certificados-description{
-  font-size:15px;
-  max-width:700px;
-  line-height:1.5;
+.certificados-description {
+    font-size: 15px;
+    max-width: 700px;
+    line-height: 1.5;
 }
 
 
-.comofunciona{
+.comofunciona {
 
     margin: 50px 80px;
     background-color: rgb(219, 236, 255);
@@ -55,25 +53,25 @@ body{
     border-radius: 10px;
 }
 
-.comofunciona .icone-texto{
+.comofunciona .icone-texto {
 
     display: flex;
     gap: 20px;
 
 }
 
-.certificados{
+.certificados {
 
     margin-bottom: 200px;
 }
 
-.icone-texto img{
+.icone-texto img {
 
     width: 40px;
     height: 40px;
 }
 
-.fileira-certificados{
+.fileira-certificados {
 
     display: flex;
     justify-content: space-between;
@@ -81,7 +79,7 @@ body{
     margin: 50px 50px;
 }
 
-.seucertificado{
+.seucertificado {
 
     width: 28%;
     padding: 30px 25px;
@@ -94,23 +92,23 @@ body{
 
 }
 
-.seucertificado .conteudo{
+.seucertificado .conteudo {
 
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 12px;
-    
+
 }
 
-.seucertificado img{
+.seucertificado img {
 
-    width:40px;
+    width: 40px;
     height: 40px;
     margin: auto;
 }
 
 
-.seucertificado h3{
+.seucertificado h3 {
 
     font-size: 16px;
     padding: 8px;
@@ -120,7 +118,7 @@ body{
     box-shadow: 1px 2px 8px -2px #828282;
 }
 
-.seucertificado h4{
+.seucertificado h4 {
 
     padding-top: 10px;
     font-size: 14px;
@@ -194,7 +192,7 @@ body{
     background: #4b5563;
 }
 
-.seucertificadobloqueado .conteudo{
+.seucertificadobloqueado .conteudo {
 
     background-color: #95b9da;
     color: black;
@@ -204,7 +202,7 @@ body{
 }
 
 
-.seucertificadobloqueado h3{
+.seucertificadobloqueado h3 {
 
     display: none;
 }

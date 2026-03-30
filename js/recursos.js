@@ -1,4 +1,3 @@
-// BOTÕES DE AÇÃO DOS CARDS
 document.querySelectorAll('.btn-download').forEach(button => {
     button.addEventListener('click', function () {
 
@@ -10,7 +9,6 @@ document.querySelectorAll('.btn-download').forEach(button => {
             return;
         }
 
-        // Simulação de ação
         alert(`Iniciando ação: ${titulo}`);
     });
 });

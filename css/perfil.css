@@ -24,7 +24,6 @@ body {
     margin:0 auto;
 }
 
-/* Hero Section */
 .hero {
     display: flex;
     flex-direction: column;
@@ -59,7 +58,6 @@ body {
     padding-bottom: 250px;
 }
 
-/* Cards Grid */
 .profile-card {
     background: white;
     width: 80%;
