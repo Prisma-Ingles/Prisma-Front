@@ -27,7 +27,7 @@ body {
   background:linear-gradient(90deg,rgba(10, 54, 126, 1) 0%, rgba(52, 158, 213, 1) 50%, rgba(52, 158, 213, 1) 80%, rgba(234, 203, 253, 1) 100%);
   padding:18px;
   margin-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   color:#fff;
 }
 
@@ -52,7 +52,7 @@ body {
 
 /* CARDS */
 .content {
-    padding: 60px 0 120px;
+    padding: 10px 0 120px;
 }
 
 .cards-grid {

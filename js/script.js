@@ -64,12 +64,20 @@ function clearMessage() {
 }
 
 function getUsuario() {
+  const logado = localStorage.getItem("usuarioLogado");
+
+  if (!logado) return null;
+
   const usuarioSalvo = localStorage.getItem("usuarioCadastrado");
   return usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
 }
 
 function abrirModal() {
-  if (!loginModal) return;
+  if (!loginModal) {
+    window.location.href = "../index.html#login";
+    return;
+  }
+
   loginModal.classList.add("active");
   document.body.classList.add("blur-bg");  
   clearMessage();
@@ -84,7 +92,11 @@ function fecharModal() {
 }
 
 function abrirModalCadastro() {
-  if (!loginModal) return;
+  if (!loginModal) {
+    window.location.href = "../index.html#login";
+    return;
+  }
+
   loginModal.classList.add("active");
   document.body.classList.add("blur-bg"); 
   clearMessage();
@@ -207,8 +219,12 @@ if (authButton) {
     const usuario = getUsuario();
 
     if (usuario) {
-      localStorage.removeItem("usuarioCadastrado");
-      atualizarUsuario();
+      localStorage.removeItem("usuarioLogado");
+      localStorage.removeItem("cursoIdeal");
+      localStorage.removeItem("descricaoCursoIdeal");
+      localStorage.removeItem("respostasQuiz");
+      localStorage.removeItem("cursoSelecionado");
+      window.location.href = "../index.html";
     } else {
       abrirModal();
     }
@@ -251,7 +267,8 @@ if (formEntrar) {
       return;
     }
 
-    const usuario = getUsuario();
+    const usuarioSalvo = localStorage.getItem("usuarioCadastrado");
+    const usuario = usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
 
     if (!usuario) {
       showMessage("Nenhuma conta cadastrada ainda.", "error");
@@ -264,11 +281,11 @@ if (formEntrar) {
     }
 
     showMessage("Login realizado com sucesso!", "success");
-
+    localStorage.setItem("usuarioLogado", "true");  
     setTimeout(() => {
       fecharModal();
       atualizarUsuario();
-      window.location.href = "cursos.html";
+      window.location.href = "./html/cursos.html";
     }, 900);
   });
 }
@@ -306,12 +323,15 @@ if (formCadastrar) {
       })
     );
 
+    localStorage.setItem("usuarioLogado", "true");
+    atualizarUsuario();
+
     showMessage("Conta criada com sucesso!", "success");
 
     setTimeout(() => {
       fecharModal();
       atualizarUsuario();
-      window.location.href = "cursos.html";
+      window.location.href = "./html/cursos.html";
     }, 900);
   });
 }
@@ -363,4 +383,10 @@ window.addEventListener("scroll", function () {
 window.addEventListener("load", () => {
   revealOnScroll();
   atualizarUsuario();
+
+ if (window.location.hash === "#login") {
+  setTimeout(() => {
+    abrirModal();
+  }, 100);
+}
 });

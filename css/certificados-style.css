@@ -77,14 +77,17 @@ body{
 
     display: flex;
     justify-content: space-between;
+    gap: 10px;
     margin: 50px 50px;
 }
 
 .seucertificado{
 
-    width: 32%;
+    width: 28%;
+    padding: 30px 25px;
     background-color: white;
-    padding:50px 20px;
+    transform: scale(1.0);
+    transform-origin: top center;
     text-align: center;
     border-radius: 20px;
     border: 1px solid #373838;
@@ -95,7 +98,7 @@ body{
 
     display: flex;
     flex-direction: column; 
-     gap: 12px;
+    gap: 12px;
     
 }
 
@@ -114,7 +117,7 @@ body{
     background-color: rgb(244, 244, 244);
     margin: auto;
     border-radius: 50px;
-    box-shadow: 1px 7px 15px -2px #828282;
+    box-shadow: 1px 2px 8px -2px #828282;
 }
 
 .seucertificado h4{
@@ -122,6 +125,73 @@ body{
     padding-top: 10px;
     font-size: 14px;
     font-weight: 900;
+}
+
+
+
+#modal-certificado {
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.15);
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-certificado-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 620px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-certificado-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-certificado-img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+.modal-certificado-download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+    background: #6b7280;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-certificado-download:hover {
+    background: #4b5563;
 }
 
 .seucertificadobloqueado .conteudo{
@@ -133,7 +203,24 @@ body{
     padding: 20px 0px;
 }
 
+
 .seucertificadobloqueado h3{
 
     display: none;
+}
+
+.btn-certificado {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #000824;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-certificado:hover {
+    background-color: #5FA3FD;
 }

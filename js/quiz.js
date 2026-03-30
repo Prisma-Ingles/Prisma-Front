@@ -151,75 +151,10 @@ function alternarOpcao(index) {
 }
 
 function calcularCursoIdeal() {
-  const respostasArea = respostas[0];
-
-  if (respostasArea.includes(0)) {
-    return {
-      curso: "English for Software Development",
-      descricao:
-        "Ideal para quem quer desenvolver vocabulário técnico, fluidez e segurança em contextos profissionais de tecnologia.",
-      cursoInterno: "English for Software Development"
-    };
-  }
-
-  if (respostasArea.includes(1)) {
-    return {
-      curso: "English for Healthcare Professionals",
-      descricao:
-        "Indicado para profissionais da saúde que precisam de comunicação clínica, técnica e internacional.",
-      cursoInterno: "English for Healthcare Professionals"
-    };
-  }
-
-  if (respostasArea.includes(2)) {
-    return {
-      curso: "English for Law & Legal",
-      descricao:
-        "Uma trilha focada em linguagem jurídica, contratos, compliance e comunicação formal.",
-      cursoInterno: "English for Law & Legal"
-    };
-  }
-
-  if (respostasArea.includes(3)) {
-    return {
-      curso: "English for Finance & Banking",
-      descricao:
-        "Indicada para quem atua com bancos, relatórios executivos e comunicação internacional no mercado financeiro.",
-      cursoInterno: "English for Finance & Banking"
-    };
-  }
-
-  if (respostasArea.includes(4)) {
-    return {
-      curso: "English for Tourism & Hospitality",
-      descricao:
-        "Ideal para hotelaria, turismo, atendimento, reservas e experiência do cliente em contexto internacional.",
-      cursoInterno: "English for Tourism & Hospitality"
-    };
-  }
-
-  if (respostasArea.includes(5)) {
-    return {
-      curso: "English for Marketing & Sales",
-      descricao:
-        "Trilha recomendada para marketing, vendas, publicidade e relacionamento com clientes e parceiros globais.",
-      cursoInterno: "English for Marketing & Sales"
-    };
-  }
-
-  if (respostasArea.includes(6)) {
-    return {
-      curso: "English for Manufacturing & Engineering",
-      descricao:
-        "Indicado para operações, engenharia, processos produtivos e comunicação técnica no ambiente industrial.",
-      cursoInterno: "English for Manufacturing & Engineering"
-    };
-  }
-
   return {
     curso: "English for Software Development",
     descricao:
-      "Ideal para quem quer desenvolver vocabulário técnico, fluidez e segurança em contextos profissionais.",
+      "Ideal para quem quer desenvolver vocabulário técnico, fluidez e segurança em contextos profissionais de tecnologia.",
     cursoInterno: "English for Software Development"
   };
 }

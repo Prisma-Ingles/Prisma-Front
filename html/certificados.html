@@ -1,4 +1,3 @@
-<!-- Certificados.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,9 +6,11 @@
   <title>Certificados</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="../css/certificados-style.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/header.css">
@@ -18,281 +19,329 @@
 </head>
 
 <body>
-  
 
-    <nav class="header" id="header">
+
+  <nav class="header" id="header">
     <div class="container header-content">
       <a href="../index.html" aria-label="PRISMA">
         <img src="../img/prisma/logo-prisma-3.png" alt="Logo Prisma" class="logo-img">
       </a>
 
-       <ul class="header-links">
+      <ul class="header-links">
         <li><a href="../index.html">INÍCIO</a></li>
         <li><a href="cursos.html">CURSOS</a></li>
-        <li><a href="certificados.html"class="active">CERTIFICADOS</a></li>
+        <li><a href="certificados.html" class="active">CERTIFICADOS</a></li>
         <li><a href="recursos.html">RECURSOS</a></li>
         <li><a href="perfil.html">PERFIL</a></li>
         <li><a href="contato.html">CONTATO</a></li>
       </ul>
-
-      <div class="header-auth">
+        <div class="header-auth">
         <span id="userWelcome" class="user-welcome"></span>
         <button class="btn-entrar" id="authButton" type="button">ENTRAR</button>
       </div>
     </div>
   </nav>
 
-    <div id="cabecalho-certificados">
-      <p class="certificados-top-label">— RECONHECIMENTO PROFISSIONAL</p>
-      <h1 class="certificados-title">
-        Seus Certificados
-      </h1>
-      <p class="certificados-description">Comprove seu dominio do ingles profissional com certificados.</p>
+  <div id="cabecalho-certificados">
+    <p class="certificados-top-label">— RECONHECIMENTO PROFISSIONAL</p>
+    <h1 class="certificados-title">
+      Seus Certificados
+    </h1>
+    <p class="certificados-description">Comprove seu dominio do ingles profissional com certificados.</p>
+  </div>
+
+
+  <div class="comofunciona">
+    <div class="icone-texto">
+      <img src="../img/certificados-fotos/simbolo-lampada.png" alt="simbolo de lampada">
+      <p><strong>Como Funciona:</strong> Conclua o curso e a prova final (nota minima 70%), em seguida, <a href="../index.html#planos"><strong>caso não tenha plano</strong></a>, pague R$30.00
+        para emitir o certificado em PDF com QR Code de validação.</p>
     </div>
 
+  </div>
 
-    <div class="comofunciona">
-      <div class="icone-texto">
-        <img src="../img/certificados-fotos/simbolo-lampada.png" alt="simbolo de lampada">
-        <p><strong>Como Funciona:</strong> Conclua o curso e a prova final (nota minima 70%), em seguida, pague R$30.00
-          para emitir o certificado em PDF com QR Code de validação.Pronto para LinkedIn e currículo.</p>
+  <section class="certificados">
+
+    <article class="fileira-certificados">
+
+      <div class="seucertificado">
+
+        <div class="conteudo">
+
+          <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
+
+          <h3>TECNOLOGIA</h3>
+
+          <h4>English for Software Development</h4>
+
+          <p>Certificado oficial Prisma. Reconhecido em currículos e no LinkedIn</p>
+
+          <button class="btn-certificado" onclick="abrirModalCertificado()"
+            style="margin-top:16px; background:#000; color:#fff; padding:12px 28px; border-radius:25px; border:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:14px; font-weight:600; width:100%; transition:background 0.3s;">VISUALIZAR
+            CERTIFICADO</button>
+
+        </div>
+
       </div>
 
+      <div class="seucertificado seucertificadobloqueado">
+
+        <div class="conteudo">
+
+          <img src="../img/certificados-fotos/icone-cadeado.png" alt="icone de computador">
+          <h3>TECNOLOGIA</h3>
+
+          <h4>English for Software Development</h4>
+
+          <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
+
+        </div>
+
+      </div>
+
+      <div class="seucertificado seucertificadobloqueado">
+
+        <div class="conteudo">
+
+          <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
+
+          <h3>TECNOLOGIA</h3>
+
+          <h4>English for Software Development</h4>
+
+          <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- segunda fileira dos certificados -->
+
+    <article class="fileira-certificados">
+
+      <div class="seucertificado seucertificadobloqueado">
+
+        <div class="conteudo">
+
+          <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
+
+          <h3>TECNOLOGIA</h3>
+
+          <h4>English for Software Development</h4>
+
+          <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
+
+        </div>
+
+      </div>
+      <div class="seucertificado seucertificadobloqueado">
+
+        <div class="conteudo">
+
+          <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
+
+          <h3>TECNOLOGIA</h3>
+
+          <h4>English for Software Development</h4>
+
+          <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
+
+        </div>
+
+      </div>
+
+      <div class="seucertificado seucertificadobloqueado">
+
+        <div class="conteudo">
+
+          <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
+
+          <h3>TECNOLOGIA</h3>
+
+          <h4>English for Software Development</h4>
+
+          <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- terceira fileira de certificados -->
+
+
+    <article class="fileira-certificados">
+
+      <div class="seucertificado seucertificadobloqueado">
+
+        <div class="conteudo">
+
+          <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
+
+          <h3>TECNOLOGIA</h3>
+
+          <h4>English for Software Development</h4>
+
+          <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
+
+        </div>
+
+      </div>
+      <div class="seucertificado seucertificadobloqueado">
+
+        <div class="conteudo">
+
+          <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
+
+          <h3>TECNOLOGIA</h3>
+
+          <h4>English for Software Development</h4>
+
+          <p>Certificado oficial Prisma com QR Code de validação.Reconhecido em currículos e no LinkedIn</p>
+
+        </div>
+
+      </div>
+
+      <div class="seucertificado seucertificadobloqueado">
+
+        <div class="conteudo">
+
+          <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
+
+          <h3>TECNOLOGIA</h3>
+
+          <h4>English for Software Development</h4>
+
+          <p>Certificado oficial Prisma com QR Code de validação.Reconhecido em currículos e no LinkedIn</p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- quarta fileira de certificados -->
+
+    <article class="fileira-certificados">
+
+      <div class="seucertificado seucertificadobloqueado">
+
+        <div class="conteudo">
+
+          <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
+
+          <h3>TECNOLOGIA</h3>
+
+          <h4>English for Software Development</h4>
+
+          <p>Certificado oficial Prisma com QR Code de validação.Reconhecido em currículos e no LinkedIn</p>
+
+        </div>
+
+      </div>
+
+
+    </article>
+
+  </section>
+
+  <!-- modal do certificado -->
+  <div id="modal-certificado">
+    <div class="modal-certificado-box">
+      <button onclick="fecharModalCertificado()" class="modal-certificado-close">✕</button>
+      <img src="../img/certificados-conclusao/CERTIFICADO_PRISMA.jpg" alt="Certificado Prisma" class="modal-certificado-img">
+      <a href="../img/certificados-conclusao/CERTIFICADO_PRISMA.pdf" download="CERTIFICADO PRISMA.pdf" class="modal-certificado-download">⬇ Download</a>
     </div>
+  </div>
 
-    <section class="certificados">
 
-      <article class="fileira-certificados">
-
-        <div class="seucertificado">
-
-          <div class="conteudo">
-
-            <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
-
-            <h3>TECNOLOGIA</h3>
-
-            <h4>English for Software Development</h4>
-
-            <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
-
-          </div>
-
+  <footer class="prisma-final-footer">
+    <div class="footer-shell">
+      <div class="footer-left">
+        <div class="footer-column">
+          <h4>PRECISA DE AJUDA?</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Plano de aula</a>
+          <a href="#">Conheça-nos</a>
         </div>
 
-        <div class="seucertificado seucertificadobloqueado">
-
-          <div class="conteudo">
-
-            <img src="../img/certificados-fotos/icone-cadeado.png" alt="icone de computador">
-
-            <h3>TECNOLOGIA</h3>
-
-            <h4>English for Software Development</h4>
-
-            <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
-
-          </div>
-
-        </div>
-
-        <div class="seucertificado seucertificadobloqueado">
-
-          <div class="conteudo">
-
-            <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
-
-            <h3>TECNOLOGIA</h3>
-
-            <h4>English for Software Development</h4>
-
-            <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- segunda fileira dos certificados -->
-
-      <article class="fileira-certificados">
-
-        <div class="seucertificado seucertificadobloqueado">
-
-          <div class="conteudo">
-
-            <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
-
-            <h3>TECNOLOGIA</h3>
-
-            <h4>English for Software Development</h4>
-
-            <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
-
-          </div>
-
-        </div>
-
-        <div class="seucertificado seucertificadobloqueado">
-
-          <div class="conteudo">
-
-            <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
-
-            <h3>TECNOLOGIA</h3>
-
-            <h4>English for Software Development</h4>
-
-            <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
-
-          </div>
-
-        </div>
-
-        <div class="seucertificado seucertificadobloqueado">
-
-          <div class="conteudo">
-
-            <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
-
-            <h3>TECNOLOGIA</h3>
-
-            <h4>English for Software Development</h4>
-
-            <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- terceira fileira de certificados -->
-
-
-      <article class="fileira-certificados">
-
-        <div class="seucertificado seucertificadobloqueado">
-
-          <div class="conteudo">
-
-            <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
-
-            <h3>TECNOLOGIA</h3>
-
-            <h4>English for Software Development</h4>
-
-            <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
-
-          </div>
-
-        </div>
-
-        <div class="seucertificado seucertificadobloqueado">
-
-          <div class="conteudo">
-
-            <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
-
-            <h3>TECNOLOGIA</h3>
-
-            <h4>English for Software Development</h4>
-
-            <p>Certificado oficial Prisma com QR Code de validação.Reconhecido em currículos e no LinkedIn</p>
-
-          </div>
-
-        </div>
-
-        <div class="seucertificado seucertificadobloqueado">
-
-          <div class="conteudo">
-
-            <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
-
-            <h3>TECNOLOGIA</h3>
-
-            <h4>English for Software Development</h4>
-
-            <p>Certificado oficial Prisma com QR Code de validação.Reconhecido em currículos e no LinkedIn</p>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- quarta fileira de certificados -->
-
-      <article class="fileira-certificados">
-
-        <div class="seucertificado seucertificadobloqueado">
-
-          <div class="conteudo">
-
-            <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
-
-            <h3>TECNOLOGIA</h3>
-
-            <h4>English for Software Development</h4>
-
-            <p>Certificado oficial Prisma com QR Code de validação.Reconhecido em currículos e no LinkedIn</p>
-
-          </div>
-
-        </div>
-
-
-      </article>
-
-    </section>
-
-
-    <!-- modal do certificado -->
-
-
-
-
-
-    <footer class="prisma-final-footer">
-      <div class="footer-shell">
-        <div class="footer-left">
-          <div class="footer-column">
-            <h4>PRECISA DE AJUDA?</h4>
-            <a href="#">FAQ</a>
-            <a href="#">Plano de aula</a>
-            <a href="#">Conheça-nos</a>
-          </div>
-
-          <div class="footer-column">
-            <h4>AVISOS LEGAIS</h4>
-            <a href="#">Política de privacidade</a>
-            <a href="#">Cookies</a>
-            <a href="#">Definições de cookies</a>
-          </div>
-        </div>
-
-        <div class="footer-center">
-          <img src="../img/prisma/logo-prisma-3.png" alt="Logo Prisma" class="footer-prisma-img">
-          <p>© 2026 COPYRIGHT - PRISMA</p>
-        </div>
-
-        <div class="footer-right footer-contact">
-          <h4>CENTRAL DE ATENDIMENTO</h4>
-          <a href="#"><i class="fa-solid fa-phone"></i> 0800 000 00 00</a>
-          <a href="#"><i class="fa-brands fa-whatsapp"></i> 55 (11) 99999-0000</a>
-          <a href="#"><i class="fa-regular fa-envelope"></i> atendimento@prisma.com</a>
+        <div class="footer-column">
+          <h4>AVISOS LEGAIS</h4>
+          <a href="#">Política de privacidade</a>
+          <a href="#">Cookies</a>
+          <a href="#">Definições de cookies</a>
         </div>
       </div>
-    </footer>
+      <div class="footer-center">
+        <img src="../img/prisma/logo-prisma-3.png" alt="Logo Prisma" class="footer-prisma-img">
+        <p>©️ 2026 COPYRIGHT - PRISMA</p>
+      </div>
 
-    <script src="..//script.js"></script>
-    <script src="../js/certificados-script.js"></script>
-    <script src="../js/vlibras.js"></script>
+      <div class="footer-right footer-contact">
+        <h4>CENTRAL DE ATENDIMENTO</h4>
+        <a href="#"><i class="fa-solid fa-phone"></i> 0800 000 00 00</a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i> 55 (11) 99999-0000</a>
+        <a href="#"><i class="fa-regular fa-envelope"></i> atendimento@prisma.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- modal de pagamento para certificado -->
+  <div class="payment-modal" id="paymentModalCert">
+    <div class="payment-box">
+      <button class="payment-close" id="paymentCloseCert" type="button">×</button>
+
+      <span class="payment-plan-tag">CERTIFICADO</span>
+      <h2>Emitir Certificado</h2>
+      <p class="payment-subtitle">
+        Escolha a forma de pagamento para emitir seu certificado oficial.
+      </p>
+
+      <div class="payment-methods">
+        <button class="method-btn active" type="button" data-method="card">Cartão</button>
+        <button class="method-btn" type="button" data-method="pix">Pix</button>
+      </div>
+
+      <div class="payment-content active" id="cardPaymentCert">
+        <div class="payment-form">
+          <input type="text" placeholder="Nome no cartão">
+          <input type="text" placeholder="Número do cartão">
+          <div class="payment-row">
+            <input type="text" placeholder="MM/AA">
+            <input type="text" placeholder="CVV">
+          </div>
+          <input type="text" placeholder="CPF do titular">
+        </div>
+
+        <button class="payment-confirm-btn" id="cardConfirmBtnCert" type="button">
+          Confirmar pagamento - R$ 30,00
+        </button>
+      </div>
+      <div class="payment-content" id="pixPaymentCert">
+        <div class="pix-card">
+          <p class="pix-title">Pagamento via Pix</p>
+          <div class="pix-qr-box">QR CODE</div>
+          <p class="pix-copy">ou copie a chave Pix abaixo</p>
+          <div class="pix-code-box">00020126580014BR.GOV.BCB.PIX0114prisma@pix.com</div>
+        </div>
+
+        <button class="payment-confirm-btn" id="pixConfirmBtnCert" type="button">
+          Já paguei - R$ 30,00
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/certificados-script.js"></script>
+  <script src="../js/vlibras.js"></script>
 
 </body>
 
