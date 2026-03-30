@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos | PRISMA</title>
+  <link rel="icon" type="image/png" href="../img/prisma/logo-prisma-3.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/cursos.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+  <nav class="header" id="header">
+    <div class="container header-content">
+      <a href="../index.html" aria-label="PRISMA">
+        <img src="../img/prisma/logo-prisma-3.png" alt="Logo Prisma" class="logo-img">
+      </a>
+
+      <ul class="header-links">
+        <li><a href="../index.html">INÍCIO</a></li>
+        <li><a href="cursos.html" class="active">CURSOS</a></li>
+        <li><a href="certificados.html">CERTIFICADOS</a></li>
+        <li><a href="recursos.html">RECURSOS</a></li>
+        <li><a href="perfil.html">PERFIL</a></li>
+        <li><a href="contato.html">CONTATO</a></li>
+      </ul>
+
+      <div class="header-auth">
+        <span id="userWelcome" class="user-welcome"></span>
+        <button class="btn-entrar" id="authButton" type="button">ENTRAR</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="courses-page prisma-courses-page">
+    <div class="courses-container">
+
+      <section class="courses-hero-box">
+        <p class="courses-top-label">— TRILHAS DE APRENDIZADO</p>
+
+        <h1 class="courses-main-title">
+          <span id="nomeUsuario">Aluno</span>, seu foco ideal é
+          <span id="cursoIdealTexto">English for Software Development</span>
+        </h1>
+
+        <p class="courses-main-description" id="descricaoCursoIdeal">
+          Com base no seu quiz, recomendamos uma trilha inicial e progressiva para
+          construir sua base no inglês com mais segurança. Abaixo, veja também os
+          outros cursos da plataforma.
+        </p>
+      </section>
+
+      <section class="prisma-courses-grid">
+
+        <article class="prisma-course-card" data-course="English for Software Development">
+          <div class="prisma-course-top">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <div class="prisma-course-bottom">
+            <span class="prisma-course-tag">Tecnologia</span>
+            <h3>English for Software Development</h3>
+            <p>Desenvolvimento de software: código, documentação, stand-ups e reuniões com times globais de TI.</p>
+            <ul>
+              <li>10 módulos • 10 aulas • 14h</li>
+              <li>Atividades</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="prisma-course-card" data-course="English for Data Science &amp; AI">
+          <div class="prisma-course-top">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div class="prisma-course-bottom">
+            <span class="prisma-course-tag">Tecnologia</span>
+            <h3>English for Data Science &amp; AI</h3>
+            <p>Vocabulário para profissionais de dados, IA e ML, apresentações, relatórios e colaboração científica
+              global.</p>
+            <ul>
+              <li>10 módulos • 10 aulas • 16h</li>
+              <li>Atividades</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="prisma-course-card" data-course="English for Cybersecurity">
+          <div class="prisma-course-top">
+            <i class="fa-solid fa-user-shield"></i>
+          </div>
+          <div class="prisma-course-bottom">
+            <span class="prisma-course-tag">Tecnologia</span>
+            <h3>English for Cybersecurity</h3>
+            <p>Terminologia de segurança da informação, relatórios de incidentes, compliance e comunicação executiva.
+            </p>
+            <ul>
+              <li>10 módulos • 10 aulas • 14h</li>
+              <li>Atividades</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="prisma-course-card" data-course="English for Healthcare Professionals">
+          <div class="prisma-course-top">
+            <i class="fa-solid fa-hospital"></i>
+          </div>
+          <div class="prisma-course-bottom">
+            <span class="prisma-course-tag">Medicina</span>
+            <h3>English for Healthcare Professionals</h3>
+            <p>Comunicação clínica, relatórios médicos, conferências e interações internacionais na área da saúde.</p>
+            <ul>
+              <li>10 módulos • 10 aulas • 14h</li>
+              <li>Atividades</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="prisma-course-card" data-course="English for Manufacturing &amp; Engineering">
+          <div class="prisma-course-top">
+            <i class="fa-solid fa-industry"></i>
+          </div>
+          <div class="prisma-course-bottom">
+            <span class="prisma-course-tag">Negócios</span>
+            <h3>English for Manufacturing &amp; Engineering</h3>
+            <p>Processos, cadeia produtiva, manuais técnicos, reuniões de chão de fábrica e operações globais.</p>
+            <ul>
+              <li>10 módulos • 10 aulas • 16h</li>
+              <li>Atividades</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="prisma-course-card" data-course="English for Law &amp; Legal">
+          <div class="prisma-course-top">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <div class="prisma-course-bottom">
+            <span class="prisma-course-tag">Negócios</span>
+            <h3>English for Law &amp; Legal</h3>
+            <p>Vocabulário jurídico, contratos, litígios, compliance e comunicação formal no ambiente legal.</p>
+            <ul>
+              <li>10 módulos • 10 aulas • 16h</li>
+              <li>Atividades</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="prisma-course-card" data-course="English for Finance &amp; Banking">
+          <div class="prisma-course-top">
+            <i class="fa-solid fa-sack-dollar"></i>
+          </div>
+          <div class="prisma-course-bottom">
+            <span class="prisma-course-tag">Corporativo</span>
+            <h3>English for Finance &amp; Banking</h3>
+            <p>Mercado financeiro, bancos, relatórios executivos, reuniões com clientes e comunicação internacional.</p>
+            <ul>
+              <li>10 módulos • 10 aulas • 16h</li>
+              <li>Atividades</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="prisma-course-card" data-course="English for Tourism &amp; Hospitality">
+          <div class="prisma-course-top">
+            <i class="fa-solid fa-hotel"></i>
+          </div>
+          <div class="prisma-course-bottom">
+            <span class="prisma-course-tag">Corporativo</span>
+            <h3>English for Tourism &amp; Hospitality</h3>
+            <p>Hotelaria, turismo e gastronomia. Atendimento, recepção, reservas, experiência do cliente e setor
+              hoteleiro.</p>
+            <ul>
+              <li>10 módulos • 10 aulas • 16h</li>
+              <li>Atividades</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="prisma-course-card" data-course="English for Pharmacy &amp; Medical Industry">
+          <div class="prisma-course-top">
+            <i class="fa-solid fa-kit-medical"></i>
+          </div>
+          <div class="prisma-course-bottom">
+            <span class="prisma-course-tag">Corporativo</span>
+            <h3>English for Pharmacy &amp; Medical Industry</h3>
+            <p>Indústria farmacêutica e dispositivos médicos. Regulatórios, ensaios clínicos e ambiente internacional.
+            </p>
+            <ul>
+              <li>10 módulos • 10 aulas • 16h</li>
+              <li>Atividades</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="prisma-course-card" data-course="English for Marketing &amp; Sales">
+          <div class="prisma-course-top">
+            <i class="fa-solid fa-people-arrows-left-right"></i>
+          </div>
+          <div class="prisma-course-bottom">
+            <span class="prisma-course-tag">Negócios</span>
+            <h3>English for Marketing &amp; Sales</h3>
+            <p>Marketing digital, vendas, publicidade e relações com clientes e parceiros internacionais.</p>
+            <ul>
+              <li>10 módulos • 10 aulas • 16h</li>
+              <li>Atividades</li>
+            </ul>
+          </div>
+        </article>
+
+      </section>
+    </div>
+  </main>
+
+  <footer class="prisma-final-footer">
+    <div class="footer-shell">
+      <div class="footer-left">
+        <div class="footer-column">
+          <h4>PRECISA DE AJUDA?</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Plano de aula</a>
+          <a href="#">Conheça-nos</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>AVISOS LEGAIS</h4>
+          <a href="#">Política de privacidade</a>
+          <a href="#">Cookies</a>
+          <a href="#">Definições de cookies</a>
+        </div>
+      </div>
+
+      <div class="footer-center">
+        <img src="../img/prisma/logo-prisma-3.png" alt="Logo Prisma" class="footer-prisma-img">
+        <p>© 2026 COPYRIGHT - PRISMA</p>
+      </div>
+
+      <div class="footer-right footer-contact">
+        <h4>CENTRAL DE ATENDIMENTO</h4>
+        <a href="#"><i class="fa-solid fa-phone"></i> 0800 000 00 00</a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i> 55 (11) 99999-0000</a>
+        <a href="#"><i class="fa-regular fa-envelope"></i> atendimento@prisma.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/cursos.js"></script>
+  <script src="../js/vlibras.js"></script>
+</body>
+
+</html>
