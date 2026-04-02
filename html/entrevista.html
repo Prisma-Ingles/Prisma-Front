@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Entrevista | PRISMA</title>
+  <link rel="icon" href="../img/prisma/logo-prisma-3.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/entrevista.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+  <nav class="header" id="header">
+    <div class="container header-content"> <a href="../index.html" aria-label="PRISMA"> <img
+          src="../img/prisma/logo-prisma-3.png" alt="Logo Prisma" class="logo-img"> </a>
+      <ul class="header-links">
+        <li><a href="../index.html">INÍCIO</a></li>
+        <li><a href="cursos.html">CURSOS</a></li>
+        <li><a href="certificados.html">CERTIFICADOS</a></li>
+        <li><a href="recursos.html" class="active">RECURSOS</a></li>
+        <li><a href="perfil.html">PERFIL</a></li>
+        <li><a href="contato.html">CONTATO</a></li>
+      </ul>
+      <div class="header-auth"> <span id="userWelcome" class="user-welcome"></span> <button class="btn-entrar"
+          id="authButton" type="button">ENTRAR</button> </div>
+    </div>
+  </nav>
+  <header class="hero">
+    <p class="label">PRÁTICA</p>
+    <h1>Interview Simulator</h1>
+    <p class="description">Practice job interviews in English</p>
+  </header>
+  <main class="container content">
+    <div class="interview-container"> <!-- Module Selection Screen -->
+      <div id="moduleSelection" class="module-selection">
+        <h2>Selecione seu Módulo de Estudo</h2>
+        <p>Escolha o módulo para praticar perguntas de entrevista:</p>
+        <div class="modules-grid"> <button class="module-btn" data-module="technology"> <i
+              class="fas fa-laptop-code"></i> <span>Tecnologia</span> </button> <button class="module-btn"
+            data-module="medicine"> <i class="fas fa-stethoscope"></i> <span>Medicina</span> </button> <button
+            class="module-btn" data-module="business"> <i class="fas fa-briefcase"></i> <span>Negócios</span> </button>
+          <button class="module-btn" data-module="corporate"> <i class="fas fa-city"></i> <span>Corporativo</span>
+          </button> </div>
+      </div> <!-- Chat Interface -->
+      <div id="chatInterface" class="chat-interface" style="display: none; flex-direction: column;">
+        <div class="chat-header">
+          <h3>Prática de Entrevista - <span id="selectedModule"></span></h3> <button id="restartBtn" class="btn-restart"
+            title="Trocar módulo"> <i class="fas fa-arrow-left"></i> Trocar Módulo </button>
+        </div>
+        <div id="chatMessages" class="chat-messages"></div>
+        <div class="chat-input-area">
+          <div class="input-wrapper"> <input type="text" id="userInput" placeholder="Digite sua resposta aqui..."
+              autocomplete="off"> <button id="sendBtn" class="send-btn"> <i class="fas fa-paper-plane"></i> </button>
+          </div>
+          <div class="btn-group"> <button id="nextQuestionBtn" class="btn-next-question" style="display: none;"> Próxima
+              Pergunta </button> <button id="endBtn" class="btn-end" style="display: none;"> Finalizar Entrevista
+            </button> </div>
+        </div>
+      </div> <!-- Results Screen -->
+      <div id="resultsScreen" class="results-screen" style="display: none;">
+        <div class="results-content">
+          <h2>Entrevista Completa!</h2>
+          <div class="results-stats">
+            <div class="stat"> <i class="fas fa-check-circle"></i>
+              <p>Perguntas Respondidas: <span id="questionsAnswered">0</span></p>
+            </div>
+            <div class="stat"> <i class="fas fa-star"></i>
+              <p>Desempenho: <span id="performance">Bom</span></p>
+            </div>
+            <div class="stat"> <i class="fas fa-clock"></i>
+              <p>Média: <span id="duration">0/100</span></p>
+            </div>
+          </div>
+          <div class="feedback-area">
+            <h3>Feedback:</h3>
+            <pre id="feedbackText"></pre>
+          </div> <button id="restartNewBtn" class="btn-restart-new"> Iniciar Nova Entrevista </button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="prisma-final-footer">
+    <div class="footer-shell">
+      <div class="footer-left">
+        <div class="footer-column">
+          <h4>PRECISA DE AJUDA?</h4> <a href="#">FAQ</a> <a href="#">Plano de aula</a> <a href="#">Conheça-nos</a>
+        </div>
+        <div class="footer-column">
+          <h4>AVISOS LEGAIS</h4> <a href="#">Política de privacidade</a> <a href="#">Cookies</a> <a href="#">Definições
+            de cookies</a>
+        </div>
+      </div>
+      <div class="footer-center"> <img src="../img/prisma/logo-prisma-3.png" alt="Logo Prisma" class="footer-prisma-img">
+        <p>© 2026 COPYRIGHT - PRISMA</p>
+      </div>
+      <div class="footer-right footer-contact">
+        <h4>CENTRAL DE ATENDIMENTO</h4> <a href="#"><i class="fa-solid fa-phone"></i> 0800 000 00 00</a> <a href="#"><i
+            class="fa-brands fa-whatsapp"></i> 55 (11) 99999-0000</a> <a href="#"><i class="fa-regular fa-envelope"></i>
+          atendimento@prisma.com</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/script.js"></script>
+  <script src="../js/entrevista.js"></script>
+  <script src="../js/vlibras.js"></script>
+</body>
+
+</html>
