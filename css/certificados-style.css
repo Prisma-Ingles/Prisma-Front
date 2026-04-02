@@ -12,10 +12,10 @@ body{
 
 
 #cabecalho-certificados{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
   height: 180px;
   width:100%;
   max-width:none;
@@ -249,3 +249,4 @@ body{
     width: 98%;
   }
 }
+
