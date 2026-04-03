@@ -97,13 +97,13 @@ body{
     text-align: center;
     border-radius: 20px;
     border: 1px solid #373838;
+    transition: 0.5s;
 
 }
 
 .seucertificado:hover{
 
     transform: translateY(-10px);
-    transition: 0.5s;
 }
 
 .seucertificado .conteudo{

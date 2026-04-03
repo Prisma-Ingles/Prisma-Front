@@ -91,6 +91,7 @@
     border: 2px solid rgb(191, 219, 250);
     max-width: 500px;
     transform: scale(1.0);
+    transition: 0.5s;
 
 }
 
@@ -98,7 +99,6 @@
 .botoes:hover{
 
     transform: translateY(-10px);
-    transition: 0.5s;
 
 }
 
@@ -211,6 +211,7 @@
     color: white;
     background-color: #000824;
     border: none;
+    transition: 0.5s;
 
 }
 
@@ -218,7 +219,6 @@
 
     cursor: pointer;
     background-color: #011d81;
-    transition: 0.5s;
 }
 
 .caixacontato label {
