@@ -1,6 +1,11 @@
 const header = document.getElementById("header");
 const revealElements = document.querySelectorAll(".reveal");
 
+// Mobile Menu
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const headerLinks = document.getElementById("headerLinks");
+const navLinks = document.querySelectorAll(".nav-link");
+
 const loginModal = document.getElementById("loginModal");
 const closeModal = document.getElementById("closeModal");
 
@@ -389,4 +394,20 @@ window.addEventListener("load", () => {
     abrirModal();
   }, 100);
 }
+});
+
+// Mobile Menu Toggle
+if (hamburgerBtn) {
+  hamburgerBtn.addEventListener("click", function () {
+    hamburgerBtn.classList.toggle("active");
+    headerLinks.classList.toggle("active");
+  });
+}
+
+// Fechar menu ao clicar em um link
+navLinks.forEach((link) => {
+  link.addEventListener("click", function () {
+    hamburgerBtn.classList.remove("active");
+    headerLinks.classList.remove("active");
+  });
 });

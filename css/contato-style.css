@@ -70,7 +70,6 @@
     padding-left: 5%;
     color: rgb(105, 103, 103);
     font-weight: 700;
-    /* font-size: 17px; */
     font-size: 1.2rem;
 
 }
@@ -78,7 +77,6 @@
 .botoes h3{
 
     font-weight: 800;
-    /* font-size: 17px;  */
     font-size: 1.3rem; 
 
 }
@@ -92,6 +90,15 @@
     border-radius: 20px;
     border: 2px solid rgb(191, 219, 250);
     max-width: 500px;
+    transform: scale(1.0);
+
+}
+
+
+.botoes:hover{
+
+    transform: translateY(-10px);
+    transition: 0.5s;
 
 }
 
@@ -365,12 +372,36 @@
 
 }
 
-@media (max-width: 800px){
+@media (max-width: 900px){
 
     .nossoscontatos{
 
         flex-direction: column;
         margin: 30px 10px;
     }
+
+.botoes {
+    width: 800px;
+
+}
+
+.caixaMensagem {
+    width: 800px;
+}
+
+}
+
+
+@media (max-width: 550px){
+
+.botoes {
+    width: 350px;
+
+}
+
+.caixaMensagem {
+    width: 350px;
+}
+
 }
 
