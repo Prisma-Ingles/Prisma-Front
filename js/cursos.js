@@ -23,7 +23,7 @@ function atualizarUsuarioCurso() {
   const usuarioAtual = getUsuario();
 
   if (usuarioAtual) {
-    if (userWelcome) userWelcome.textContent = `Bem-vindo, ${usuarioAtual.nome} 👋`;
+    if (userWelcome) userWelcome.textContent = `Bem-vindo(a), ${usuarioAtual.nome} 👋`;
     if (nomeUsuario) nomeUsuario.textContent = usuarioAtual.nome;
     if (authButton) authButton.textContent = "Sair";
   } else {
@@ -34,25 +34,30 @@ function atualizarUsuarioCurso() {
 }
 
 function atualizarCursoIdealTexto() {
+  const usuario = getUsuario();
   const cursoIdeal = getCursoIdeal();
   const descricaoSalva = localStorage.getItem("descricaoCursoIdeal");
 
-  if (cursoIdeal == null) {
-    tituloPaginaCursos.textContent = "Nossos cursos"
-    descricaoCursoIdeal.textContent = "Conteúdo prático por área profissional. Cada curso tem 10 módulos com videoaulas e atividades."
-
-    return
+  if (!usuario) {
+    tituloPaginaCursos.textContent = "Nossos cursos";
+    descricaoCursoIdeal.textContent = "Conteúdo prático por área profissional. Cada curso tem 10 módulos com videoaulas e atividades.";
+    return;
   }
 
-  if (cursoIdealTexto) {
-    cursoIdealTexto.textContent = cursoIdeal;
+  if (usuario && !cursoIdeal) {
+    tituloPaginaCursos.textContent = "Nossos cursos";
+    descricaoCursoIdeal.textContent = "Conteúdo prático por área profissional. Cada curso tem 10 módulos com videoaulas e atividades.";
+    return;
+  }
+
+  if (cursoIdealTexto && cursoIdeal) {
+    cursoIdealTexto.textContent = `${cursoIdeal}`;
   }
 
   if (descricaoCursoIdeal && descricaoSalva) {
     descricaoCursoIdeal.textContent = descricaoSalva;
   }
 }
-
 function destacarCursoIdeal() {
   const cursoIdeal = getCursoIdeal();
 

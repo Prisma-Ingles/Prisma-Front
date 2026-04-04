@@ -12,3 +12,18 @@ document.querySelectorAll('.btn-download').forEach(button => {
         alert(`Iniciando ação: ${titulo}`);
     });
 });
+
+// RECURSOS BLOQUEADO
+
+document.addEventListener("DOMContentLoaded", () => {
+  const logado = localStorage.getItem("usuarioLogado");
+  const overlay = document.getElementById("lockOverlay");
+
+  if (!logado) {
+    if (overlay) overlay.classList.remove("hidden");
+  }
+});
+
+function irParaLogin() {
+  window.location.href = "../index.html#login";
+}
