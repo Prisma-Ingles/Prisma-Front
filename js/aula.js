@@ -35,7 +35,7 @@ function atualizarUsuarioAula() {
 
   if (usuarioAtual) {
     if (userWelcome) userWelcome.textContent = `Bem-vindo(a), ${usuarioAtual.nome} 👋`;
-    if (authButton) authButton.textContent = "Sair";
+    if (authButton) authButton.textContent = "SAIR";
   } else {
     if (userWelcome) userWelcome.textContent = "";
     if (authButton) authButton.textContent = "ENTRAR";

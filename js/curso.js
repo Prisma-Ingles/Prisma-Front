@@ -17,7 +17,7 @@ function atualizarUsuarioCurso() {
 
   if (usuarioAtual) {
     if (userWelcome) userWelcome.textContent = `Bem-vindo(a), ${usuarioAtual.nome} 👋`;
-    if (authButton) authButton.textContent = "Sair";
+    if (authButton) authButton.textContent = "SAIR";
   } else {
     if (userWelcome) userWelcome.textContent = "";
     if (authButton) authButton.textContent = "ENTRAR";
@@ -165,7 +165,7 @@ function renderModulos(modulos) {
     card.style.cursor = "pointer";
 
     card.addEventListener("click", () => {
-      if (index > 1) {
+      if (index > 0) {
         alert("Você precisa concluir os módulos anteriores primeiro.");
         return;
       }
