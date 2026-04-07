@@ -23,9 +23,9 @@ function atualizarUsuarioCurso() {
   const usuarioAtual = getUsuario();
 
   if (usuarioAtual) {
-    if (userWelcome) userWelcome.textContent = `Bem-vindo, ${usuarioAtual.nome} 👋`;
+    if (userWelcome) userWelcome.textContent = `Bem-vindo(a), ${usuarioAtual.nome} 👋`;
     if (nomeUsuario) nomeUsuario.textContent = usuarioAtual.nome;
-    if (authButton) authButton.textContent = "Sair";
+    if (authButton) authButton.textContent = "SAIR";
   } else {
     if (userWelcome) userWelcome.textContent = "";
     if (nomeUsuario) nomeUsuario.textContent = "Aluno";
@@ -34,6 +34,7 @@ function atualizarUsuarioCurso() {
 }
 
 function atualizarCursoIdealTexto() {
+  const usuario = getUsuario();
   const cursoIdeal = getCursoIdeal();
   const descricaoSalva = localStorage.getItem("descricaoCursoIdeal");
 
@@ -52,7 +53,6 @@ function atualizarCursoIdealTexto() {
     descricaoCursoIdeal.textContent = descricaoSalva;
   }
 }
-
 function destacarCursoIdeal() {
   const cursoIdeal = getCursoIdeal();
 
