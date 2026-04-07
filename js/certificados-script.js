@@ -41,7 +41,7 @@ const conclua = bloqueio.querySelector('h4');
   if(conclua){
     conclua.textContent = "Conclua o curso para liberar";
     conclua.style.fontWeight = '400';
-    conclua.style.fontSize = '15px';
+    conclua.style.fontSize = '18px';
   }
 
 });
@@ -63,7 +63,7 @@ bloqueios.forEach(bloqueio => {
   botao.type = 'button';
   botao.style.backgroundColor = 'black';
   botao.style.color = 'white';
-  botao.style.fontSize = '12px';
+  botao.style.fontSize = '15px';
   botao.style.margin = 'auto';
   botao.style.marginTop = '15px';
   botao.style.padding = '15px';

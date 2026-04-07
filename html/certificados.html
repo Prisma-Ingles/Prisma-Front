@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Certificados</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,18 +28,24 @@
         <img src="../img/prisma/logo-prisma-3.png" alt="Logo Prisma" class="logo-img">
       </a>
 
-      <ul class="header-links">
-        <li><a href="../index.html">INÍCIO</a></li>
-        <li><a href="cursos.html">CURSOS</a></li>
-        <li><a href="certificados.html" class="active">CERTIFICADOS</a></li>
-        <li><a href="recursos.html">RECURSOS</a></li>
-        <li><a href="perfil.html">PERFIL</a></li>
-        <li><a href="contato.html">CONTATO</a></li>
+      <ul class="header-links" id="headerLinks">
+        <li><a href="../index.html" class="nav-link">INÍCIO</a></li>
+        <li><a href="cursos.html" class="nav-link">CURSOS</a></li>
+        <li><a href="certificados.html" class="active nav-link">CERTIFICADOS</a></li>
+        <li><a href="recursos.html" class="nav-link">RECURSOS</a></li>
+        <li><a href="perfil.html" class="nav-link">PERFIL</a></li>
+        <li><a href="contato.html" class="nav-link">CONTATO</a></li>
       </ul>
-        <div class="header-auth">
+      <div class="header-auth">
         <span id="userWelcome" class="user-welcome"></span>
         <button class="btn-entrar" id="authButton" type="button">ENTRAR</button>
       </div>
+
+      <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
     </div>
   </nav>
 
@@ -76,24 +83,8 @@
 
           <p>Certificado oficial Prisma. Reconhecido em currículos e no LinkedIn</p>
 
-          <button class="btn-certificado" onclick="abrirModalCertificado()"
-            style="margin-top:16px; background:#000; color:#fff; padding:12px 28px; border-radius:25px; border:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:14px; font-weight:600; width:100%; transition:background 0.3s;">VISUALIZAR
+          <button class="btn-certificado" onclick="abrirModalCertificado()">VISUALIZAR
             CERTIFICADO</button>
-
-        </div>
-
-      </div>
-
-      <div class="seucertificado seucertificadobloqueado">
-
-        <div class="conteudo">
-
-          <img src="../img/certificados-fotos/icone-cadeado.png" alt="icone de computador">
-          <h3>TECNOLOGIA</h3>
-
-          <h4>English for Software Development</h4>
-
-          <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
 
         </div>
 
@@ -109,7 +100,29 @@
 
           <h4>English for Software Development</h4>
 
-          <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
+          <p>Certificado oficial Prisma. Reconhecido em currículos e no LinkedIn</p>
+
+          <button class="btn-certificado" onclick="abrirModalCertificado()">VISUALIZAR
+            CERTIFICADO</button>
+
+        </div>
+
+      </div>
+
+      <div class="seucertificado seucertificadobloqueado">
+
+        <div class="conteudo">
+
+          <img src="../img/certificados-fotos/icone-computador.png" alt="icone de computador">
+
+          <h3>TECNOLOGIA</h3>
+
+          <h4>English for Software Development</h4>
+
+          <p>Certificado oficial Prisma. Reconhecido em currículos e no LinkedIn</p>
+
+          <button class="btn-certificado" onclick="abrirModalCertificado()">VISUALIZAR
+            CERTIFICADO</button>
 
         </div>
 
@@ -132,7 +145,10 @@
 
           <h4>English for Software Development</h4>
 
-          <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
+          <p>Certificado oficial Prisma. Reconhecido em currículos e no LinkedIn</p>
+
+          <button class="btn-certificado" onclick="abrirModalCertificado()">VISUALIZAR
+            CERTIFICADO</button>
 
         </div>
 
@@ -147,7 +163,10 @@
 
           <h4>English for Software Development</h4>
 
-          <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
+          <p>Certificado oficial Prisma. Reconhecido em currículos e no LinkedIn</p>
+
+          <button class="btn-certificado" onclick="abrirModalCertificado()">VISUALIZAR
+            CERTIFICADO</button>
 
         </div>
 
@@ -163,7 +182,10 @@
 
           <h4>English for Software Development</h4>
 
-          <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
+          <p>Certificado oficial Prisma. Reconhecido em currículos e no LinkedIn</p>
+
+          <button class="btn-certificado" onclick="abrirModalCertificado()">VISUALIZAR
+            CERTIFICADO</button>
 
         </div>
 
@@ -187,7 +209,10 @@
 
           <h4>English for Software Development</h4>
 
-          <p>Certificado oficial Prisma com QR Code de validação. Reconhecido em currículos e no LinkedIn</p>
+          <p>Certificado oficial Prisma. Reconhecido em currículos e no LinkedIn</p>
+
+          <button class="btn-certificado" onclick="abrirModalCertificado()">VISUALIZAR
+            CERTIFICADO</button>
 
         </div>
 
@@ -202,7 +227,10 @@
 
           <h4>English for Software Development</h4>
 
-          <p>Certificado oficial Prisma com QR Code de validação.Reconhecido em currículos e no LinkedIn</p>
+          <p>Certificado oficial Prisma. Reconhecido em currículos e no LinkedIn</p>
+
+          <button class="btn-certificado" onclick="abrirModalCertificado()">VISUALIZAR
+            CERTIFICADO</button>
 
         </div>
 
@@ -218,7 +246,10 @@
 
           <h4>English for Software Development</h4>
 
-          <p>Certificado oficial Prisma com QR Code de validação.Reconhecido em currículos e no LinkedIn</p>
+          <p>Certificado oficial Prisma. Reconhecido em currículos e no LinkedIn</p>
+
+          <button class="btn-certificado" onclick="abrirModalCertificado()">VISUALIZAR
+            CERTIFICADO</button>
 
         </div>
 
@@ -241,7 +272,10 @@
 
           <h4>English for Software Development</h4>
 
-          <p>Certificado oficial Prisma com QR Code de validação.Reconhecido em currículos e no LinkedIn</p>
+          <p>Certificado oficial Prisma. Reconhecido em currículos e no LinkedIn</p>
+
+          <button class="btn-certificado" onclick="abrirModalCertificado()">VISUALIZAR
+            CERTIFICADO</button>
 
         </div>
 
@@ -253,7 +287,6 @@
   </section>
 
   <!-- modal do certificado -->
-   
   <div id="modal-certificado">
     <div class="modal-certificado-box">
       <button onclick="fecharModalCertificado()" class="modal-certificado-close">✕</button>
@@ -294,7 +327,7 @@
     </div>
   </footer>
 
-
+  <!-- modal de pagamento para certificado -->
   <div class="payment-modal" id="paymentModalCert">
     <div class="payment-box">
       <button class="payment-close" id="paymentCloseCert" type="button">×</button>

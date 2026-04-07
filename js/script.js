@@ -1,6 +1,11 @@
 const header = document.getElementById("header");
 const revealElements = document.querySelectorAll(".reveal");
 
+// Mobile Menu
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const headerLinks = document.getElementById("headerLinks");
+const navLinks = document.querySelectorAll(".nav-link");
+
 const loginModal = document.getElementById("loginModal");
 const closeModal = document.getElementById("closeModal");
 
@@ -79,7 +84,7 @@ function abrirModal() {
   }
 
   loginModal.classList.add("active");
-  document.body.classList.add("blur-bg");
+  document.body.classList.add("blur-bg");  
   clearMessage();
   ativarEntrar();
 }
@@ -98,7 +103,7 @@ function abrirModalCadastro() {
   }
 
   loginModal.classList.add("active");
-  document.body.classList.add("blur-bg");
+  document.body.classList.add("blur-bg"); 
   clearMessage();
   ativarCadastrar();
 }
@@ -113,7 +118,7 @@ function ativarEntrar() {
   formCadastrar.classList.add("hidden-form");
 
   if (modalTitle) {
-    modalTitle.textContent = "Bem-vindo(a)";
+    modalTitle.textContent = "Bem-vindo";
   }
 
   if (modalSubtitle) {
@@ -147,7 +152,7 @@ function atualizarUsuario() {
   const usuario = getUsuario();
 
   if (usuario && userWelcome && authButton) {
-    userWelcome.textContent = `Bem-vindo(a), ${usuario.nome} 👋`;
+    userWelcome.textContent = `Bem-vindo, ${usuario.nome} 👋`;
     authButton.textContent = "SAIR";
   } else if (userWelcome && authButton) {
     userWelcome.textContent = "";
@@ -172,32 +177,29 @@ function switchPaymentMethod(method) {
 }
 
 function openPayment(planType) {
-  const usuario = getUsuario();
-
-  if (planType === "free") {
-    if (!usuario) {
-      alert("Você precisa se cadastrar ou fazer login para continuar.");
-      abrirModalCadastro();
-      return;
-    }
-
-    window.location.href = "./html/cursos.html";
-    return;
-  }
-
-  if (!usuario) {
-    alert("Você precisa se cadastrar ou fazer login para continuar.");
-
-    localStorage.setItem("planoPendente", planType);
-
-    abrirModalCadastro();
-    return;
-  }
   if (!paymentModal || !paymentBox) return;
 
   paymentModal.classList.add("active");
   document.body.classList.add("blur-bg");
   paymentBox.classList.remove("payment-free", "payment-plus", "payment-pro");
+
+  if (planType === "free") {
+    paymentBox.classList.add("payment-free");
+    if (paymentPlanTag) paymentPlanTag.textContent = "PRISMA FREE";
+    if (paymentTitle) paymentTitle.textContent = "Começar com o Prisma Free";
+    if (paymentSubtitle) {
+      paymentSubtitle.textContent = "Escolha a forma de pagamento para ativar sua experiência inicial.";
+    }
+  }
+
+  if (planType === "plus") {
+    paymentBox.classList.add("payment-plus");
+    if (paymentPlanTag) paymentPlanTag.textContent = "PRISMA PLUS";
+    if (paymentTitle) paymentTitle.textContent = "Assinar o Prisma Plus";
+    if (paymentSubtitle) {
+      paymentSubtitle.textContent = "Escolha a forma de pagamento para desbloquear mais aulas e exercícios.";
+    }
+  }
 
   if (planType === "pro") {
     paymentBox.classList.add("payment-pro");
@@ -223,6 +225,9 @@ if (authButton) {
 
     if (usuario) {
       localStorage.removeItem("usuarioLogado");
+      localStorage.removeItem("cursoIdeal");
+      localStorage.removeItem("descricaoCursoIdeal");
+      localStorage.removeItem("respostasQuiz");
       localStorage.removeItem("cursoSelecionado");
       window.location.href = "../index.html";
     } else {
@@ -281,21 +286,11 @@ if (formEntrar) {
     }
 
     showMessage("Login realizado com sucesso!", "success");
-    localStorage.setItem("usuarioLogado", "true");
-
+    localStorage.setItem("usuarioLogado", "true");  
     setTimeout(() => {
       fecharModal();
       atualizarUsuario();
-      const planoPendente = localStorage.getItem("planoPendente");
-
-      if (planoPendente) {
-        localStorage.removeItem("planoPendente");
-        openPayment(planoPendente);
-        return;
-      }
-
       window.location.href = "./html/cursos.html";
-
     }, 900);
   });
 }
@@ -341,16 +336,7 @@ if (formCadastrar) {
     setTimeout(() => {
       fecharModal();
       atualizarUsuario();
-      const planoPendente = localStorage.getItem("planoPendente");
-
-      if (planoPendente) {
-        localStorage.removeItem("planoPendente");
-        openPayment(planoPendente);
-        return;
-      }
-
       window.location.href = "./html/cursos.html";
-
     }, 900);
   });
 }
@@ -403,10 +389,25 @@ window.addEventListener("load", () => {
   revealOnScroll();
   atualizarUsuario();
 
-  if (window.location.hash === "#login") {
-    setTimeout(() => {
-      abrirModal();
-    }, 100);
-    history.replaceState(null, null, window.location.pathname);
-  }
+ if (window.location.hash === "#login") {
+  setTimeout(() => {
+    abrirModal();
+  }, 100);
+}
+});
+
+// Mobile Menu Toggle
+if (hamburgerBtn) {
+  hamburgerBtn.addEventListener("click", function () {
+    hamburgerBtn.classList.toggle("active");
+    headerLinks.classList.toggle("active");
+  });
+}
+
+// Fechar menu ao clicar em um link
+navLinks.forEach((link) => {
+  link.addEventListener("click", function () {
+    hamburgerBtn.classList.remove("active");
+    headerLinks.classList.remove("active");
+  });
 });

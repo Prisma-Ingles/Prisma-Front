@@ -1,18 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
 
-  const logado = localStorage.getItem("usuarioLogado");
-  const overlay = document.getElementById("lockOverlay");
-  const main = document.querySelector("main");
-
-  if (!logado) {
-    if (overlay) overlay.classList.remove("hidden");
-  }
-
-});
-
-function irParaLogin() {
-  window.location.href = "../index.html#login";
-}
+const user = JSON.parse(localStorage.getItem("usuarioCadastrado"));
 
 const nomeEl = document.getElementById("nomeUsuario");
 const emailEl = document.getElementById("emailUsuario");
@@ -20,20 +7,20 @@ const avatarEl = document.getElementById("avatar");
 const welcome = document.getElementById("userWelcome");
 const btn = document.getElementById("authButton");
 
-if (user) {
+if(user){
     nomeEl.textContent = user.nome;
     emailEl.textContent = user.email;
 
     avatarEl.textContent = user.nome.charAt(0).toUpperCase();
 
-    welcome.textContent = `Bem-vindo(a), ${user.nome} 👋`;
+    welcome.textContent = `Bem-vindo, ${user.nome} 👋`;
     btn.textContent = "Sair";
 
     btn.onclick = () => {
         localStorage.removeItem("usuarioCadastrado");
         location.reload();
     };
-} else {
+}else{
     welcome.textContent = "";
     btn.textContent = "Entrar";
 

@@ -239,16 +239,14 @@ formCadastro.addEventListener("submit", (e) => {
     return;
   }
 
-localStorage.setItem(
-  "usuarioCadastrado",
-  JSON.stringify({
-    nome,
-    email,
-    senha
-  })
-);
-
-localStorage.setItem("usuarioLogado", "true");
+  localStorage.setItem(
+    "usuarioCadastrado",
+    JSON.stringify({
+      nome,
+      email,
+      senha
+    })
+  );
 
   mensagemCadastro.textContent = "Conta criada com sucesso!";
   mensagemCadastro.style.color = "#16a34a";

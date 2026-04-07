@@ -16,8 +16,8 @@ function atualizarUsuarioCurso() {
   const usuarioAtual = getUsuario();
 
   if (usuarioAtual) {
-    if (userWelcome) userWelcome.textContent = `Bem-vindo(a), ${usuarioAtual.nome} 👋`;
-    if (authButton) authButton.textContent = "SAIR";
+    if (userWelcome) userWelcome.textContent = `Bem-vindo, ${usuarioAtual.nome} 👋`;
+    if (authButton) authButton.textContent = "Sair";
   } else {
     if (userWelcome) userWelcome.textContent = "";
     if (authButton) authButton.textContent = "ENTRAR";
@@ -80,7 +80,119 @@ const cursosData = {
       }
     ]
   },
-}
+
+  "English for Data Science & AI": {
+    titulo: "English for Data Science & AI",
+    descricao1: "Este curso foi desenvolvido para profissionais que atuam com dados, inteligência artificial e machine learning em ambientes globais.",
+    descricao2: "Você desenvolverá vocabulário técnico, leitura de papers, apresentação de resultados e comunicação em times analíticos e científicos.",
+    beneficios: [
+      { icon: "fa-solid fa-chart-line", text: "Aprender vocabulário de dados e IA" },
+      { icon: "fa-solid fa-brain", text: "Entender documentação técnica avançada" },
+      { icon: "fa-solid fa-file-lines", text: "Ler relatórios e papers com mais confiança" },
+      { icon: "fa-solid fa-comments", text: "Apresentar resultados em inglês" }
+    ],
+    modulos: [
+      {
+        id: "data-modulo-1",
+        title: "Vocabulary for Data Science",
+        hours: "8h",
+        description: "Vocabulário essencial para atuar com dados em inglês.",
+        image: "../img/tl-cursos/modulo1.png"
+      },
+      {
+        id: "data-modulo-2",
+        title: "English for AI and Machine Learning",
+        hours: "10h",
+        description: "Termos e expressões usados em IA e ML.",
+        image: "../img/tl-cursos/modulo2.png"
+      },
+      {
+        id: "data-modulo-3",
+        title: "Presenting Data Insights",
+        hours: "6h",
+        description: "Como apresentar insights com clareza.",
+        image: "../img/tl-cursos/modulo3.png"
+      },
+      {
+        id: "data-modulo-4",
+        title: "Reading Technical Papers",
+        hours: "7h",
+        description: "Leitura de artigos e papers técnicos.",
+        image: "../img/tl-cursos/modulo4.png"
+      },
+      {
+        id: "data-modulo-5",
+        title: "Writing Reports and Dashboards",
+        hours: "5h",
+        description: "Relatórios e dashboards em inglês.",
+        image: "../img/tl-cursos/modulo5.png"
+      },
+      {
+        id: "data-modulo-6",
+        title: "Communication in Global Data Teams",
+        hours: "6h",
+        description: "Comunicação em times globais de dados.",
+        image: "../img/tl-cursos/modulo6.png"
+      }
+    ]
+  },
+
+  "English for Cybersecurity": {
+    titulo: "English for Cybersecurity",
+    descricao1: "Este curso foi criado para desenvolver a fluência técnica necessária em segurança da informação, gestão de incidentes e compliance.",
+    descricao2: "Você vai trabalhar com terminologia de riscos, vulnerabilidades, relatórios e comunicação estratégica com equipes e liderança.",
+    beneficios: [
+      { icon: "fa-solid fa-shield-halved", text: "Aprender termos essenciais de cybersecurity" },
+      { icon: "fa-solid fa-triangle-exclamation", text: "Compreender incidentes e alertas" },
+      { icon: "fa-solid fa-file-shield", text: "Produzir relatórios com clareza" },
+      { icon: "fa-solid fa-user-tie", text: "Comunicar riscos de forma profissional" }
+    ],
+    modulos: [
+      {
+        id: "cyber-modulo-1",
+        title: "Cybersecurity Essentials in English",
+        hours: "8h",
+        description: "Base do inglês técnico em cibersegurança.",
+        image: "../img/tl-cursos/modulo1.png"
+      },
+      {
+        id: "cyber-modulo-2",
+        title: "Incident Reports and Communication",
+        hours: "7h",
+        description: "Relatórios e comunicação de incidentes.",
+        image: "../img/tl-cursos/modulo2.png"
+      },
+      {
+        id: "cyber-modulo-3",
+        title: "Risk, Threats and Vulnerabilities",
+        hours: "8h",
+        description: "Riscos, ameaças e vulnerabilidades.",
+        image: "../img/tl-cursos/modulo3.png"
+      },
+      {
+        id: "cyber-modulo-4",
+        title: "Compliance and Governance",
+        hours: "6h",
+        description: "Governança e compliance em inglês.",
+        image: "../img/tl-cursos/modulo4.png"
+      },
+      {
+        id: "cyber-modulo-5",
+        title: "Security Meetings and Presentations",
+        hours: "5h",
+        description: "Reuniões e apresentações da área.",
+        image: "../img/tl-cursos/modulo5.png"
+      },
+      {
+        id: "cyber-modulo-6",
+        title: "Professional Writing for Security Teams",
+        hours: "6h",
+        description: "Escrita profissional para times de segurança.",
+        image: "../img/tl-cursos/modulo6.png"
+      }
+    ]
+  }
+};
 
 function getCursoSelecionado() {
   return localStorage.getItem("cursoSelecionado") || "English for Software Development";
@@ -139,8 +251,9 @@ function renderModulos(modulos) {
 
           <p class="figma-modulo-desc">${modulo.description}</p>
 
-          ${progresso > 0
-        ? `
+          ${
+            progresso > 0
+              ? `
                 <div class="figma-progress">
                   <div class="figma-progress-bar">
                     <span style="width:${progresso}%"></span>
@@ -148,12 +261,12 @@ function renderModulos(modulos) {
                   <small>${statusTexto}</small>
                 </div>
               `
-        : `
+              : `
                 <div class="figma-progress figma-progress-empty">
                   <small>${statusTexto}</small>
                 </div>
               `
-      }
+          }
         </div>
       </article>
     `;
@@ -161,18 +274,12 @@ function renderModulos(modulos) {
 
   const cardsModulos = document.querySelectorAll(".modulo-clicavel");
 
-  cardsModulos.forEach((card, index) => {
+  cardsModulos.forEach((card) => {
     card.style.cursor = "pointer";
 
     card.addEventListener("click", () => {
-      if (index > 0) {
-        alert("Você precisa concluir os módulos anteriores primeiro.");
-        return;
-      }
-
       const moduloId = card.dataset.moduloId;
       const moduloTitle = card.dataset.moduloTitle;
-
       abrirAula(moduloId, moduloTitle);
     });
   });

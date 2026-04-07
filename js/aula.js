@@ -34,8 +34,8 @@ function atualizarUsuarioAula() {
   const usuarioAtual = getUsuario();
 
   if (usuarioAtual) {
-    if (userWelcome) userWelcome.textContent = `Bem-vindo(a), ${usuarioAtual.nome} 👋`;
-    if (authButton) authButton.textContent = "SAIR";
+    if (userWelcome) userWelcome.textContent = `Bem-vindo, ${usuarioAtual.nome} 👋`;
+    if (authButton) authButton.textContent = "Sair";
   } else {
     if (userWelcome) userWelcome.textContent = "";
     if (authButton) authButton.textContent = "ENTRAR";
@@ -61,6 +61,46 @@ const aulasData = {
     conteudoTitulo: "Como escrever comentários e descrições técnicas",
     paragrafos: [
       "Nesta aula, você vai aprender a escrever comentários, descrições de funções e mensagens técnicas com mais clareza em inglês. O objetivo é melhorar sua comunicação no código e deixar seu projeto mais profissional para outras pessoas da equipe."
+    ]
+  },
+  "software-modulo-3": {
+    cursoLabel: "— ENGLISH FOR SOFTWARE DEVELOPMENT",
+    titulo: "Leitura de Documentação Técnica",
+    aulaNumero: "AULA 9 DE 12",
+    modulo: "MÓDULO 3",
+    conteudoTitulo: "Interpretando documentações em inglês",
+    paragrafos: [
+      "Aqui você vai praticar a leitura de documentações técnicas, identificando palavras-chave, instruções e exemplos comuns no ambiente de desenvolvimento. Isso ajuda a ganhar autonomia para estudar ferramentas, bibliotecas e frameworks usados no mercado."
+    ]
+  },
+  "software-modulo-4": {
+    cursoLabel: "— ENGLISH FOR SOFTWARE DEVELOPMENT",
+    titulo: "Inglês para Ferramentas de Desenvolvimento",
+    aulaNumero: "AULA 10 DE 12",
+    modulo: "MÓDULO 4",
+    conteudoTitulo: "Vocabulário de plataformas e ferramentas",
+    paragrafos: [
+      "Nesta etapa, você vai aprender termos comuns em plataformas de versionamento, integração, deploy e produtividade. Assim, fica mais fácil entender interfaces, comandos e mensagens em ferramentas usadas no dia a dia do desenvolvedor."
+    ]
+  },
+  "software-modulo-5": {
+    cursoLabel: "— ENGLISH FOR SOFTWARE DEVELOPMENT",
+    titulo: "Code Review e Colaboração",
+    aulaNumero: "AULA 11 DE 12",
+    modulo: "MÓDULO 5",
+    conteudoTitulo: "Comunicação em revisões de código",
+    paragrafos: [
+      "Nesta aula, você verá expressões comuns usadas em code reviews, sugestões de melhoria e feedbacks técnicos em inglês. Essa habilidade é importante para colaborar com equipes e participar de projetos de forma mais confiante."
+    ]
+  },
+  "software-modulo-6": {
+    cursoLabel: "— ENGLISH FOR SOFTWARE DEVELOPMENT",
+    titulo: "Comunicação em Times de Desenvolvimento",
+    aulaNumero: "AULA 12 DE 12",
+    modulo: "MÓDULO 6",
+    conteudoTitulo: "Interação profissional em times de tecnologia",
+    paragrafos: [
+      "Aqui o foco é entender frases e termos usados em reuniões, alinhamentos, tarefas e conversas do ambiente profissional. Você vai desenvolver uma comunicação mais natural para atuar em times de desenvolvimento com contexto internacional."
     ]
   }
 };
