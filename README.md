@@ -1,1 +1,1 @@
-# TESTE---Prisma-Responsividade
+# Plataforma PRISMA
