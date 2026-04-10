@@ -64,13 +64,13 @@ input{
   border:none;
   background:transparent;
   color:#b3b7bd;
-  font-size:16px;
+  font-size:30px;
   cursor:pointer;
   line-height:1;
 }
 
 .quiz-mini-kicker{
-  font-size:8px;
+  font-size:15px;
   font-weight:600;
   letter-spacing:0.6px;
   text-transform:uppercase;
@@ -86,7 +86,7 @@ input{
 }
 
 .quiz-subtitle{
-  font-size:8px;
+  font-size:12px;
   color:#9aa1aa;
   margin-bottom:12px;
 }
@@ -99,14 +99,14 @@ input{
 }
 
 .quiz-question{
-  font-size:14px;
+  font-size:16px;
   font-weight:700;
   color:#1c2430;
   margin-bottom:8px;
 }
 
 .quiz-helper{
-  font-size:9px;
+  font-size:12px;
   color:#7e8794;
   margin-bottom:14px;
 }
@@ -125,7 +125,7 @@ input{
   border-radius:8px;
   padding:10px 12px;
   text-align:left;
-  font-size:10px;
+  font-size:12px;
   color:#5f6874;
   cursor:pointer;
   transition:0.22s ease;
@@ -178,7 +178,7 @@ input{
 }
 
 .quiz-step{
-  font-size:8px;
+  font-size:12px;
   color:#9aa1aa;
 }
 
@@ -194,7 +194,7 @@ input{
   border:none;
   background:transparent;
   color:#7a88a0;
-  font-size:8px;
+  font-size:11px;
   font-weight:600;
   cursor:pointer;
   display:inline-flex;
@@ -205,7 +205,7 @@ input{
 
 .quiz-btn-link::before{
   content:"←";
-  font-size:9px;
+  font-size:12px;
 }
 
 .quiz-btn-next{
@@ -215,7 +215,7 @@ input{
   border-radius:999px;
   background:#081327;
   color:#ffffff;
-  font-size:8px;
+  font-size:11px;
   font-weight:700;
   cursor:pointer;
   transition:0.2s ease;
@@ -247,8 +247,8 @@ input{
 }
 
 .resultado-icon{
-  width:54px;
-  height:40px;
+  width:72px;
+  height:60px;
   border-radius:6px;
   background:#081327;
   display:flex;
@@ -259,23 +259,23 @@ input{
 }
 
 .resultado h2{
-  font-size:16px;
+  font-size:17px;
   font-weight:700;
   color:#111111;
   margin-bottom:8px;
 }
 
 .resultado-texto{
-  font-size:8px;
+  font-size:13px;
   line-height:1.5;
   color:#9aa1aa;
-  max-width:260px;
+  max-width:360px;
   margin:0 auto 14px;
 }
 
 .resultado-curso-box{
   width:100%;
-  max-width:270px;
+  max-width:370px;
   margin:0 auto 14px;
   background:linear-gradient(90deg, #F0D7FF, #E3B3FF, #86BAFF, #E7E9ED);
   border:1px solid #c8dbf5;
@@ -286,15 +286,15 @@ input{
 
 .resultado-curso-box strong{
   display:block;
-  font-size:9px;
+  font-size:13px;
   color:#111111;
   margin-bottom:4px;
 }
 
 .resultado-curso-box span{
   display:block;
-  font-size:8px;
-  color:#6d7682;
+  font-size:11px;
+  color:#000000;
   line-height:1.45;
 }
 
@@ -307,9 +307,9 @@ input{
 
 .resultado-btn{
   min-height:22px;
-  padding:0 12px;
+  padding:6px 14px;
   border-radius:999px;
-  font-size:8px;
+  font-size:11px;
   font-weight:700;
   cursor:pointer;
   border:none;

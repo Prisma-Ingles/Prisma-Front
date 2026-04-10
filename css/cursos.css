@@ -46,6 +46,13 @@ body{
   color:#fff;
 }
 
+.user-welcome{
+  color:#ffffff !important;
+  font-size:13px !important;
+  font-weight:600 !important;
+  white-space:nowrap !important;
+}
+
 .courses-top-label{
   font-size:15px;
   text-transform:uppercase;

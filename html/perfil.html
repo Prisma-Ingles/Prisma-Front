@@ -5,54 +5,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minha Jornada - Prisma</title>
-  <link rel="shortcut icon" href="../img/prisma/logo-prisma-3.png" type="image/x-icon">
+  <link rel="icon" type="image/png" href="./img/prisma/logo-prisma-3.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <link rel="stylesheet" href="../css/perfil.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/menu-mobile.css">
+  <link rel="stylesheet" href="../css/footer-mobile.css">
+  <link rel="stylesheet" href="../css/responsividade-perfil.css">
 </head>
 
-<body> 
+<body>
 
   <!-- HEADER -->
-<nav class="header" id="header">
+  <header>
     <div class="container header-content">
-      <a href="../index.html" aria-label="PRISMA">
-        <img src="../img/prisma/logo-prisma-3.png" alt="Logo Prisma" class="logo-img">
+      <a href="index.html" aria-label="PRISMA">
+        <img src="/img/prisma/logo-prisma-3.png" alt="Logo Prisma" class="logo-img">
       </a>
 
-      <ul class="header-links" id="headerLinks">
-        <li><a href="../index.html" class="nav-link">INÍCIO</a></li>
-        <li><a href="cursos.html" class="nav-link">CURSOS</a></li>
-        <li><a href="certificados.html" class="nav-link">CERTIFICADOS</a></li>
-        <li><a href="recursos.html" class="nav-link">RECURSOS</a></li>
-        <li><a href="perfil.html" class="active nav-link">PERFIL</a></li>
-        <li><a href="contato.html" class="nav-link">CONTATO</a></li>
+      <ul class="header-links">
+        <li><a href="../index.html">INÍCIO</a></li>
+        <li><a href="../html/cursos.html">CURSOS</a></li>
+        <li><a href="../html/certificados.html">CERTIFICADOS</a></li>
+        <li><a href="../html/recursos.html">RECURSOS</a></li>
+        <li><a href="../html/perfil.html" class="active">PERFIL</a></li>
+        <li><a href="../html/contato.html">CONTATO</a></li>
       </ul>
 
       <div class="header-auth">
         <span id="userWelcome" class="user-welcome"></span>
         <button class="btn-entrar" id="authButton" type="button">ENTRAR</button>
       </div>
-
-      <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
+      <button class="hamburger-btn" id="menuHamburger" aria-label="Abrir menu" type="button">
+        <i class="fa-solid fa-bars"></i>
       </button>
     </div>
-  </nav>
+  </header>
 
   <!-- MAIN -->
   <main>
 
     <section class="hero">
-        <p>— MINHA JORNADA</p>
-        <h1>Meu Perfil</h1>
+      <p>— MINHA JORNADA</p>
+      <h1>Meu Perfil</h1>
     </section>
 
     <section class="profile-section">
@@ -61,8 +63,8 @@
         <div class="user-info">
           <div class="avatar">A</div>
           <div class="details">
-            <h2>Aluno Prisma</h2>
-            <p>aluno@prisma.com.br · Membro desde Janeiro 2025</p>
+            <h2 id="nomeUsuario">Aluno Prisma</h2>
+            <p id="emailUsuario">aluno@prisma.com.br</p>
             <span class="level">Nível 4 - Intermediário</span>
 
             <div class="progress-bar-main">
@@ -124,6 +126,17 @@
       </div>
     </section>
 
+    <!-- PERFIL BLOQUEADO -->
+
+    <div id="lockOverlay" class="lock-overlay hidden">
+      <div class="lock-box">
+        <h2>🔒 Acesso restrito</h2>
+        <br>
+        <p>Faça login para acessar e ter informações do seu perfil.</p>
+        <button class="lock-btn" onclick="irParaLogin()">Entrar / Cadastrar</button>
+      </div>
+    </div>
+
   </main>
 
   <!-- FOOTER -->
@@ -160,6 +173,9 @@
   </footer>
 
   <script src="../js/script.js"></script>
+  <script src="../js/perfil.js"></script>
+  <script src="../js/menu-mobile.js"></script>
   <script src="../js/vlibras.js"></script>
 </body>
+
 </html>

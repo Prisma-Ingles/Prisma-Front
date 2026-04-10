@@ -7,7 +7,7 @@
   --white:#ffffff;
   --btn-dark:#1f284c;
   --btn-border:#7e8a99;
-  --card-bg:#ffffff;
+  --card-bg:#ffffff; 
   --card-blue: linear-gradient(135deg, #E2F2FF, #D4ECFF);
   --line:#d4d9df;
   --purple:#4a1e58;
@@ -22,9 +22,10 @@
   font-family:"Inter", Arial, Helvetica, sans-serif;
 }
 
-.header{
+header{
   background:var(--navy);
   padding:18px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 .header-content{
@@ -84,100 +85,4 @@
   font-size:12px;
   font-weight:700;
   cursor:pointer;
-}
-
-.hamburger-menu{
-  display:none;
-  flex-direction:column;
-  background:none;
-  border:none;
-  cursor:pointer;
-  gap:6px;
-  padding:8px;
-}
-
-.hamburger-menu .line{
-  width:24px;
-  height:3px;
-  background:#ffffff;
-  border-radius:2px;
-  transition:all 0.3s ease;
-}
-
-.hamburger-menu.active .line:nth-child(1){
-  transform:rotate(45deg) translate(12px, 12px);
-}
-
-.hamburger-menu.active .line:nth-child(2){
-  opacity:0;
-}
-
-.hamburger-menu.active .line:nth-child(3){
-  transform:rotate(-45deg) translate(12px, -12px);
-}
-
-/* Mobile Menu */
-@media (max-width:768px){
-  .hamburger-menu{
-    display:flex;
-  }
-
-  .header-links{
-    position:fixed;
-    top:60px;
-    left:0;
-    right:0;
-    background:var(--navy);
-    flex-direction:column;
-    gap:0;
-    max-height:0;
-    overflow:hidden;
-    transition:max-height 0.3s ease;
-    align-items:flex-start;
-    padding:0;
-  }
-
-  .header-links.active{
-    max-height:500px;
-    padding:20px 0;
-  }
-
-  .header-links li{
-    width:100%;
-    padding:0;
-  }
-
-  .header-links a{
-    display:block;
-    padding:12px 20px;
-    border-bottom:none;
-  }
-
-  .header-links a:hover{
-    border-bottom:none;
-    padding-bottom:12px;
-    background:rgba(255,255,255,0.08);
-  }
-
-  .header-links a.active{
-    border-bottom:none;
-    padding-bottom:12px;
-    background:rgba(31,113,239,0.2);
-  }
-
-  .header-auth{
-    flex-direction:column;
-    gap:8px;
-    display:none;
-  }
-
-  .btn-entrar{
-    padding:8px 16px;
-    font-size:11px;
-    width:100%;
-  }
-
-  .header-content{
-    gap:12px;
-  }
 }

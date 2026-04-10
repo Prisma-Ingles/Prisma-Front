@@ -9,16 +9,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+
   <link rel="stylesheet" href="../css/flashcards.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/menu-mobile.css">
+  <link rel="stylesheet" href="../css/footer-mobile.css">
+  <link rel="stylesheet" href="../css/responsividade-flashcards.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-  <nav class="header" id="header">
+  <header>
     <div class="container header-content">
       <a href="../index.html" aria-label="PRISMA">
         <img src="../img/prisma/logo-prisma-3.png" alt="Logo Prisma" class="logo-img">
@@ -26,19 +29,22 @@
 
       <ul class="header-links">
         <li><a href="../index.html">INÍCIO</a></li>
-        <li><a href="cursos.html">CURSOS</a></li>
-        <li><a href="certificados.html">CERTIFICADOS</a></li>
-        <li><a href="recursos.html" class="active">RECURSOS</a></li>
-        <li><a href="perfil.html">PERFIL</a></li>
-        <li><a href="contato.html">CONTATO</a></li>
+        <li><a href="../html/cursos.html">CURSOS</a></li>
+        <li><a href="../html/certificados.html">CERTIFICADOS</a></li>
+        <li><a href="../html/recursos.html" class="active">RECURSOS</a></li>
+        <li><a href="../html/perfil.html">PERFIL</a></li>
+        <li><a href="../html/contato.html">CONTATO</a></li>
       </ul>
 
       <div class="header-auth">
         <span id="userWelcome" class="user-welcome"></span>
         <button class="btn-entrar" id="authButton" type="button">ENTRAR</button>
       </div>
+      <button class="hamburger-btn" id="menuHamburger" aria-label="Abrir menu" type="button">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
-  </nav>
+  </header>
 
 <header class="hero">
   <p class="label">PRÁTICA</p>
@@ -114,6 +120,7 @@
 
   <script src="../js/script.js"></script>
   <script src="../js/flashcards.js"></script>
+  <script src="../js/menu-mobile.js"></script>
   <script src="../js/vlibras.js"></script>
 
 </body>

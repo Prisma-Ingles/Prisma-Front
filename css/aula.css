@@ -100,7 +100,7 @@ body{
   align-items:center;
   gap:8px;
   margin:0 0 10px;
-  font-size:9px;
+  font-size:13px;
   font-weight:700;
   color:#5c6777;
   text-transform:uppercase;
@@ -448,7 +448,7 @@ body{
 }
  
 .curso-sidebar-subtitle{
-  font-size:10px;
+  font-size:12px;
   line-height:1.2;
   color:#6d7c90;
   margin-bottom:10px;
@@ -471,7 +471,7 @@ body{
 }
  
 .curso-progress-label{
-  font-size:8px;
+  font-size:12px;
   color:#6c7688;
   margin-bottom:12px;
 }
@@ -541,10 +541,10 @@ body{
 }
  
 .user-welcome{
-  color:#ffffff;
-  font-size:13px;
-  font-weight:600;
-  white-space:nowrap;
+  color:#ffffff !important;
+  font-size:13px !important;
+  font-weight:600 !important;
+  white-space:nowrap !important;
 }
  
 .modulo-clicavel{
@@ -553,60 +553,4 @@ body{
  
 .modulo-clicavel:hover{
   transform:translateY(-4px);
-}
- 
-@media (max-width:1000px){
-  .curso-aula-container{
-    grid-template-columns:1fr;
-    gap:24px;
-  }
- 
-  .curso-aula-sidebar{
-    width:100%;
-    margin-top:0;
-  }
- 
-  .curso-video-box,
-  .curso-aula-texto,
-  .prisma-quiz,
-  .prisma-question-card{
-    max-width:100%;
-  }
- 
-  .curso-sidebar-card{
-    max-width:500px;
-  }
-}
- 
-@media (max-width:640px){
-  .quiz-actions{
-    width:100%;
-    justify-content:flex-end;
-  }
- 
-  .answer-row{
-    align-items:flex-start;
-    border-radius:24px;
-    flex-direction:column;
-    padding:10px 12px;
-  }
- 
-  .answer-chips{
-    width:100%;
-    justify-content:flex-start;
-    padding-left:46px;
-  }
- 
-  .prisma-quiz-banner{
-    max-width:100%;
-  }
- 
-  .curso-aula-titulo{
-    font-size:22px;
-    max-width:100%;
-  }
- 
-  .curso-video-box{
-    height:220px;
-  }
 }

@@ -1,0 +1,164 @@
+/* ============================================================
+   PRISMA — responsividade-curso.css
+   Responsividade exclusiva do body da página curso.html.
+
+   Não contém header  → coberto por menu-mobile.css
+   Não contém footer  → coberto por footer-mobile.css
+
+   Importar no <head> do curso.html,
+   após menu-mobile.css e footer-mobile.css:
+     <link rel="stylesheet" href="../css/responsividade-curso.css">
+   ============================================================ */
+
+
+/* ──────────────────────────────────────────────────────────
+   BREAKPOINT PRINCIPAL — ≤ 1024px (tablet e mobile)
+   ────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+  /* === TOPO DO CURSO === */
+
+  .curso-topo-figma {
+    padding: 28px 24px 10px;
+  }
+
+  /* Remove o nowrap — o título pode quebrar linha normalmente */
+  .curso-titulo-figma {
+    font-size: 30px;
+    max-width: 100%;
+    white-space: normal;
+    margin-left: 0;
+  }
+
+  .curso-texto-figma {
+    font-size: 16px;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .curso-label-figma {
+    font-size: 14px;
+  }
+
+  /* === BENEFÍCIOS === */
+
+  .figma-benefits-box {
+    padding: 36px 28px 32px;
+    border-radius: 20px;
+    margin-top: 28px;
+  }
+
+  /* 4 itens lado a lado → 2 colunas em tablet */
+  .figma-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 28px;
+  }
+
+  .figma-benefit-item {
+    max-width: 100%;
+    flex: unset;
+  }
+
+  /* === CTA START === */
+
+  .curso-start-figma {
+    font-size: 24px;
+    margin-top: 48px;
+  }
+
+  /* === MÓDULOS === */
+
+  .figma-modulos-section {
+    padding: 18px 24px 38px;
+  }
+
+  /* Remove a largura fixa — o card estica para preencher a coluna */
+  .figma-modulo-card {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 320 / 345;
+  }
+
+  .courses-container {
+    margin-bottom: 56px;
+  }
+
+}
+
+
+/* ──────────────────────────────────────────────────────────
+   MOBILE PEQUENO — ≤ 640px
+   ────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+
+  /* === TOPO DO CURSO === */
+
+  .curso-topo-figma {
+    padding: 22px 16px 8px;
+  }
+
+  .curso-titulo-figma {
+    font-size: 24px;
+  }
+
+  .curso-texto-figma {
+    font-size: 15px;
+  }
+
+  /* === BENEFÍCIOS === */
+
+  .figma-benefits-box {
+    padding: 28px 18px 24px;
+    border-radius: 16px;
+    margin-top: 20px;
+  }
+
+  .figma-benefits-box h3 {
+    font-size: 17px;
+    margin-bottom: 24px;
+  }
+
+  /* 2 colunas → 1 coluna em mobile */
+  .figma-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .figma-benefit-item i {
+    width: 72px;
+    height: 72px;
+    font-size: 26px;
+    border-radius: 16px;
+  }
+
+  /* === CTA START === */
+
+  .curso-start-figma {
+    font-size: 19px;
+    margin-top: 36px;
+  }
+
+  /* === MÓDULOS === */
+
+  .figma-modulos-section {
+    padding: 14px 14px 32px;
+  }
+
+  /* Cards ocupam largura total em mobile */
+  .figma-modulos-grid {
+    gap: 12px;
+  }
+
+  .figma-modulo-card {
+    max-width: 100%;
+    aspect-ratio: 320 / 345;
+  }
+
+  .courses-container {
+    margin-bottom: 40px;
+  }
+
+}

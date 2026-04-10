@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,48 +10,50 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/recursos.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/menu-mobile.css">
+  <link rel="stylesheet" href="../css/footer-mobile.css">
+  <link rel="stylesheet" href="../css/responsividade-recursos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
-  <nav class="header" id="header">
+  <header>
     <div class="container header-content">
-      <a href="../index.html" aria-label="PRISMA">
+      <a href="index.html" aria-label="PRISMA">
         <img src="../img/prisma/logo-prisma-3.png" alt="Logo Prisma" class="logo-img">
-      </a> 
+      </a>
 
-      <ul class="header-links" id="headerLinks">
-        <li><a href="../index.html" class="nav-link">INÍCIO</a></li>
-        <li><a href="cursos.html" class="nav-link">CURSOS</a></li>
-        <li><a href="certificados.html" class="nav-link">CERTIFICADOS</a></li>
-        <li><a href="recursos.html" class="active nav-link">RECURSOS</a></li>
-        <li><a href="perfil.html" class="nav-link">PERFIL</a></li>
-        <li><a href="contato.html" class="nav-link">CONTATO</a></li>
+      <ul class="header-links">
+        <li><a href="../index.html">INÍCIO</a></li>
+        <li><a href="cursos.html">CURSOS</a></li>
+        <li><a href="certificados.html">CERTIFICADOS</a></li>
+        <li><a href="recursos.html" class="active">RECURSOS</a></li>
+        <li><a href="perfil.html">PERFIL</a></li>
+        <li><a href="contato.html">CONTATO</a></li>
       </ul>
 
       <div class="header-auth">
         <span id="userWelcome" class="user-welcome"></span>
         <button class="btn-entrar" id="authButton" type="button">ENTRAR</button>
       </div>
-
-      <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
+      <button class="hamburger-btn" id="menuHamburger" aria-label="Abrir menu" type="button">
+        <i class="fa-solid fa-bars"></i>
       </button>
     </div>
-  </nav>
+  </header>
 
   <header class="hero">
-      <p class="label">— MATERIAL DE APOIO</p>
-      <h1>Recursos Extras</h1>
-      <p class="description">
-        Ferramentas complementares para acelerar seu aprendizado.
-      </p>
+    <p class="label">— MATERIAL DE APOIO</p>
+    <h1>Recursos Extras</h1>
+    <p class="description">
+      Ferramentas complementares para acelerar seu aprendizado.
+    </p>
   </header>
 
   <main class="container content">
@@ -59,7 +62,7 @@
         <i class="fas fa-book-open main-icon"></i>
         <h3>E-books e Glossários</h3>
         <p>Guias de vocabulário profissional, expressões idiomáticas e frases essenciais por área.</p>
-        <button class="btn-download">BAIXAR GRÁTIS</button>
+        <a class="btn-download" href="../pdf/Ebook_Ingles_Corporativo_Completo.pdf" download="Ebook-Ingles-Corporativo">BAIXAR GRÁTIS</a>
       </div>
 
       <div class="card">
@@ -84,25 +87,36 @@
       </div>
 
       <div class="card">
-                <i class="fas fa-envelope-open-text main-icon"></i>
-                <h3>Templates de E-mail</h3>
-                <p>Modelos prontos para follow-ups, solicitações e comunicação com clientes estrangeiros.</p>
-                <button class="btn-download">BAIXAR</button>
-            </div>
+        <i class="fas fa-envelope-open-text main-icon"></i>
+        <h3>Templates de E-mail</h3>
+        <p>Modelos prontos para follow-ups, solicitações e comunicação com clientes estrangeiros.</p>
+        <button class="btn-download">BAIXAR</button>
+      </div>
 
-            <div class="card">
-                <i class="fas fa-comment-dots main-icon"></i>
-                <h3>Fórum de Prática</h3>
-                <p>Comunidade ativa para troca de experiências e prática de conversação em inglês.</p>
-                <button class="btn-download">BAIXAR GRÁTIS</button>
-            </div>
+      <div class="card">
+        <i class="fas fa-comment-dots main-icon"></i>
+        <h3>Fórum de Prática</h3>
+        <p>Comunidade ativa para troca de experiências e prática de conversação em inglês.</p>
+        <button class="btn-download">ENTRAR</button>
+      </div>
 
-            <div class="card">
-                <i class="fas fa-users main-icon"></i>
-                <h3>Mentoria em Grupo</h3>
-                <p>Agende um bate papo em pequenos times e tire suas dúvidas com um profissional.</p>
-                <button class="btn-download">FAÇA PARTE</button>
-            </div>
+      <div class="card">
+        <i class="fas fa-users main-icon"></i>
+        <h3>Mentoria em Grupo</h3>
+        <p>Agende um bate papo em pequenos times e tire suas dúvidas com um profissional.</p>
+        <button class="btn-download">FAÇA PARTE</button>
+      </div>
+    </div>
+
+    <!-- Recursos Bloqueado -->
+
+    <div id="lockOverlay" class="lock-overlay hidden">
+      <div class="lock-box">
+        <h2>🔒 Acesso restrito</h2>
+        <br>
+        <p>Faça login para acessar os recursos disponíveis.</p>
+        <button class="lock-btn" onclick="irParaLogin()">Entrar / Cadastrar</button>
+      </div>
     </div>
   </main>
 
@@ -140,6 +154,8 @@
 
   <script src="../js/script.js"></script>
   <script src="../js/recursos.js"></script>
+  <script src="../js/menu-mobile.js"></script>
   <script src="../js/vlibras.js"></script>
 </body>
+
 </html>

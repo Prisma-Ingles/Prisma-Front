@@ -1,0 +1,53 @@
+/* ============================================================
+   PRISMA — footer-mobile.css
+   Responsividade global do footer.
+   Funciona em todas as páginas que usam .footer-shell.
+
+   Importar em TODAS as páginas (após footer.css):
+     Páginas na raiz  → <link rel="stylesheet" href="/css/footer-mobile.css">
+     Páginas em /html → <link rel="stylesheet" href="../css/footer-mobile.css">
+   ============================================================ */
+
+
+/* ──────────────────────────────────────────────────────────
+   ≤ 1024px — colapsa o grid de 3 colunas para coluna única
+   ────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+  .footer-shell {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    text-align: center;
+  }
+
+  .footer-left {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    justify-self: center;
+  }
+
+  .footer-column,
+  .footer-contact {
+    align-items: center;
+  }
+
+  .footer-right {
+    justify-self: center;
+  }
+
+  .footer-contact a {
+    justify-content: center;
+  }
+
+  .footer-column h4,
+  .footer-contact h4 {
+    text-align: center;
+  }
+
+  .footer-column a,
+  .footer-contact a {
+    text-align: center;
+  }
+
+}

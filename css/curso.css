@@ -27,6 +27,13 @@ body{
   color:var(--text);
 }
 
+.user-welcome{
+  color:#ffffff !important;
+  font-size:13px !important;
+  font-weight:600 !important;
+  white-space:nowrap !important;
+}
+
 .courses-container {
     margin-bottom: 70px;
 }

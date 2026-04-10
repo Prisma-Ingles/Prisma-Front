@@ -38,15 +38,20 @@ function atualizarCursoIdealTexto() {
   const cursoIdeal = getCursoIdeal();
   const descricaoSalva = localStorage.getItem("descricaoCursoIdeal");
 
-  if (cursoIdeal == null) {
-    tituloPaginaCursos.textContent = "Nossos cursos"
-    descricaoCursoIdeal.textContent = "Conteúdo prático por área profissional. Cada curso tem 10 módulos com videoaulas e atividades."
-
-    return
+  if (!usuario) {
+    tituloPaginaCursos.textContent = "Nossos cursos";
+    descricaoCursoIdeal.textContent = "Conteúdo prático por área profissional. Cada curso tem 10 módulos com videoaulas e atividades.";
+    return;
   }
 
-  if (cursoIdealTexto) {
-    cursoIdealTexto.textContent = cursoIdeal;
+  if (usuario && !cursoIdeal) {
+    tituloPaginaCursos.textContent = "Nossos cursos";
+    descricaoCursoIdeal.textContent = "Conteúdo prático por área profissional. Cada curso tem 10 módulos com videoaulas e atividades.";
+    return;
+  }
+
+  if (cursoIdealTexto && cursoIdeal) {
+    cursoIdealTexto.textContent = `${cursoIdeal}`;
   }
 
   if (descricaoCursoIdeal && descricaoSalva) {

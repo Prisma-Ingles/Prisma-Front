@@ -1,0 +1,235 @@
+/* ============================================================
+   PRISMA — responsividade.css
+   Responsividade do BODY do index.html
+   (hero, stats bar, seções, cards, plans, CTA, aula).
+
+   Não contém header  → coberto por menu-mobile.css
+   Não contém footer  → coberto por footer-mobile.css
+
+   Importar no index.html (após todos os outros CSS):
+     <link rel="stylesheet" href="./css/responsividade.css">
+   ============================================================ */
+
+
+/* ──────────────────────────────────────────────────────────
+   BREAKPOINT PRINCIPAL — ≤ 1024px
+   ────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+  /* === HERO === */
+  .hero-container {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding: 48px 24px 40px !important;
+    min-height: auto !important;
+  }
+
+  .hero-left h1 {
+    font-size: 42px;
+    letter-spacing: -1px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .hero-right {
+    justify-content: center;
+  }
+
+  .hero-prisma-img {
+    width: 240px;
+  }
+
+  /* === STATS BAR === */
+  .hero-stats-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 22px 18px;
+    gap: 0;
+  }
+
+  /* === SEÇÕES GERAIS === */
+  .section-light {
+    padding: 40px 18px 48px;
+  }
+
+  .section-title {
+    font-size: 34px;
+  }
+
+  .section-description {
+    font-size: 17px;
+  }
+
+  /* === CARDS GRID (objetivos) === */
+  .cards-grid,
+  .four-cols {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+    margin-top: 32px !important;
+  }
+
+  .mini-card {
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .mini-card h3 {
+    font-size: 20px;
+  }
+
+  .mini-card p {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  /* === RESOURCES GRID === */
+  .resources-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+    justify-content: stretch !important;
+    margin-top: 32px !important;
+  }
+
+  .resources-section .mini-card {
+    max-width: 100%;
+  }
+
+  /* === PLANS GRID === */
+  .plans-grid {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px !important;
+    margin-top: 32px !important;
+  }
+
+  .plan-card {
+    width: 100% !important;
+    max-width: 480px !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .plans-section {
+    padding: 40px 18px 54px;
+    margin-bottom: 40px;
+  }
+
+  /* === FINAL CTA === */
+  .final-cta {
+    padding: 60px 18px;
+  }
+
+  .final-cta h2 {
+    font-size: 34px;
+  }
+
+  /* === SEÇÃO AULA === */
+  .curso-aula-container {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .curso-aula-sidebar {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .curso-video-box,
+  .curso-aula-texto,
+  .prisma-quiz,
+  .prisma-question-card,
+  .prisma-quiz-banner {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .curso-aula-titulo {
+    font-size: 22px;
+    max-width: 100%;
+  }
+
+}
+
+
+/* ──────────────────────────────────────────────────────────
+   MOBILE PEQUENO — ≤ 640px
+   ────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+
+  /* Tipografia */
+  .hero-left h1 {
+    font-size: 32px;
+    letter-spacing: -0.5px;
+  }
+
+  .section-title,
+  .final-cta h2 {
+    font-size: 26px;
+  }
+
+  .section-description {
+    font-size: 15px;
+  }
+
+  /* Hero */
+  .hero-container {
+    padding: 36px 16px 32px !important;
+  }
+
+  .hero-pill {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-prisma-img {
+    width: 180px;
+  }
+
+  .hero-prisma-text {
+    font-size: 18px;
+    letter-spacing: 6px;
+  }
+
+  /* Stats bar: coluna única */
+  .hero-stats-container {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .hero-stat:not(:last-child)::after {
+    display: none;
+  }
+
+  /* Cards: coluna única em telas muito pequenas */
+  .cards-grid,
+  .four-cols,
+  .resources-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Video aula */
+  .curso-video-box {
+    height: 210px !important;
+  }
+
+  /* Plans */
+  .plan-card {
+    max-width: 100% !important;
+  }
+
+}

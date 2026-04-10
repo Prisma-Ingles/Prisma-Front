@@ -1,0 +1,113 @@
+@media (max-width: 1024px) {
+
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+
+  #cabecalho-suporte {
+    height: auto;
+    margin-top: 32px;
+    margin-bottom: 40px;
+    padding: 28px 24px;
+    box-sizing: border-box;
+  }
+
+  .contato-title       { font-size: 32px; }
+  .contato-top-label   { font-size: 13px; }
+  .contato-description { font-size: 14px; max-width: 100%; }
+
+
+  .nossoscontatos {
+    flex-direction: column;
+    align-items: stretch;
+    margin: 40px 18px;
+    gap: 24px;
+    width: calc(100% - 36px);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  /* === CANAIS DE CONTATO === */
+
+  /* botoesSuporte tem width: 500px fixo no CSS base */
+  .botoesSuporte {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .caixaMensagem {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .caixacontato {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .formulariocontato {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  /* Garante que inputs não ultrapassem o formulário */
+  .inputs,
+  #Assunto_tecnico,
+  #mensagemcaixa,
+  .btn_btn-enviar {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 15px;
+  }
+
+  .nome_email {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .caixacontato label { font-size: 15px; }
+
+}
+
+@media (max-width: 640px) {
+
+
+
+  #cabecalho-suporte {
+    margin-top: 20px;
+    margin-bottom: 28px;
+    padding: 22px 18px;
+  }
+
+  .contato-title { font-size: 26px; }
+
+
+  .nossoscontatos {
+    margin: 24px 14px;
+    gap: 16px;
+    width: calc(100% - 28px);
+  }
+
+
+  .nome_email {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nome_email > div:first-child { margin-bottom: 10px; }
+
+  .inputs,
+  #Assunto_tecnico,
+  #mensagemcaixa {
+    font-size: 14px;
+  }
+
+  .caixacontato label { font-size: 14px; }
+
+}

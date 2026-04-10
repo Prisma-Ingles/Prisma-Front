@@ -1,0 +1,189 @@
+/* ============================================================
+   PRISMA — menu-mobile.css
+   Tudo relacionado ao menu hambúrguer:
+   botão, drawer lateral, overlay, animações e regras
+   de header responsivo.
+
+   Importar em TODAS as páginas (após header.css):
+     Páginas na raiz  → <link rel="stylesheet" href="/css/menu-mobile.css">
+     Páginas em /html → <link rel="stylesheet" href="../css/menu-mobile.css">
+   ============================================================ */
+
+
+/* ──────────────────────────────────────────────────────────
+   1. BOTÃO HAMBÚRGUER
+   Sempre no HTML, invisível no desktop.
+   A media query no bloco 5 o exibe no mobile.
+   ────────────────────────────────────────────────────────── */
+.hamburger-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 22px;
+  padding: 6px 10px;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  order: 3;
+  z-index: 1001;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.2s ease;
+}
+
+.hamburger-btn:hover { opacity: 0.75; }
+.hamburger-btn i     { pointer-events: none; }
+
+
+/* ──────────────────────────────────────────────────────────
+   2. OVERLAY — container do backdrop + drawer
+   Injetado no body pelo menu-mobile.js.
+   ────────────────────────────────────────────────────────── */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+}
+
+
+/* ──────────────────────────────────────────────────────────
+   3. BACKDROP — fundo escurecido atrás do drawer
+   ────────────────────────────────────────────────────────── */
+.mobile-nav-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+/* ──────────────────────────────────────────────────────────
+   4. DRAWER — painel lateral deslizante
+   ────────────────────────────────────────────────────────── */
+.mobile-nav-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(300px, 82vw);
+  height: 100%;
+  background: var(--navy, #03123a);
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px 40px;
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+
+/* Botão fechar (×) */
+.mobile-nav-close {
+  align-self: flex-end;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px;
+  margin-bottom: 28px;
+  opacity: 0.8;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.2s ease;
+}
+.mobile-nav-close:hover { opacity: 1; }
+
+/* Lista de links */
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobile-nav-links a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: opacity 0.2s ease;
+}
+
+.mobile-nav-links a:hover         { opacity: 0.65; }
+.mobile-nav-links a.active        { border-bottom-color: rgba(255, 255, 255, 0.3); }
+
+/* Área do botão ENTRAR / SAIR */
+.mobile-nav-auth {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.mobile-nav-auth .btn-entrar-mobile {
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 13px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  outline: none;
+  transition: opacity 0.2s ease;
+}
+.mobile-nav-auth .btn-entrar-mobile:hover { opacity: 0.85; }
+
+
+/* ──────────────────────────────────────────────────────────
+   5. ESTADO ABERTO — classe .is-open adicionada pelo JS
+   ────────────────────────────────────────────────────────── */
+.mobile-nav-overlay.is-open                        { display: block; }
+.mobile-nav-overlay.is-open .mobile-nav-backdrop   { opacity: 1; }
+.mobile-nav-overlay.is-open .mobile-nav-drawer     { transform: translateX(0); }
+
+
+/* ──────────────────────────────────────────────────────────
+   6. HEADER RESPONSIVO — ≤ 1024px
+   Exibe o hambúrguer, esconde nav e auth do desktop,
+   e corrige o max-width herdado da classe .container.
+   ────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+  /* Exibe o hambúrguer */
+  .hamburger-btn {
+    display: flex;
+  }
+
+  /* Esconde navegação e auth do desktop */
+  .header-links,
+  .header-auth {
+    display: none !important;
+  }
+
+  /*
+    O header-content acumula as classes .container (max-width: 1180px; margin: auto)
+    e .header-content. O seletor "nav.header .header-content" tem especificidade
+    maior que ".container" sem !important, cancelando o max-width só no mobile.
+  */
+  header .header-content {
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+}

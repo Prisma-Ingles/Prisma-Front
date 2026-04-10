@@ -5,6 +5,13 @@
     font-family:"Inter", Arial, Helvetica, sans-serif;
 }
 
+.user-welcome{
+  color:#ffffff !important;
+  font-size:13px !important;
+  font-weight:600 !important;
+  white-space:nowrap !important;
+}
+
 /* HERO HEADER */
 .hero {
     display: flex;
@@ -141,14 +148,17 @@
 }
 
 .card-front {
-    background: white;
-    box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+    background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+    border: 1px solid #e5e7eb;
 }
 
+
 .card-back {
-    background: linear-gradient(90deg, #0a367e, #349ed5);
+     background: linear-gradient(90deg, #0a367e, #349ed5);
     color: white;
     transform: rotateY(180deg);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
 }
 
 .controls {

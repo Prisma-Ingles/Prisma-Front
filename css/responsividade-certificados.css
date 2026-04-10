@@ -1,0 +1,126 @@
+/* ============================================================
+   PRISMA — responsividade-certificados.css
+   Responsividade exclusiva do body da página certificados.html.
+
+   Nao contém header  -> coberto por menu-mobile.css
+   Nao contém footer  -> coberto por footer-mobile.css
+
+   ATENCAO: em certificados.html o certificados-style.css e
+   carregado ANTES do style.css (ordem invertida no HTML).
+   Por isso alguns valores usam !important para garantir a
+   sobreposicao correta em mobile.
+
+   Importar no <head> do certificados.html,
+   apos footer-mobile.css:
+     <link rel="stylesheet" href="../css/responsividade-certificados.css">
+   ============================================================ */
+
+
+/* ──────────────────────────────────────────────────────────
+   BREAKPOINT PRINCIPAL — <= 1024px (tablet e mobile)
+   ────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+  /* === CABECALHO === */
+
+  #cabecalho-certificados {
+    height: auto !important;
+    margin-top: 32px !important;
+    margin-bottom: 40px !important;
+    padding: 28px 24px !important;
+  }
+
+  .certificados-title {
+    font-size: 28px;
+  }
+
+  .certificados-description {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  /* === COMO FUNCIONA === */
+
+  .comofunciona {
+    margin: 32px 18px;
+    padding: 20px 18px;
+  }
+
+  /* === GRID DE CERTIFICADOS === */
+
+  .fileira-certificados {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px;
+    margin: 0 !important;
+    padding: 0 18px;
+    margin-bottom: 14px !important;
+  }
+
+  .seucertificado {
+    width: 100% !important;
+    padding: 22px 18px;
+  }
+
+  .certificados {
+    margin-bottom: 48px !important;
+  }
+
+}
+
+
+/* ──────────────────────────────────────────────────────────
+   MOBILE PEQUENO — <= 640px
+   ────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+
+  /* === CABECALHO === */
+
+  #cabecalho-certificados {
+    margin-top: 20px !important;
+    margin-bottom: 28px !important;
+    padding: 22px 18px !important;
+  }
+
+  .certificados-title {
+    font-size: 22px;
+  }
+
+  .certificados-top-label {
+    font-size: 13px;
+  }
+
+  /* === COMO FUNCIONA === */
+
+  .comofunciona {
+    margin: 20px 14px;
+    padding: 18px 14px;
+  }
+
+  .comofunciona .icone-texto {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* === GRID DE CERTIFICADOS === */
+
+  .fileira-certificados {
+    gap: 12px;
+    padding: 0 14px;
+  }
+
+  .seucertificado {
+    padding: 18px 14px;
+  }
+
+  .certificados {
+    margin-bottom: 36px !important;
+  }
+
+  /* === MODAL DO CERTIFICADO === */
+
+  .modal-certificado-box {
+    padding: 18px 16px;
+  }
+
+}

@@ -1,5 +1,9 @@
+:root{
+  --navy:#03123a;
+}
+
 .prisma-final-footer{
-  background:#010a2a;
+  background: var(--navy);
   padding:22px 18px;
 }
 

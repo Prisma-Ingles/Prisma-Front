@@ -15,37 +15,37 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/menu-mobile.css">
+  <link rel="stylesheet" href="./css/footer-mobile.css">
+  <link rel="stylesheet" href="./css/responsividade.css">
 </head>
 
 <body>
 
-  <nav class="header" id="header">
+  <header>
     <div class="container header-content">
       <a href="index.html" aria-label="PRISMA">
         <img src="/img/prisma/logo-prisma-3.png" alt="Logo Prisma" class="logo-img">
       </a>
 
-      <ul class="header-links" id="headerLinks">
-        <li><a href="index.html" class="active nav-link">INÍCIO</a></li>
-        <li><a href="./html/cursos.html" class="nav-link">CURSOS</a></li>
-        <li><a href="./html/certificados.html" class="nav-link">CERTIFICADOS</a></li>
-        <li><a href="./html/recursos.html" class="nav-link">RECURSOS</a></li>
-        <li><a href="./html/perfil.html" class="nav-link">PERFIL</a></li>
-        <li><a href="./html/contato.html" class="nav-link">CONTATO</a></li>
+      <ul class="header-links">
+        <li><a href="index.html" class="active">INÍCIO</a></li>
+        <li><a href="./html/cursos.html">CURSOS</a></li>
+        <li><a href="./html/certificados.html">CERTIFICADOS</a></li>
+        <li><a href="./html/recursos.html">RECURSOS</a></li>
+        <li><a href="./html/perfil.html">PERFIL</a></li>
+        <li><a href="./html/contato.html">CONTATO</a></li>
       </ul>
 
       <div class="header-auth">
         <span id="userWelcome" class="user-welcome"></span>
         <button class="btn-entrar" id="authButton" type="button">ENTRAR</button>
       </div>
-
-      <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
+      <button class="hamburger-btn" id="menuHamburger" aria-label="Abrir menu" type="button">
+        <i class="fa-solid fa-bars"></i>
       </button>
     </div>
-  </nav>
+  </header>
 
   <section class="hero-prisma reveal">
     <div class="hero-container">
@@ -445,6 +445,8 @@
 
   <script src="./js/script.js"></script>
   <script src="./js/vlibras.js"></script>
+  <script src="./js/menu-mobile.js"></script>
+  
 </body>
 
 </html>

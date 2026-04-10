@@ -1,0 +1,86 @@
+/* ============================================================
+   PRISMA — responsividade-cursos.css
+   Responsividade exclusiva do body da página cursos.html.
+
+   Não contém header  → coberto por menu-mobile.css
+   Não contém footer  → coberto por footer-mobile.css
+
+   Importar no <head> do cursos.html,
+   após menu-mobile.css e footer-mobile.css:
+     <link rel="stylesheet" href="../css/responsividade-cursos.css">
+   ============================================================ */
+
+
+/* ──────────────────────────────────────────────────────────
+   BREAKPOINT PRINCIPAL — ≤ 1024px (tablet e mobile)
+   ────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+  /* === HERO DA PÁGINA === */
+
+  /* Remove a altura fixa — o conteúdo define a altura */
+  .courses-hero-box {
+    height: auto;
+    margin-top: 32px;
+    margin-bottom: 40px;
+    padding: 28px 24px;
+  }
+
+  .courses-main-title {
+    font-size: 28px;
+  }
+
+  .courses-main-description {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  /* === GRID DE CURSOS === */
+
+  /* 3 colunas → 2 colunas em tablet */
+  .prisma-courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 48px;
+    padding: 0 18px;
+  }
+
+  /* Remove a largura fixa — o card estica para preencher a coluna */
+  .prisma-course-card {
+    width: 100%;
+  }
+
+}
+
+
+/* ──────────────────────────────────────────────────────────
+   MOBILE PEQUENO — ≤ 640px
+   ────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+
+  /* === HERO DA PÁGINA === */
+  .courses-hero-box {
+    margin-top: 20px;
+    margin-bottom: 28px;
+    padding: 22px 18px;
+  }
+
+  .courses-main-title {
+    font-size: 22px;
+  }
+
+  .courses-top-label {
+    font-size: 13px;
+  }
+
+  /* === GRID DE CURSOS === */
+
+  /* 2 colunas → 1 coluna em mobile */
+  .prisma-courses-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 14px;
+    margin-bottom: 36px;
+  }
+
+}

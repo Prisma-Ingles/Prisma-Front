@@ -9,41 +9,40 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/curso.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/menu-mobile.css">
+  <link rel="stylesheet" href="../css/footer-mobile.css">
+  <link rel="stylesheet" href="../css/responsividade-curso.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
-  <nav class="header">
+  <header>
     <div class="container header-content">
       <a href="../index.html">
         <img src="../img/prisma/logo-prisma-3.png" class="logo-img">
       </a>
 
-      <ul class="header-links" id="headerLinks">
-        <li><a href="../index.html" class="nav-link">INÍCIO</a></li>
-        <li><a href="cursos.html" class="active nav-link">CURSOS</a></li>
-        <li><a href="certificados.html" class="nav-link">CERTIFICADOS</a></li>
-        <li><a href="recursos.html" class="nav-link">RECURSOS</a></li>
-        <li><a href="perfil.html" class="nav-link">PERFIL</a></li>
-        <li><a href="contato.html" class="nav-link">CONTATO</a></li>
+      <ul class="header-links">
+        <li><a href="../index.html">INÍCIO</a></li>
+        <li><a href="cursos.html" class="active">CURSOS</a></li>
+        <li><a href="certificados.html">CERTIFICADOS</a></li>
+        <li><a href="recursos.html">RECURSOS</a></li>
+        <li><a href="perfil.html">PERFIL</a></li>
+        <li><a href="contato.html">CONTATO</a></li>
       </ul>
 
       <div class="header-auth">
         <span id="userWelcome" class="user-welcome"></span>
         <button class="btn-entrar" id="authButton">ENTRAR</button>
       </div>
-
-      <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
+      <button class="hamburger-btn" id="menuHamburger" aria-label="Abrir menu" type="button">
+        <i class="fa-solid fa-bars"></i>
       </button>
     </div>
-  </nav>
+  </header>
 
   <main class="curso-page curso-page-figma">
 
@@ -117,6 +116,7 @@
 
   <script src="../js/curso.js"></script>
   <script src="../js/script.js"></script>
+  <script src="../js/menu-mobile.js"></script>
   <script src="../js/vlibras.js"></script>
 </body>
 </html>
